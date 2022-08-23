@@ -6,13 +6,14 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 14:59:06 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/22 15:01:34 by samajat          ###   ########.fr       */
+/*   Updated: 2022/08/23 17:14:54 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstring>
 
-int main ()
+int main (int argc, const char *argv[])
 {
-    std::cout << "hello world" << std::endl;
+    std::cout << (char)toupper('l');
 }
