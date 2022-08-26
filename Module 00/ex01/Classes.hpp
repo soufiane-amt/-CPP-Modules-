@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:19:24 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/26 21:10:38 by samajat          ###   ########.fr       */
+/*   Updated: 2022/08/26 21:50:05 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 //Headers
 #include "iostream"
-
+#include "string"
 //Classes
 class Contact
 {
@@ -34,6 +34,6 @@ class MyPhoneBook
     public:
         Contact contacts[8];
         void    add_new_contact(void);
-        void    search ();
-        void    exitPhoneBook();
+        void    search (void);
+        void    exitPhoneBook(void);
 }
