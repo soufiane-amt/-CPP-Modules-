@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 22:18:10 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/25 22:27:44 by samajat          ###   ########.fr       */
+/*   Updated: 2022/08/26 16:10:31 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int main ()
 {
-    Computer pc;
-    
-    pc.Computer ("hp", "2022", "windows");
-    
+    Computer pc("HP", 5, "Windows 10");
+        
     pc.powerOn();
 }
