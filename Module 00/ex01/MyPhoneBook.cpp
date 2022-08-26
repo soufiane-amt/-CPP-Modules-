@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:20:19 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/26 22:50:06 by samajat          ###   ########.fr       */
+/*   Updated: 2022/08/26 22:51:48 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,12 @@ void    MyPhoneBook::search (void)
 {
     size_t index;
 
-    display_contacts_info(this.contacts[]);
+    display_contacts_info(this.contacts);
     std :: cout << "Please choose an index:";
     index << std :: cin;
     while (index > this->contacts.length() - 1)//exit
         std::cerr << "The index is not valid please try again." << std ::endl;
+    //display func
     
 }
 
