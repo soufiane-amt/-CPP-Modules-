@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/23 17:23:05 by samajat           #+#    #+#              #
-#    Updated: 2022/08/23 17:47:23 by samajat          ###   ########.fr        #
+#    Updated: 2022/08/27 14:07:15 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,6 @@ $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME) 
 
 %.o : %.cpp
-	echo $@
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean :
