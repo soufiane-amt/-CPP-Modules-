@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:20:19 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/26 22:51:48 by samajat          ###   ########.fr       */
+/*   Updated: 2022/08/27 13:19:13 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,13 @@ std::string    str_processor(std::string str)
     return (str + "|");
 }
 
+void    display_contact(int index)
+{
+    std::cout << str_processor(to_string(index)) << str_processor(to_string(contacts[index].first_name))\
+    str_processor(to_string(contacts[index].last_name)) << str_processor(to_string(contacts[index].nickname))\
+    << std::endl;
+}
+
 void    display_contacts_info(Contact contacts[])
 {
     int i;
@@ -74,27 +81,46 @@ void    display_contacts_info(Contact contacts[])
     i = 0;
     while (i < contacts.length())
     {
-        std::cout << str_processor(to_string(i)) << str_processor(to_string(contacts[i].first_name))\
-        str_processor(to_string(contacts[i].last_name)) << str_processor(to_string(contacts[i].nickname))\
-        << std::endl;
+        display_contact(i);
         i++;
     }
 }
 
 void    MyPhoneBook::search (void)
 {
-    size_t index;
+    std::string index;
 
+    index = "-1";
     display_contacts_info(this.contacts);
-    std :: cout << "Please choose an index:";
-    index << std :: cin;
-    while (index > this->contacts.length() - 1)//exit
+    std :: cout << "Please choose an index:" << std::endl;
+    while (stoi(index) >= this->contacts.length() || stoi(index) < 0 )
+    {
+        index << std :: cin;
+        if (index == "EXIT")
+        {
+            phoneBook.exitProgram = true;
+            return ;
+        }
         std::cerr << "The index is not valid please try again." << std ::endl;
-    //display func
-    
+    }
+    display_contact(stoi(i));
 }
 
-int main ()
+int main (void)
 {
-    
+    MyPhoneBook phoneBook;
+    std::string input;
+
+    while (!phoneBook.exitProgram)
+    {
+        input << std::cin;
+        if (input == "ADD")
+            phoneBook.add_new_contact();
+        else if(input == "SEARCH")
+            search();
+        else if ("EXIT")
+            phoneBook.exitProgram = true;
+        else
+            std::cerr << "Unvalid command." << std::endl;
+    }
 }

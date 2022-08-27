@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:19:24 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/26 21:50:05 by samajat          ###   ########.fr       */
+/*   Updated: 2022/08/27 12:39:23 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ class MyPhoneBook
         Contact contacts[8];
         void    add_new_contact(void);
         void    search (void);
-        void    exitPhoneBook(void);
+        bool     exitProgram;
+        exitProgram = false;
 }
