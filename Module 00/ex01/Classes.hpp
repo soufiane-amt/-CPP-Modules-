@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:19:24 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/27 15:49:22 by samajat          ###   ########.fr       */
+/*   Updated: 2022/08/27 16:24:26 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,14 @@ class MyPhoneBook
     public:
         //variables
         Contact contacts[8];
-        static int     length;
+        int     length;
         bool     exitProgram;
         //Methods
         void    add_new_contact(void);
         void    search (void);
+        void    display_contacts_info();
+        //Constructor
+        MyPhoneBook (){this->length = 0;}
 };
 
 #endif

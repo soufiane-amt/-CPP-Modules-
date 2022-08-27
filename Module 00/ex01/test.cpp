@@ -3,7 +3,7 @@
 
 int main ()
 {
-    int a[10];
+    std::string lol;
 
-    std::cout << sizeof(a)/sizeof(a[0]);
+    std::cin >> lol
 }
