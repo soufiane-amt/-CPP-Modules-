@@ -3,15 +3,7 @@
 
 int main ()
 {
-    // std::string arr;
+    int a[10];
 
-    // arr = "hello";
-    // arr += " world";
-    // std :: cout << arr << std::endl;
-    bool b;
-    b = false;
-    if (!b)
-        printf("false\n");
-    else
-        printf ("true\n");
+    std::cout << sizeof(a)/sizeof(a[0]);
 }

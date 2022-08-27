@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/23 20:37:13 by samajat           #+#    #+#              #
-#    Updated: 2022/08/27 13:27:12 by samajat          ###   ########.fr        #
+#    Updated: 2022/08/27 14:07:26 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,10 +25,10 @@ OBJ  = $(FILES:=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CC) $(FLAGS) -o $(OBJ) $(NAME)
+	$(CC) $(FLAGS) $(OBJ) -o  $(NAME)
 
 %.o : %.cpp
-	$(CC) $(FLAGS) $< -c $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean :
 	$(RM) $(OBJ)
