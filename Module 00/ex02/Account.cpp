@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 18:55:50 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/28 21:56:54 by samajat          ###   ########.fr       */
+/*   Updated: 2022/08/28 22:47:15 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ int Account::getNbDeposits(void)
 int Account::getNbWithdrawals(void)
 {
     return (_totalNbWithdrawals);
+}
+
+int Account::checkAmount(void) const
+{
+    return (this->_amount);
 }
 
 //index:0;amount:42;created
@@ -98,7 +103,19 @@ void    Account::_displayTimestamp(void)
 	std::cout << "[" + year + month + day + "]  ";
 }
 
-int main()
+void Account::makeDeposit(int deposit)
 {
-    Account a(1);
+    this->_amount += deposit;
+    this->_totalAmount += deposit;
+    this->_nbDeposits += 1;
+    this->_totalNbDeposits += 1;
+}
+
+bool Account::makeWithdrawal(int withdrawal)
+{
+    this->_amount -= withdrawal;
+    this->_totalAmount -= withdrawal;
+    this->_nbWithdrawals += 1;
+    this->_totalNbWithdrawals += 1;
+    return (true);
 }

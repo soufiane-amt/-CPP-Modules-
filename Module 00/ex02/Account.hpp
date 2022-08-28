@@ -57,8 +57,8 @@ private:
 	int				_nbDeposits;
 	int				_nbWithdrawals;
 
-	Account( void );
 
+	Account( void );
 };
 
 //Static declarations
