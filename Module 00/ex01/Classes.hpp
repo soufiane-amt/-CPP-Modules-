@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:19:24 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/27 16:24:26 by samajat          ###   ########.fr       */
+/*   Updated: 2022/08/27 20:37:17 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Contact
         std::string nickname;
         std::string phone_number;
         std::string darkest_secret;
-        void    field_err_checker(std :: string info, std :: string field_name);
+        //void    field_err_checker(std :: string info, std :: string field_name);
 };
 
 

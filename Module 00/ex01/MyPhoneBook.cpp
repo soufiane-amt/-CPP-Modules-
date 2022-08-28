@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:20:19 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/27 18:47:18 by samajat          ###   ########.fr       */
+/*   Updated: 2022/08/27 18:50:46 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void    Contact :: field_err_checker(std :: string info, std :: string field_nam
     if (info.empty())//Problem
         std :: cerr << "The " << field_name << error_message;
 }
+
 
 void    MyPhoneBook :: add_new_contact (void)
 {
@@ -53,12 +54,6 @@ void    MyPhoneBook :: add_new_contact (void)
     std::cout << "---------------------------------------------"<< this->length<< std::endl;
 }
 
-// ◦Display the saved contacts as a list of 4 columns: index, first name, last
-// name and nickname
-// Each column must be 10 characters wide. A pipe character (’|’) separates
-// them. The text must be right-aligned. If the text is longer than the column,
-// it must be truncated and the last displayable character must be replaced by a
-// dot (’.’).
 std::string    str_processor(std::string str)
 {
     int j;
