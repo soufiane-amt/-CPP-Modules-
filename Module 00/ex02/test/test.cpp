@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 21:02:12 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/28 20:54:10 by samajat          ###   ########.fr       */
+/*   Updated: 2022/08/28 21:43:22 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,26 @@
 // };
 
 // // Test :: count = 0;
-#include <time>
+#include <ctime>
 #include <iostream>
- 
+#include <string>
 int main()
 {
-    tm *tm_gmt = gmtime(&curr_time);
-	cout << "Current time : " << tm_gmt->tm_hour << ":" << tm_gmt->tm_min << ":" << tm_gmt->tm_sec << " GMT";
+    time_t curr_time;
+    tm *_tm;
+    std::string timeStamp;
+    std::string month;
+    std::string day;
+    std::string year;
+    
+    curr_time = time(0);
+    _tm = gmtime(&curr_time);
+    month = std::to_string(_tm->tm_mon);
+    day = std::to_string(_tm->tm_mday);
+    year = std::to_string(_tm->tm_year + 1900);
+    if (month.length() == 1)
+        month = "0" + month;
+    if (day.length() == 1)
+        day = "0" + day;
+	std::cout << "[" + year + month + day + "]" << std::endl;
 }
