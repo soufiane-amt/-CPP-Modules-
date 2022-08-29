@@ -67,7 +67,7 @@ int	Account ::_totalAmount = 0;
 int	Account ::_totalNbDeposits = 0;
 int	Account ::_totalNbWithdrawals = 0;
 
-
+#include "Account.cpp"
 // ************************************************************************** //
 // vim: set ts=4 sw=4 tw=80 noexpandtab:                                      //
 // -*- indent-tabs-mode:t;                                                   -*-
