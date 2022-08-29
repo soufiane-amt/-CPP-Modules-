@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 14:18:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/29 18:43:43 by samajat          ###   ########.fr       */
+/*   Created: 2022/08/29 13:51:15 by samajat           #+#    #+#             */
+/*   Updated: 2022/08/29 21:43:55 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main()
+void    Zombie::announce(void)
 {
-    // std::cout <<"hello";
-    randomChump("kool");
-    randomChump("fg");
-    randomChump("kofgdol");
-    randomChump("koodl");
+    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void    Zombie::setName(std::string n)
+{
+    this->name = n;
+}
+ 
+Zombie::~Zombie()
+{
+    std::cout << this->name << "is destroyed!" << std::endl;
 }

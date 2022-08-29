@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 13:51:15 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/29 18:29:10 by samajat          ###   ########.fr       */
+/*   Updated: 2022/08/29 21:44:23 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void    Zombie::setName(std::string n)
  
 Zombie::~Zombie()
 {
-    std::cout << this->name << std::endl;
+    std::cout << this->name << " is destroyed!" << std::endl;
 }

@@ -5,18 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 14:18:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/29 18:43:43 by samajat          ###   ########.fr       */
+/*   Created: 2022/08/29 21:48:42 by samajat           #+#    #+#             */
+/*   Updated: 2022/08/29 22:33:24 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
-int main()
+int main ()
 {
-    // std::cout <<"hello";
-    randomChump("kool");
-    randomChump("fg");
-    randomChump("kofgdol");
-    randomChump("koodl");
+    std::string str;
+    std::string *stringPTR;
+
+    str = "HI THIS IS BRAIN";
+    stringPTR = &str;
+    std::string& stringREF = str;
+    
+    std::cout << &str << std::endl << stringPTR <<std::endl << &stringREF<<std::endl;
+    std::cout << str << std::endl << *stringPTR <<std::endl << stringREF<<std::endl;
 }
