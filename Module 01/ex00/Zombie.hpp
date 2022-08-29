@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 13:51:14 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/29 18:20:29 by samajat          ###   ########.fr       */
+/*   Updated: 2022/08/29 18:38:12 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ class Zombie
     public:
     void            announce(void);
     void            setName(std::string n);
-    ~Zombie();
+    ~Zombie(); 
     private:
-    std::string name;
-    
-};
-
-//funcs
+    std::string name; 
+     
+}; 
+ 
+//funcs 
 Zombie* newZombie( std::string name );
 void    randomChump( std::string name );
 
