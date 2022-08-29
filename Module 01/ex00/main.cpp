@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:18:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/29 17:37:08 by samajat          ###   ########.fr       */
+/*   Updated: 2022/08/29 18:20:00 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 int main()
 {
-    randomChump("kool");
+    std::cout <<"hello";
+    // randomChump("kool");
 }

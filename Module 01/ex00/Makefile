@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/29 13:44:36 by samajat           #+#    #+#              #
-#    Updated: 2022/08/29 14:34:08 by samajat          ###   ########.fr        #
+#    Updated: 2022/08/29 18:25:57 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,20 +18,19 @@ FLAGS = -Wall -Wextra -Werror
 
 RM = rm -rf
 
-HEADER = Zombie
+HEADER = Zombie.hpp
 
-FILES = Zombie main randomChump newZombie
+FILES = main Zombie randomChump newZombie
 
 OBJ = $(FILES:=.o)
 
-
 $(NAME) : all
 
-all: $(OBJ)
+all: $(OBJ) $(HEADER)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME) $(HEADER)
 
 %.o : %.cpp
-	$(CC) $(FLAGS) $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean : 
 	$(RM) $(OBJ)

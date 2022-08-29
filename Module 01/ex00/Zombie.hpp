@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 13:51:14 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/29 17:05:32 by samajat          ###   ########.fr       */
+/*   Updated: 2022/08/29 18:20:29 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,9 @@
 class Zombie
 {
     public:
-    void announce(void)
-    {
-        std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-    };
-    void    setName(std::string n)
-    {
-        name = n;
-    }
-    
+    void            announce(void);
+    void            setName(std::string n);
+    ~Zombie();
     private:
     std::string name;
     
