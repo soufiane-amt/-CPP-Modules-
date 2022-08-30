@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   test.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/30 13:40:34 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/30 17:11:43 by samajat          ###   ########.fr       */
+/*   Created: 2022/08/30 15:22:49 by samajat           #+#    #+#             */
+/*   Updated: 2022/08/30 18:03:43 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "Weapon.hpp"
-
-std::string&  Weapon::getType (void)
+class Wep 
 {
-    return (this->type);
-}
+private:
+    int age;
+public:
+    Wep(){};
+    Wep(int newage): age(newage){};
+    const int& getAge(){return (this->age);};
+    int l() const{return (1);};
+};
 
-void Weapon::setType(std::string newType)
+int main ()
 {
-    this->type = newType;
-}
-
-Weapon::Weapon(std::string weaponName)
-{
-    setType(weaponName);
+    Wep t(18);
+    Wep R(18); 
+    t = R;
+    // std::cout << t.l() << std::endl;
 }

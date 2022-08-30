@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 13:06:54 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/30 13:25:26 by samajat          ###   ########.fr       */
+/*   Updated: 2022/08/30 14:22:20 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ HumanB::HumanB(std::string name, Weapon weapon)
 HumanB::HumanB(std::string name)
 {
     this->name = name;
-    this->weapon = 0;
+    this->weapon.setType("");
 }
 
 //<name> attacks with their <weapon type>
 void    HumanB::attack(void)
 {
-    if(this->weapon)
-        std::cout << this->name << "attacks with their " << weapon.type << std::endl;
+    if(this->weapon.getType() != "")
+        std::cout << this->name << "attacks with their " << weapon.getType() << std::endl;
 }

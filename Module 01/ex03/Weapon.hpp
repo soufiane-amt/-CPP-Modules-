@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:21:49 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/30 13:47:18 by samajat          ###   ########.fr       */
+/*   Updated: 2022/08/30 17:56:05 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@
 class Weapon
 {
     public:
-    std::string& const getType(void);
-    std::string setType(std::string newType);
+    Weapon(std::string weaponName);
+    const std::string& getType();
+    void setType(std::string newType);
 
     private:
     std::string type;

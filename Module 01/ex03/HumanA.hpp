@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 13:01:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/30 13:03:45 by samajat          ###   ########.fr       */
+/*   Updated: 2022/08/30 13:59:51 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 
 //Header
 #include <iostream>
+#include "Weapon.hpp"
 
 //Classes
 class HumanA
 {
     private:
         std::string name;
-        Weapon weapon;
+        Weapon      weapon;
     public:
         HumanA(std::string name, Weapon weapon);
         void    attack();
