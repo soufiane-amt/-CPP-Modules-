@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:21:49 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/30 13:05:41 by samajat          ###   ########.fr       */
+/*   Updated: 2022/08/30 13:47:18 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 
 //Headers
+#include "iostream"
 
 //try to handle the case where the user gives you invalid input
 //Classes
