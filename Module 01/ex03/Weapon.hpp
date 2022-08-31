@@ -23,7 +23,7 @@ class Weapon
 {
     public:
     Weapon(std::string weaponName);
-    std::string getType();
+    const std::string &getType();
     void setType(std::string newType);
 
     private:

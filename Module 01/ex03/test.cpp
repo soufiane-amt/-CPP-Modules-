@@ -23,10 +23,17 @@ public:
     int l() const{return (1);};
 };
 
-int main ()
+std::string &cplus(std::string l)
 {
-    Wep t(18);
-    Wep R(18); 
-    t = R;
-    // std::cout << t.l() << std::endl;
+    return (l);
+}
+
+int main()
+{
+    std::string str;
+
+    str = "hello";
+    (cplus(str)) = "pop";
+    std::cout << str << std::endl;
+    return 0;
 }
