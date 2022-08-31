@@ -12,7 +12,7 @@
 
 #include "Weapon.hpp"
 
-std::string&  Weapon::getType (void)
+std::string  Weapon::getType ()
 {
     return (this->type);
 }

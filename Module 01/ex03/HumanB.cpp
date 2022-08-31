@@ -12,21 +12,22 @@
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name, Weapon weapon)
-
- {
-    this->name = name;
-    this->weapon = weapon;
-}
-HumanB::HumanB(std::string name)
+HumanB::HumanB(std::string name): name(name)
 {
-    this->name = name;
-    this->weapon.setType("");
 }
+// HumanB::HumanB(std::string name)
+// {
+//     this->name = name;
+//     this->weapon.setType("");
+// }
+ void HumanB::setWeapon (Weapon &weapon)
+ {
+     this->weapon = &weapon;
+ }
 
 //<name> attacks with their <weapon type>
 void    HumanB::attack(void)
 {
-    if(this->weapon.getType() != "")
-        std::cout << this->name << "attacks with their " << weapon.getType() << std::endl;
+    if(this->weapon->getType() != "")
+        std::cout << this->name << "attacks with their " << weapon->getType() << std::endl;
 }
