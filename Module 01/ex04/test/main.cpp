@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+ /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
@@ -13,22 +13,46 @@
 #include <fstream>
 #include <iostream>
 
+int	ft_strcmp(char *s1, char *s2)
+{
+	int i;
+
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+		i++;
+	return (s1[i] - s2[i]);
+}
+
+
+std::string    replaceLine(char *buff, std::string s1, std::string s2)
+{
+    std::string replacedLine = "";
+    int         i;
+    int         s1Len;
+
+    i = 0;
+    s1Len = s1.length();
+    while (buff[i])
+    {
+        if (!ft_strcmp(buff + i, s1))
+        {
+            replacedLine += s2;
+            i += s1Len - 1;
+        }
+        else
+        {
+            replacedLine += buff[i];
+        }
+        i++;
+    }
+    return (replacedLine);
+}
+
 int main(int argc, char **argv)
 {
-    std::fstream     file;
-    std::string str;
+    std::string buff = "Hello world !";
 
-    str = "ll";
-    std::cout << (int)(str.find("lr"));
-    // file.open("l", std::ios::in);
-    // getline(file, str);
-    // std::cout <<  str <<std::endl;
-    // getline(file, str);
-    // std::cout <<  str <<std::endl;
-    // getline(file, str);
-    // std::cout <<  str <<std::endl;
-    // while(getline(file, str))
-    // {
-    //     std::cout << str << std::endl;
-    // }
+    std::string a = "wor";
+    std::string b = "n";
+    std::cout << replaceLine(buff, a, b) << std::endl;
 }
