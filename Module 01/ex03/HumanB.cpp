@@ -20,6 +20,7 @@ HumanB::HumanB(std::string name): name(name)
 //     this->name = name;
 //     this->weapon.setType("");
 // }
+
  void HumanB::setWeapon (Weapon &weapon)
  {
      this->weapon = &weapon;

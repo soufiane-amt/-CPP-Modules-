@@ -24,9 +24,9 @@ FILES = HumanA HumanB Weapon main
 
 OBJ = $(FILES:=.o)
 
-$(NAME) : all
+all: $(NAME)
 
-all : $(OBJ)
+$(NAME) : $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME) 
 
 %.o : %.cpp $(HEADERS)
