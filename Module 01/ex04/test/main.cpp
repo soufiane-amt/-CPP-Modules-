@@ -12,6 +12,8 @@
 
 #include <fstream>
 #include <iostream>
+#include <string>
+#include <cstring>
 
 int	ft_strcmp(char *s1, char *s2)
 {
@@ -24,7 +26,7 @@ int	ft_strcmp(char *s1, char *s2)
 }
 
 
-std::string    replaceLine(char *buff, std::string s1, std::string s2)
+std::string    soul(char *buff, std::string s1, std::string s2)
 {
     std::string replacedLine = "";
     int         i;
@@ -34,7 +36,8 @@ std::string    replaceLine(char *buff, std::string s1, std::string s2)
     s1Len = s1.length();
     while (buff[i])
     {
-        if (!ft_strcmp(buff + i, s1))
+        // std::cout << (std::string)(buff + i) << "\n";
+        if (strncmp(s1, buff + i, s1Len))
         {
             replacedLine += s2;
             i += s1Len - 1;
@@ -50,9 +53,11 @@ std::string    replaceLine(char *buff, std::string s1, std::string s2)
 
 int main(int argc, char **argv)
 {
-    std::string buff = "Hello world !";
+    char *buff = new char(12);
 
+    strcpy(buff, "hello world");
     std::string a = "wor";
     std::string b = "n";
-    std::cout << replaceLine(buff, a, b) << std::endl;
+    std::string c = soul(buff, a, b);
+    std::cout << c << std::endl;
 }
