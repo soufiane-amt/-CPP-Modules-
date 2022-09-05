@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 17:21:42 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/05 14:41:54 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/05 16:24:46 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,6 @@ int	ft_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
-void    createAReFile(std::string file, std::ofstream *rFile)
-{
-    file += ".replace";
-    rFile->open(file , std::ios::out | std::ios::app);
-    if (!rFile)
-    {
-        std::cerr << "Failed to create the replace file!" << std::endl;
-        exit (1);
-    }
-}
 
 std::string    replaceLine(std::string buff,  std::string s1,  std::string s2)
 {
@@ -44,6 +34,7 @@ std::string    replaceLine(std::string buff,  std::string s1,  std::string s2)
     s1Len = s1.length();
     while (buff[i])
     {
+            std::cout << buff.substr(i, s1Len) << std::endl;
         if (buff.substr(i, s1Len) == s1)
         {
             replacedLine += s2;
@@ -59,7 +50,7 @@ std::string    replaceLine(std::string buff,  std::string s1,  std::string s2)
 }
 
 
-void    replaceText(std::ofstream *rFile, const char **parm)
+void    replaceText(std::ofstream *rFile, char **parm)
 {
     std::ifstream   file;
     std::string buff;
@@ -76,4 +67,15 @@ void    replaceText(std::ofstream *rFile, const char **parm)
     // {
         
     // }
+}
+
+void    createAReFile(std::string file, std::ofstream *rFile)
+{
+    file += ".replace";
+    rFile->open(file , std::ios::out | std::ios::app);
+    if (!rFile)
+    {
+        std::cerr << "Failed to create the replace file!" << std::endl;
+        exit (1);
+    }
 }
