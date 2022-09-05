@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 17:21:42 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/04 21:40:50 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/05 14:41:54 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,18 @@ void    createAReFile(std::string file, std::ofstream *rFile)
     }
 }
 
-std::string    replaceLine(char *buff, std::string s1, std::string s2)
+std::string    replaceLine(std::string buff,  std::string s1,  std::string s2)
 {
     std::string replacedLine = "";
     int         i;
     int         s1Len;
 
+
     i = 0;
     s1Len = s1.length();
-    if (buff.find(s1) == -1)
-        return (0);
     while (buff[i])
     {
-        if (!ft_strcmp(buff + i, s1))
+        if (buff.substr(i, s1Len) == s1)
         {
             replacedLine += s2;
             i += s1Len - 1;
@@ -59,10 +58,11 @@ std::string    replaceLine(char *buff, std::string s1, std::string s2)
     return (replacedLine);
 }
 
-void    replaceText(std::ofstream *rFile, char **parm)
+
+void    replaceText(std::ofstream *rFile, const char **parm)
 {
     std::ifstream   file;
-    std::string     buff;
+    std::string buff;
 
     file.open(parm[0], std::ios::in);
     if (!file)
@@ -70,8 +70,10 @@ void    replaceText(std::ofstream *rFile, char **parm)
         std::cerr << "Failed to find the  file!" << std::endl;
         exit(1);
     }
-    while (getline(file, buff))
-    {
+    getline(file, buff);
+    (*rFile) << replaceLine(buff, parm[1], parm[2]);
+    // while (getline(*file, buff))
+    // {
         
-    }
+    // }
 }

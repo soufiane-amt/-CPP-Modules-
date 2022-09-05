@@ -26,18 +26,18 @@ int	ft_strcmp(char *s1, char *s2)
 }
 
 
-std::string    soul(char *buff, std::string s1, std::string s2)
+std::string    soul(std::string buff,  std::string s1,  std::string s2)
 {
     std::string replacedLine = "";
     int         i;
     int         s1Len;
 
+
     i = 0;
     s1Len = s1.length();
     while (buff[i])
     {
-        // std::cout << (std::string)(buff + i) << "\n";
-        if (strncmp(s1, buff + i, s1Len))
+        if (buff.substr(i, s1Len) == s1)
         {
             replacedLine += s2;
             i += s1Len - 1;
@@ -55,9 +55,14 @@ int main(int argc, char **argv)
 {
     char *buff = new char(12);
 
-    strcpy(buff, "hello world");
-    std::string a = "wor";
-    std::string b = "n";
+    strcpy(buff, "worldhello worldworld");
+    std::string a = "world";
+    std::string b = "w";
     std::string c = soul(buff, a, b);
     std::cout << c << std::endl;
+    // std::ifstream *file;
+    // std::string s;
+
+    // file->open ("file", std::ios::in);
+    // std::cout << getline(*file, s) << std::endl;
 }
