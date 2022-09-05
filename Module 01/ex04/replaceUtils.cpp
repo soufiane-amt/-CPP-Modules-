@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 17:21:42 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/05 16:24:46 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/05 17:52:23 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,15 @@ std::string    replaceLine(std::string buff,  std::string s1,  std::string s2)
     s1Len = s1.length();
     while (buff[i])
     {
-            std::cout << buff.substr(i, s1Len) << std::endl;
         if (buff.substr(i, s1Len) == s1)
         {
+            // std::cout << buff.substr(i, s1Len) << std::endl;
             replacedLine += s2;
             i += s1Len - 1;
         }
         else
         {
+            // std::cout << buff.substr(i, s1Len) << std::endl;
             replacedLine += buff[i];
         }
         i++;
@@ -61,18 +62,16 @@ void    replaceText(std::ofstream *rFile, char **parm)
         std::cerr << "Failed to find the  file!" << std::endl;
         exit(1);
     }
-    getline(file, buff);
-    (*rFile) << replaceLine(buff, parm[1], parm[2]);
-    // while (getline(*file, buff))
-    // {
-        
-    // }
+    while (getline(file, buff))
+    {
+        (*rFile) << replaceLine(buff, parm[1], parm[2]) << std::endl;
+    }
 }
 
 void    createAReFile(std::string file, std::ofstream *rFile)
 {
     file += ".replace";
-    rFile->open(file , std::ios::out | std::ios::app);
+    rFile->open(file , std::ios::out);
     if (!rFile)
     {
         std::cerr << "Failed to create the replace file!" << std::endl;
