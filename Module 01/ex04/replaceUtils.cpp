@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 17:21:42 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/05 17:52:23 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/06 15:47:55 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,14 @@ int	ft_strcmp(char *s1, char *s2)
 
 std::string    replaceLine(std::string buff,  std::string s1,  std::string s2)
 {
-    std::string replacedLine = "";
-    int         i;
-    int         s1Len;
+    std::string         replacedLine = "";
+    static std::string  partOfPrLine = "";
+    int                 i;
+    int                 s1Len;
 
+    
 
+    
     i = 0;
     s1Len = s1.length();
     while (buff[i])
@@ -55,6 +58,7 @@ void    replaceText(std::ofstream *rFile, char **parm)
 {
     std::ifstream   file;
     std::string buff;
+    std::firstLine;
 
     file.open(parm[0], std::ios::in);
     if (!file)
@@ -62,9 +66,15 @@ void    replaceText(std::ofstream *rFile, char **parm)
         std::cerr << "Failed to find the  file!" << std::endl;
         exit(1);
     }
+    if (!getline(file, firstLine))
+    {
+        std::cerr << "No lines in text." << std::endl;
+        return ;
+    }
     while (getline(file, buff))
     {
-        (*rFile) << replaceLine(buff, parm[1], parm[2]) << std::endl;
+        (*rFile) << replaceLine(buff + firstLine, parm[1], parm[2]) << std::endl;
+        firstLine = "";
     }
 }
 
