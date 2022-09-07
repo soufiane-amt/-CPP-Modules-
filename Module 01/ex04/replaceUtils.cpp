@@ -41,7 +41,7 @@ std::string    replaceLine(std::string buff,  std::string s1,  std::string s2)
             // std::cout << partOfPrLine ;
             return (replacedLine);
         }
-        else
+        else if (buff.substr(i, s1Len) != s1)
         {
             std::cout << buff.substr(i, s1Len) <<std::endl;//--problem is here--
             // std::cout << buff.substr(i, s1Len) << std::endl;
