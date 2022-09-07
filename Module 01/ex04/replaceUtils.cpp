@@ -32,12 +32,14 @@ std::string    replaceLine(std::string buff,  std::string s1,  std::string s2)
 
     i = 0;
     s1Len = s1.length();
+    std::cout << buff ;
     while (buff[i])
     {
         if (buff.substr(i, s1Len) == s1)
         {
             replacedLine += s2;
             partOfPrLine = buff.substr(i + s1Len);
+            // std::cout << partOfPrLine ;
             return (replacedLine);
         }
         else
@@ -55,8 +57,8 @@ std::string    replaceLine(std::string buff,  std::string s1,  std::string s2)
 void    replaceText(std::ofstream *rFile, char **parm)
 {
     std::ifstream   file;
-    std::string buff;
-    std::firstLine;
+    std::string     buff;
+    std::string     firstLine;
 
     file.open(parm[0], std::ios::in);
     if (!file)
@@ -72,7 +74,7 @@ void    replaceText(std::ofstream *rFile, char **parm)
     firstLine += "\n";
     while (getline(file, buff))
     {
-        (*rFile) << replaceLine(firstLine + buff + "\n", parm[1], parm[2]) << std::endl;
+        (*rFile) << replaceLine(firstLine + buff + "\n", parm[1], parm[2]);
         firstLine = "";
     }
 }
