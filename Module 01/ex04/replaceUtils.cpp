@@ -22,7 +22,6 @@ int	ft_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
-
 std::string    replaceLine(std::string buff,  std::string s1,  std::string s2)
 {
     std::string         replacedLine = "";
@@ -32,7 +31,7 @@ std::string    replaceLine(std::string buff,  std::string s1,  std::string s2)
 
     i = 0;
     s1Len = s1.length();
-    std::cout << buff ;
+    // std::cout << buff ;
     while (buff[i])
     {
         if (buff.substr(i, s1Len) == s1)
@@ -44,6 +43,7 @@ std::string    replaceLine(std::string buff,  std::string s1,  std::string s2)
         }
         else
         {
+            std::cout << buff.substr(i, s1Len) <<std::endl;//--problem is here--
             // std::cout << buff.substr(i, s1Len) << std::endl;
             replacedLine += buff[i];
         }
