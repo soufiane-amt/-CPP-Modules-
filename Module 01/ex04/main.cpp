@@ -23,4 +23,5 @@ int main(int argc, char **argv)
     }
     createAReFile(argv[1], &rFile);
     replaceText(&rFile, argv + 1);
+    // while(1);
 }

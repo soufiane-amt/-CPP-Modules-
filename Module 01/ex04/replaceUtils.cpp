@@ -22,34 +22,27 @@ int	ft_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
-std::string    replaceLine(std::string buff,  std::string s1,  std::string s2)
+std::string    replaceLine(std::ofstream *rFile, std::string buff, std::string s1, std::string s2)
 {
     std::string         replacedLine = "";
-    static std::string  partOfPrLine = "";
     int                 i;
     int                 s1Len;
 
     i = 0;
     s1Len = s1.length();
-    // std::cout << buff ;
     while (buff[i])
     {
         if (buff.substr(i, s1Len) == s1)
         {
-            replacedLine += s2;
-            partOfPrLine = buff.substr(i + s1Len);
-            // std::cout << partOfPrLine ;
-            return (replacedLine);
+            (*rFile) << s2;
+            i += s1Len - 1;
         }
-        else if (buff.substr(i, s1Len) != s1)
+        else
         {
-            std::cout << buff.substr(i, s1Len) <<std::endl;//--problem is here--
-            // std::cout << buff.substr(i, s1Len) << std::endl;
-            replacedLine += buff[i];
+            (*rFile) << buff[i];
         }
         i++;
     }
-    partOfPrLine = "";
     return (replacedLine);
 }
 
@@ -58,7 +51,7 @@ void    replaceText(std::ofstream *rFile, char **parm)
 {
     std::ifstream   file;
     std::string     buff;
-    std::string     firstLine;
+    std::string     text = "";
 
     file.open(parm[0], std::ios::in);
     if (!file)
@@ -66,18 +59,20 @@ void    replaceText(std::ofstream *rFile, char **parm)
         std::cerr << "Failed to find the  file!" << std::endl;
         exit(1);
     }
-    if (!getline(file, firstLine))
+    if (file.eof())
     {
         std::cerr << "No lines in text." << std::endl;
         return ;
     }
-    firstLine += "\n";
     while (getline(file, buff))
     {
-        (*rFile) << replaceLine(firstLine + buff + "\n", parm[1], parm[2]);
-        firstLine = "";
+        text += buff;
+        if(!file.eof())
+            text += "\n";
     }
+    replaceLine(rFile, text, parm[1], parm[2]);
 }
+
 
 void    createAReFile(std::string file, std::ofstream *rFile)
 {
