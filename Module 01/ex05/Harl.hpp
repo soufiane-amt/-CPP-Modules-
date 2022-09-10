@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 17:23:41 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/09 21:31:34 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/10 13:05:22 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ private:
     void info( void );
     void warning( void );
     void error( void );
-    void (*comment[])();
+    void commentNotFound(void);
+    void (*messages[5])(); 
     std::string levels[5];
 
 public:

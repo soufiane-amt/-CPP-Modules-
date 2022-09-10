@@ -6,17 +6,17 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 17:25:39 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/09 21:31:47 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/10 18:10:43 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-
+ //typedef int (CLASSENAME::*FUCNMEMB)(int , float, int);
 Harl::Harl(void)
 {
-    messages = {debug, info, warning, error};
-    levels = {"WRONGLEVEL", "DEBUG", "INFO", "WARNING", "ERROR"};
+    messages[] = {&commentNotFound, debug, info, warning, error};
+    levels = {"WRONGCOMMENT", "DEBUG", "INFO", "WARNING", "ERROR"};
 }
 
 void    Harl::debug (void)
@@ -42,6 +42,11 @@ void    Harl::error (void)
     std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
+void    Harl::commentNotFound(void)
+{
+    std::cerr << "Harl: I don't have such comment." << std::endl;
+}
+
 int levelExists(std::string level)
 {
     return (level == "DEBUG" || level == "INFO" || level == "WARNING" || level == "ERROR");
@@ -54,5 +59,6 @@ void    Harl::complain( std::string level )
     i = 1;
     while(i < 5 && level != levels[i])
         i++;
-    this->comment[levelExists(level) * i];
+    this->messages[levelExists(level) * i];
+    // this->messages[0];
 }
