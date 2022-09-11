@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 20:00:55 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/10 18:06:42 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/11 15:01:06 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,29 @@
 
 
 
+// #define  PTRMEMBER(object, ptrToMember) ((object).*(ptrToMember)) 
 class Calc
 {
     public:
-    Calc();
     int add(int a, int b);
-    int (Calc::funcPtr*)(int, int);
-}
+    int abstarct(int a, int b);
+};
 
-Calc::Calc()
-{
-
-}
-
-int add (int a, int b)
+int Calc::add (int a, int b)
 {
     return (a + b);
 }
+int Calc::abstarct (int a, int b)
+{
+    return (a - b);
+}
 
+typedef int (Calc::*CalMFunc)(int, int);
 int main ()
 {
-    // int (*ptrFunc)(int, int);
-    // ptrFunc = &add;
-    // std::cout << ptrFunc(10, 10) << std::endl;
+    CalMFunc ptr[] = {&Calc::add, &Calc::abstarct};
     Calc c;
-
-    c.
+    // Calc a;
+    std::cout << "Output is " << (c.*ptr[0])(2, 5) << std::endl;
+    std::cout << "Output is " << (c.*ptr[1])(2, 5) << std::endl;
 }
