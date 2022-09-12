@@ -6,8 +6,8 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 17:23:41 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/10 13:05:22 by samajat          ###   ########.fr       */
-/*                                                                            */
+/*   Updated: 2022/09/11 21:05:04 by samajat          ###   ########.fr       */
+/**/
 /* ************************************************************************** */
 
 #ifndef HARL
@@ -17,16 +17,19 @@
 #include <iostream>
 
 //Class
+// typedef void (Harl::*ptrFunc)(void);
+#define CALL_MEMBER_FN(object,ptrToMember)  ((object).*(ptrToMember))
 
 class Harl
 {
 private:
+    typedef void (Harl::*messagePtr)();
     void debug( void );
     void info( void );
     void warning( void );
     void error( void );
     void commentNotFound(void);
-    void (*messages[5])(); 
+    messagePtr messages[5];
     std::string levels[5];
 
 public:
