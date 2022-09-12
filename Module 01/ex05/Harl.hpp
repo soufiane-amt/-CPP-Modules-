@@ -30,7 +30,7 @@ private:
     void error( void );
     void commentNotFound(void);
     messagePtr messages[5];
-    std::string levels[5];
+    std::string levels[4];
 
 public:
     Harl(void);

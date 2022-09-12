@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 17:25:39 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/12 11:03:32 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/12 12:14:25 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ Harl::Harl(void)
     messages[2] = &Harl::info;
     messages[3] = &Harl::warning;
     messages[4] = &Harl::error;
-    levels[0] = "WRONGCOMMENT";
-    levels[1] = "DEBUG";
-    levels[2] = "INFO";
-    levels[3] = "WARNING";
-    levels[4] = "ERROR";
+    // levels[0] = "WRONGCOMMENT";
+    levels[0] = "DEBUG";
+    levels[1] = "INFO";
+    levels[2] = "WARNING";
+    levels[3] = "ERROR";
 }
 
 void    Harl::debug (void)
@@ -65,8 +65,8 @@ void    Harl::complain( std::string level )
 {
     int i;
 
-    i = 1;
-    while(i < 5 && level != levels[i])
+    i = 0;
+    while(i < 4 && level != levels[i])
         i++;
-    CALL_MEMBER_FN(*this, messages[levelExists(level) * i])();
+    CALL_MEMBER_FN(*this, messages[levelExists(level) * (i + 1)])();
 }
