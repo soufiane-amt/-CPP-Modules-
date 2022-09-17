@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 18:20:09 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/17 13:15:08 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/17 13:23:36 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ private:
 public :
     Fixed   (void);
     Fixed   (const Fixed &copy);
-    Fixed   &operator =(Fixed &fixed);
+    Fixed   &operator =(constFixed &fixed);
     int     getRawBits(void) const;
     void    setRawBits( int const raw );
     ~Fixed(void);
