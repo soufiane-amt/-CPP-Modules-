@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/17 14:09:26 by samajat           #+#    #+#              #
-#    Updated: 2022/09/17 14:17:26 by samajat          ###   ########.fr        #
+#    Updated: 2022/09/17 14:19:06 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,8 @@ FILES = Fixed main
 
 OBJ = $(FILES:=.o)
 
-all : $(NAME)
 
-$(NAME) : $(OBJ)
+all : $(OBJ)
 	$(CC) $(FLAGS) $(OBJ)
 
 %.o : %.cpp
