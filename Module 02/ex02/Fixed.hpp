@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 18:20:09 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/18 21:57:21 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/18 22:49:38 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,12 @@ public :
     Fixed   (const float f);
     Fixed   (const int n);
     Fixed   &operator =(const Fixed &fixed);
-    bool operator<(const Fixed &f1, const Fixed &f2)
-    bool operator>(const Fixed &f1, const Fixed &f2)
+    bool operator<(const Fixed &f1, const Fixed &f2);
+    bool operator>(const Fixed &f1, const Fixed &f2);
+    bool operator!=(const Fixed &f1, const Fixed &f2);
+    bool operator<=(const Fixed &f1, const Fixed &f2);
+    bool operator>=(const Fixed &f1, const Fixed &f2);
+    Fixed operator+(const Fixed &f1, const Fixed &f2);
     int     getRawBits(void) const;
     void    setRawBits( int const raw );
     float   toFloat( void ) const;

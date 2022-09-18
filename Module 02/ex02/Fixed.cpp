@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 12:50:49 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/18 21:59:12 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/18 22:48:33 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,14 @@ bool operator==(const Fixed &f1, const Fixed &f2)
 bool operator!=(const Fixed &f1, const Fixed &f2)
 {
     return (f1.getRawBits() != f2.getRawBits());
+}
+
+Fixed operator+(const Fixed &f1, const Fixed &f2)
+{
+    Fixed sum;
+
+    sum.setRawBits(f1.getRawBits() + f2.getRawBits());
+    return (sum);
 }
 
 
