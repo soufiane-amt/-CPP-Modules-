@@ -32,9 +32,11 @@ int main()
     // b = roundf(a);
     // std::cout << b << std::endl;
     // std::getline(std::cin, input);
-    printOut out;
-    out << "hello"<< " world" << "\n" ;
-    out.operator<<("hello").operator<<( "world");
+    // printOut out;
+    // out << "hello"<< " world" << "\n" ;
+    // printOut::operator<<("hello").printOut::operator<<( "world");
+    // operator<<(std::cout, "dfd");
     // std::cout << out.operator<<(out.operator<<("world")) << std::endl;
-
+    float a = 6 * (1 >> 1);
+    std::cout << a << std::endl;
 }

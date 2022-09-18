@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 18:20:09 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/17 17:02:31 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/18 20:25:20 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 //Headers
 #include <iostream>
-
+#include <cmath>
 //Class
 
 class Fixed
@@ -30,13 +30,14 @@ public :
     Fixed   (const float f);
     Fixed   (const int n);
     Fixed   &operator =(const Fixed &fixed);
-    Fixed   &operator <<(const Fixed &fixed);
     int     getRawBits(void) const;
     void    setRawBits( int const raw );
     float   toFloat( void ) const;
     int     toInt( void ) const;
     ~Fixed(void);
 };
+//Adding an overloading function to take care of the case if the paramerter 2 is of Fixed type 
+std::ostream& operator <<(std::ostream &COUT, const Fixed &fixed);
 
 #endif
 

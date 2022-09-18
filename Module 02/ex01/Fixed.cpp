@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 12:50:49 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/18 17:24:49 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/18 20:25:15 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ Fixed::Fixed(const Fixed &copy)
 
 Fixed::Fixed   (const float f)
 {
-    // float tmp = f;
-    raw = (f *(1 << fractBits));
+    raw = (f * (1 << fractBits));
 }
 
 Fixed::Fixed   (const int d)
@@ -52,12 +51,14 @@ void    Fixed::setRawBits (int const raw)
 
 float Fixed::toFloat( void ) const
 {
-    return (raw >> 8);
+    float f = raw >> 8;
+    return (f);
 }
 
 int Fixed::toInt( void ) const
 {
-    return (raw >> 8);
+    int d = raw >> 8;
+    return (d);
 }
 
 Fixed& Fixed::operator=(const Fixed &fixed)
@@ -68,8 +69,16 @@ Fixed& Fixed::operator=(const Fixed &fixed)
     return (*this);
 }
 
+std::ostream& operator<<(std::ostream &COUT, const Fixed &fixed)
+{
+    float a = (static_cast< float>(fixed.getRawBits()) / (1 << 8));
+    // COUT << roundf(a);
+    COUT << a;
+    // std::cout << "------"<< fixed.getRawBits() << std::endl;
+    return (COUT);
+}
+
 Fixed::~Fixed(void)
 {
     std::cout << "Destructor called" << std::endl;
 }
-
