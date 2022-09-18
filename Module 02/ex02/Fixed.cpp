@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 12:50:49 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/18 21:21:24 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/18 21:37:54 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,19 @@ static  Fixed& Fixed::min(const Fixed &f1, const Fixed &f2);
 }
 
 static  Fixed& Fixed::max(const Fixed &f1, const Fixed &f2);
+{
+    if (f1.getRawBits() < f2.getRawBits())
+        return (f2);
+    return (f1)
+}
+static  Fixed& Fixed::min(Fixed &f1, Fixed &f2);
+{
+    if (f1.getRawBits() > f2.getRawBits())
+        return (f2);
+    return (f1)
+}
+
+static  Fixed& Fixed::max(Fixed &f1, Fixed &f2);
 {
     if (f1.getRawBits() < f2.getRawBits())
         return (f2);

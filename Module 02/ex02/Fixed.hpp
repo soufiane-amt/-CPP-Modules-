@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 18:20:09 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/18 21:20:58 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/18 21:37:35 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ public :
     void    setRawBits( int const raw );
     float   toFloat( void ) const;
     int     toInt( void ) const;
+    static  Fixed& min(Fixed &f1, Fixed &f2);
     static  Fixed& min(const Fixed &f1, const Fixed &f2);
+    static  Fixed& max(Fixed &f1, Fixed &f2);
     static  Fixed& max(const Fixed &f1, const Fixed &f2);
     ~Fixed(void);
     
