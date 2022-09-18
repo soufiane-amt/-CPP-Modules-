@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 12:50:49 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/18 20:25:15 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/18 20:43:16 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,18 @@ Fixed::Fixed(const Fixed &copy)
 
 Fixed::Fixed   (const float f)
 {
-    raw = (f * (1 << fractBits));
+    std::cout << "Float constructor called" << std::endl;
+    raw = roundf(f * (1 << fractBits));
 }
 
 Fixed::Fixed   (const int d)
 {
-    raw = d << fractBits;
+    std::cout << "Int constructor called" << std::endl;
+    raw = roundf(d << fractBits);
 }
 
 int     Fixed::getRawBits(void) const
 {
-    std::cout << "getRawBits member function called" << std::endl;
     return (raw);
 }
 
@@ -51,7 +52,7 @@ void    Fixed::setRawBits (int const raw)
 
 float Fixed::toFloat( void ) const
 {
-    float f = raw >> 8;
+    float f = (static_cast< float>(this->getRawBits()) / (1 << 8));
     return (f);
 }
 
@@ -72,9 +73,7 @@ Fixed& Fixed::operator=(const Fixed &fixed)
 std::ostream& operator<<(std::ostream &COUT, const Fixed &fixed)
 {
     float a = (static_cast< float>(fixed.getRawBits()) / (1 << 8));
-    // COUT << roundf(a);
     COUT << a;
-    // std::cout << "------"<< fixed.getRawBits() << std::endl;
     return (COUT);
 }
 
