@@ -37,6 +37,8 @@ int main()
     // printOut::operator<<("hello").printOut::operator<<( "world");
     // operator<<(std::cout, "dfd");
     // std::cout << out.operator<<(out.operator<<("world")) << std::endl;
-    float a = 6 * (1 >> 1);
-    std::cout << a << std::endl;
+    // float a = 6 * (1 >> 1);
+    // std::cout << a << std::endl;
+    if (4 > 1)
+        std::cout << "OK\n";
 }

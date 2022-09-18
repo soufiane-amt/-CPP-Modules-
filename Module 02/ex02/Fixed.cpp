@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 12:50:49 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/18 21:40:28 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/18 21:59:12 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,12 @@ int Fixed::toInt( void ) const
 }
 
 //-----Overloaded operators-------//
+std::ostream& operator<<(std::ostream &COUT, const Fixed &fixed)
+{
+    float a = (static_cast< float>(fixed.getRawBits()) / (1 << 8));
+    COUT << a;
+    return (COUT);
+}
 
 Fixed& Fixed::operator=(const Fixed &fixed)
 {
@@ -78,12 +84,38 @@ Fixed& Fixed::operator=(const Fixed &fixed)
     return (*this);
 }
 
-std::ostream& operator<<(std::ostream &COUT, const Fixed &fixed)
+bool operator<(const Fixed &f1, const Fixed &f2)
 {
-    float a = (static_cast< float>(fixed.getRawBits()) / (1 << 8));
-    COUT << a;
-    return (COUT);
+    return (f1.getRawBits() < f2.getRawBits());
 }
+
+bool operator>(const Fixed &f1, const Fixed &f2)
+{
+    return (f1.getRawBits() < f2.getRawBits());
+}
+
+bool operator>=(const Fixed &f1, const Fixed &f2)
+{
+    return (f1.getRawBits() >= f2.getRawBits());
+}
+bool operator<=(const Fixed &f1, const Fixed &f2)
+{
+    return (f1.getRawBits() >= f2.getRawBits());
+}
+
+bool operator==(const Fixed &f1, const Fixed &f2)
+{
+    return (f1.getRawBits() == f2.getRawBits());
+}
+
+
+bool operator!=(const Fixed &f1, const Fixed &f2)
+{
+    return (f1.getRawBits() != f2.getRawBits());
+}
+
+
+
 
 
 //-----Min/Max-------//
