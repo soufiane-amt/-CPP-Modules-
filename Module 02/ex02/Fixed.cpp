@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 12:50:49 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/18 21:37:54 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/18 21:40:28 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include "Fixed.hpp"
 
 const int Fixed::fractBits = 8;
+
+//-----Constructor-------//
 
 Fixed::Fixed(void)
 {
@@ -40,6 +42,8 @@ Fixed::Fixed   (const int d)
     raw = roundf(d << fractBits);
 }
 
+//-----getter/setters-------//
+
 int     Fixed::getRawBits(void) const
 {
     return (raw);
@@ -49,6 +53,8 @@ void    Fixed::setRawBits (int const raw)
 {
     this->raw = raw;
 }
+
+//-----Conversion-------//
 
 float Fixed::toFloat( void ) const
 {
@@ -61,6 +67,8 @@ int Fixed::toInt( void ) const
     int d = raw >> 8;
     return (d);
 }
+
+//-----Overloaded operators-------//
 
 Fixed& Fixed::operator=(const Fixed &fixed)
 {
@@ -76,6 +84,9 @@ std::ostream& operator<<(std::ostream &COUT, const Fixed &fixed)
     COUT << a;
     return (COUT);
 }
+
+
+//-----Min/Max-------//
 
 static  Fixed& Fixed::min(const Fixed &f1, const Fixed &f2);
 {
@@ -103,6 +114,9 @@ static  Fixed& Fixed::max(Fixed &f1, Fixed &f2);
         return (f2);
     return (f1)
 }
+
+
+//-----destructor-------//
 
 Fixed::~Fixed(void)
 {
