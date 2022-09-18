@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 12:50:49 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/18 20:43:16 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/18 21:06:52 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ float Fixed::toFloat( void ) const
 
 int Fixed::toInt( void ) const
 {
-    int d = raw >> 8;
+    int d = raw * (1 >> 8);
     return (d);
 }
 
@@ -76,6 +76,7 @@ std::ostream& operator<<(std::ostream &COUT, const Fixed &fixed)
     COUT << a;
     return (COUT);
 }
+
 
 Fixed::~Fixed(void)
 {
