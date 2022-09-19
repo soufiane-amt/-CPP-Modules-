@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 18:20:09 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/19 15:05:50 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/19 16:41:02 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ public :
     Fixed   (const int n);
     
     Fixed   &operator =(const Fixed &fixed);
-    bool    operator<(const Fixed &f);
-    bool    operator>(const Fixed &f);
-    bool    operator!=(const Fixed &f);
-    bool    operator<=(const Fixed &f);
-    bool    operator>=(const Fixed &f);
-    bool    operator==(const Fixed &f);
+    bool    operator<(const Fixed &f) const;
+    bool    operator>(const Fixed &f) const;
+    bool    operator!=(const Fixed &f) const;
+    bool    operator<=(const Fixed &f) const;
+    bool    operator>=(const Fixed &f) const;
+    bool    operator==(const Fixed &f) const;
     Fixed   operator+(const Fixed &f);
     Fixed   operator-(const Fixed &f);
     Fixed   operator*(const Fixed &f);
@@ -52,9 +52,9 @@ public :
     int     toInt( void ) const;
     
     static  Fixed& min(Fixed &f1, Fixed &f2);
-    static  Fixed& min(const Fixed &f1, const Fixed &f2);
+    static  const Fixed& min(const Fixed &f1, const Fixed &f2);
     static  Fixed& max(Fixed &f1, Fixed &f2);
-    static  Fixed& max(const Fixed &f1, const Fixed &f2);
+    static  const Fixed& max(const Fixed &f1, const Fixed &f2);
     ~Fixed(void);
     
 };
