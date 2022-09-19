@@ -30,8 +30,9 @@ class printOut
 int main()
 {
     int a = 5;
-    int b = 5;
+    int b = 0;
 
-    if (&a == &a)
-        std::cout << "OK" << std::endl;
+    a = a / b;
+    // if (&a == &a)
+    //     std::cout << "OK" << std::endl;
 }
