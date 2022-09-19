@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 18:20:09 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/19 16:41:02 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/19 21:13:22 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ public :
     Fixed   operator/(const Fixed &f);
     Fixed   operator++();
     Fixed   operator++(int);
+    Fixed   operator()(const float f)const ;
 
     int     getRawBits(void) const;
     void    setRawBits( int const raw );

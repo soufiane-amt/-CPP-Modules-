@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 12:50:49 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/19 16:44:15 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/19 21:13:24 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,6 +159,12 @@ Fixed Fixed::operator++(int)
     return (tmp);
 }
 
+ Fixed   Fixed::operator()(const float f)const 
+{
+    (void)f;
+    std::cout << "You got into the () operator func\n";
+    return (*this);
+}
 
 
 
