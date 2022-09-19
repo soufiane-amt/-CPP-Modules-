@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 12:50:49 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/19 11:18:44 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/19 15:13:04 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,69 +84,84 @@ Fixed& Fixed::operator=(const Fixed &fixed)
     return (*this);
 }
 
-bool operator<(const Fixed &f)
+// bool Fixed::operator<(const Fixed &f)
+// {
+//     return (this->getRawBits() < f.getRawBits());
+// }
+
+// bool Fixed::operator>(const Fixed &f)
+// {
+//     return (this->getRawBits() > f.getRawBits());
+// }
+
+// bool Fixed::operator!=(const Fixed &f)
+// {
+//     return (this->getRawBits() != f.getRawBits());
+// }
+// bool Fixed::operator<=(const Fixed &f)
+// {
+//     return (this->getRawBits() <= f.getRawBits());
+// }
+
+// bool Fixed::operator>=(const Fixed &f)
+// {
+//     return (this->getRawBits() >= f.getRawBits());
+// }
+
+// bool Fixed::operator==(const Fixed &f)
+// {
+//     return (this->getRawBits() == f.getRawBits());
+// }
+
+
+// Fixed Fixed::operator+(const Fixed &f)
+// {
+//     Fixed sum;
+
+//     sum.setRawBits(this->getRawBits() + f.getRawBits());
+//     return (sum);
+// }
+
+
+// Fixed Fixed::operator-(const Fixed &f)
+// {
+//     Fixed abst;
+
+//     abst.setRawBits(this->getRawBits() - f.getRawBits());
+//     return (abst);
+// }
+
+
+// Fixed Fixed::operator*(const Fixed &f)
+// {
+//     Fixed mul;
+
+//     mul.setRawBits(this->getRawBits() * f.getRawBits()/(1 << fractBits));
+//     return (mul);
+// }
+
+
+// Fixed Fixed::operator/(const Fixed &f)
+// {
+//     Fixed div;
+
+//     div.setRawBits(this->getRawBits() / f.getRawBits()/(1 << fractBits));
+//     return (div);
+// }
+// //
+
+// Fixed Fixed::operator++()
+// {
+//     raw++;
+//     return (*this);
+// }
+
+Fixed Fixed::operator++(int)
 {
-    return (this->getRawBits() < f.getRawBits());
-}
+    Fixed tmp(*this);
 
-bool operator>(const Fixed &f)
-{
-    return (this->getRawBits() < f.getRawBits());
-}
-
-bool operator!=(const Fixed &f)
-{
-    return (this->getRawBits() != f.getRawBits());
-}
-bool operator<=(const Fixed &f)
-{
-    return (this->getRawBits() >= f.getRawBits());
-}
-
-bool operator>=(const Fixed &f)
-{
-    return (this->getRawBits() >= f.getRawBits());
-}
-
-bool operator==(const Fixed &f)
-{
-    return (this->getRawBits() == f.getRawBits());
-}
-
-
-Fixed operator+(const Fixed &f)
-{
-    Fixed sum;
-
-    sum.setRawBits(this->getRawBits() + f.getRawBits());
-    return (sum);
-}
-
-
-Fixed operator-(const Fixed &f)
-{
-    Fixed abst;
-
-    sum.setRawBits(this->getRawBits() - f.getRawBits());
-    return (abst);
-}
-
-
-Fixed operator*(const Fixed &f)
-{
-    Fixed abst;
-
-    sum.setRawBits(this->getRawBits() * f.getRawBits()/(1 << fractBits));
-    return (abst);
-}
-
-
-Fixed operator/(const Fixed &f)
-{
-    Fixed abst;
-
-    sum.setRawBits(this->getRawBits() / f.getRawBits()/(1 << fractBits));
-    return (abst);
+    raw++;
+    return (tmp);
 }
 
 
@@ -155,31 +170,32 @@ Fixed operator/(const Fixed &f)
 
 //-----Min/Max-------//
 
-static  Fixed& Fixed::min(const Fixed &f1, const Fixed &f2);
+Fixed& Fixed::min(const Fixed &f1, const Fixed &f2)
 {
     if (f1.getRawBits() > f2.getRawBits())
         return (f2);
-    return (f1)
+    return (f1);
 }
 
-static  Fixed& Fixed::max(const Fixed &f1, const Fixed &f2);
+Fixed& Fixed::max(const Fixed &f1, const Fixed &f2)
 {
     if (f1.getRawBits() < f2.getRawBits())
         return (f2);
-    return (f1)
+    return (f1);
 }
-static  Fixed& Fixed::min(Fixed &f1, Fixed &f2);
+
+Fixed& Fixed::min(Fixed &f1, Fixed &f2)
 {
     if (f1.getRawBits() > f2.getRawBits())
         return (f2);
-    return (f1)
+    return (f1);
 }
 
-static  Fixed& Fixed::max(Fixed &f1, Fixed &f2);
+Fixed& Fixed::max(Fixed &f1, Fixed &f2)
 {
     if (f1.getRawBits() < f2.getRawBits())
         return (f2);
-    return (f1)
+    return (f1);
 }
 
 

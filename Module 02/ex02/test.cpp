@@ -30,9 +30,13 @@ class printOut
 int main()
 {
     int a = 5;
-    int b = 0;
+    int b = 1;
+    int &aa = a;
+    int &bb = b;
+    int &aaa = aa;
+    int &bba = bb;
 
-    a = a / b;
+    std::cout << aaa << bba << std::endl;
     // if (&a == &a)
     //     std::cout << "OK" << std::endl;
 }
