@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 16:56:50 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/19 17:15:08 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/19 17:25:48 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ class Point
     public:
     Point (void);
     Point (const float a, const float b);
-    Point (const &Point copy);
+    Point (const Point &copy);
 
     Fixed getX(void);
     Fixed getY(void);
     void setX(Fixed x);
     void setY(Fixed y);
 
-    Point &operator=(const  &Point point);
+    Point &operator=(const Point &point);
 
     ~Point(void);
 };
