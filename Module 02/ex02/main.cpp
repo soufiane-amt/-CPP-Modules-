@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 14:12:42 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/19 16:43:27 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/20 19:22:22 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int main( void ) {
     Fixed a;
     Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+    Fixed o = 2.5f;
     std::cout << a << std::endl;
     std::cout << ++a << std::endl;
     std::cout << a << std::endl;
