@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 16:56:50 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/20 12:45:57 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/20 14:41:01 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ class Point
     ~Point(void);
 };
 
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif

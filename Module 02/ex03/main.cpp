@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 21:24:25 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/20 13:45:43 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/20 14:41:52 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 int main ()
 {
-    Point a(5, 5);
-    Fixed p(5.2f);
+    Point a(4, 5);
+    Point b(1, 2);
+    Point c(7, 2);
     
-    
-    std::cout << pow(p.toFloat(), 2) << std::endl;
+
+    bsp(a, b, c, a);
 }

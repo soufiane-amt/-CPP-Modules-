@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/17 14:09:26 by samajat           #+#    #+#              #
-#    Updated: 2022/09/19 17:18:40 by samajat          ###   ########.fr        #
+#    Updated: 2022/09/20 14:42:09 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -rf
 
-FILES = Fixed main Point
+FILES = Fixed main Point bsp
 
 OBJ = $(FILES:=.o)
 
