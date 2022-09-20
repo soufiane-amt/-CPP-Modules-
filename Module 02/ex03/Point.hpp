@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 16:56:50 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/19 21:50:20 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/20 12:31:20 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class Point
     Point (const float a, const float b);
     Point (const Point &copy);
 
-    const Fixed &getX(void) ;
-    const Fixed &getY(void);
+    Fixed getX(void) const;
+    Fixed getY(void) const;
     // void setX(Fixed x);
     // void setY(Fixed y);
 
