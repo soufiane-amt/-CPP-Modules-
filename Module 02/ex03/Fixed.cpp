@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 12:50:49 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/19 21:13:24 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/20 15:36:05 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ Fixed::Fixed(const Fixed &copy)
     *this = copy;
 }
 
+    // std::cout << "called this\n";
 
 Fixed::Fixed   (const float f)
 {
