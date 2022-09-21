@@ -6,35 +6,32 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:49:37 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/21 19:57:42 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/21 21:30:07 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Point.hpp"
 
-Fixed   getTwoPointsDistance(Point const p1, Point const p2)// add reference
+float   getTwoPointsDistance(Point const p1, Point const p2)// add reference
 {
-    Fixed   d = (float)sqrt(pow(p2.getX().toFloat() - p1.getX().toFloat(), 2) + pow(p2.getY().toFloat() - p1.getY().toFloat(), 2));
+    float   d = (float)sqrt(pow(p2.getX().getRawBits() - p1.getX().getRawBits(), 2) + pow(p2.getY().getRawBits() - p1.getY().getRawBits(), 2));
     return (d);
 }
 
 
-Fixed   getSemiParm (Point  a, Point  b, Point  c)
+float   getSemiParm (Point  a, Point  b, Point  c)
 {
-    Fixed aa = (getTwoPointsDistance(a, b) + getTwoPointsDistance(b, c) + getTwoPointsDistance(c, a)) / Fixed(2);
+    float aa = (getTwoPointsDistance(a, b) + getTwoPointsDistance(b, c) + getTwoPointsDistance(c, a)) / 2;
     return aa;
 }
 
-Fixed   getTriangleArea (Point const p1, Point const p2, Point const p3)
-{
-    Fixed   semiParam = getSemiParm(p1, p2, p3);
-    
-    float f = sqrt((semiParam * (semiParam - getTwoPointsDistance(p1, p2)) * (semiParam - getTwoPointsDistance(p2, p3)) * (semiParam - getTwoPointsDistance(p1, p3))).toFloat());
-    Fixed   area = f;
-    Fixed   Area(area);
+float   getTriangleArea (Point const p1, Point const p2, Point const p3)
+{    
+    float semiParam = getSemiParm(p1, p2, p3);
+    float f = sqrt((semiParam * (semiParam - getTwoPointsDistance(p1, p2)) * (semiParam - getTwoPointsDistance(p2, p3)) * (semiParam - getTwoPointsDistance(p1, p3))));
 
-    return (Area);
+    return (f);
 }
 
 
