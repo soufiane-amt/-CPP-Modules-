@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:49:37 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/21 17:50:18 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/21 19:57:42 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ bool bsp( Point const a, Point const b, Point const c, Point const point)
     if (getTriangleArea(a, b, c) == (getTriangleArea(point, a, b) + getTriangleArea(point, b, c) + getTriangleArea(point, c, a)))
         std::cout << "yep" << std::endl;
     std::cout << (getTriangleArea(a, b, c)) << std::endl;
-    std::cout << (getTriangleArea(point, a, b) + getTriangleArea(point, b, c) + getTriangleArea(point, c, a)) << std::endl;
+    std::cout << getTriangleArea(point, a, b) + getTriangleArea(point, b, c) + getTriangleArea(point, c, a) << std::endl;
+    std::cout << getTriangleArea(point, a, b) << " -- "<< getTriangleArea(point, b, c) << " -- "<< getTriangleArea(point, c, a) << std::endl;
     return true;
 }

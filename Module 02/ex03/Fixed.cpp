@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 12:50:49 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/21 17:40:03 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/21 20:02:01 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void    Fixed::setRawBits (int const raw)
 
 float Fixed::toFloat( void ) const
 {
-    float f = (static_cast< float>(this->getRawBits()) / (1 << 8));
+    float f = ((float)this->getRawBits() / (1 << fractBits));
     return (f);
 }
 
@@ -67,7 +67,7 @@ int Fixed::toInt( void ) const
 //-----Overloaded operators-------//
 std::ostream& operator<<(std::ostream &COUT, const Fixed &fixed)
 {
-    float a = (static_cast< float>(fixed.getRawBits()) / (1 << 8));
+    float a = ((float)(fixed.getRawBits()) / (1 << 8));
     COUT << a;
     return (COUT);
 }
