@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 12:50:49 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/20 15:36:05 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/21 17:40:03 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ Fixed::Fixed(const Fixed &copy)
     *this = copy;
 }
 
-    // std::cout << "called this\n";
 
 Fixed::Fixed   (const float f)
 {
@@ -76,7 +75,6 @@ std::ostream& operator<<(std::ostream &COUT, const Fixed &fixed)
 Fixed& Fixed::operator=(const Fixed &fixed)
 {
     this->raw = fixed.getRawBits();
-    
     return (*this);
 }
 
@@ -132,7 +130,7 @@ Fixed Fixed::operator*(const Fixed &f)
 {
     Fixed mul;
 
-    mul.setRawBits(this->getRawBits() * f.getRawBits()/(1 << fractBits));
+    mul = (*this).toFloat()*(f).toFloat();
     return (mul);
 }
 
@@ -141,7 +139,7 @@ Fixed Fixed::operator/(const Fixed &f)
 {
     Fixed div;
 
-    div.setRawBits(this->getRawBits() / f.getRawBits()/(1 << fractBits));
+    div = (*this).toFloat()/(f).toFloat();
     return (div);
 }
 //
@@ -159,14 +157,6 @@ Fixed Fixed::operator++(int)
     raw++;
     return (tmp);
 }
-
- Fixed   Fixed::operator()(const float f)const 
-{
-    (void)f;
-    std::cout << "You got into the () operator func\n";
-    return (*this);
-}
-
 
 
 

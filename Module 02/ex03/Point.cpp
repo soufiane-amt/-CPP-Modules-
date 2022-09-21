@@ -6,25 +6,25 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 16:56:41 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/20 12:45:52 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/21 15:23:47 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-Point::Point (void): x(0), y(0){}
+Point::Point (void): x(0), y(0){
+}
 
-Point::Point (const float a, const float b): x(Fixed(a)),y(Fixed(b)){}
+Point::Point (const float a, const float b): x(Fixed(a)),y(Fixed(b)){
+}
 
-Point::Point (const Point &copy)
+Point::Point (const Point &copy): x(copy.getX()), y(copy.getY()) 
 {
-    (*this) = copy;
 }
 
 Point &Point::operator=(const Point &copy)
 {
-    (Fixed)this->x = copy.getX();
-    (Fixed)this->y = copy.getY();
+    (void)copy;
     return (*this);
 }
 
