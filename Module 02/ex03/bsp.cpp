@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:49:37 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/22 14:04:13 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/22 14:15:35 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,16 +73,9 @@ float   getTriangleArea (Point const p1, Point const p2, Point const p3)
 
 bool bsp( Point const a, Point const b, Point const c, Point const point)
 {
-    (void)point;
-    std::cout << a.getX().toFloat() << std::endl;
-    //
-    std::cout << getTwoPointsDistance(a, b) << std::endl;
-    std::cout << getTwoPointsDistance(b, c) << std::endl;
-    std::cout << getTwoPointsDistance(a, c) << std::endl;
-    std::cout << getSemiParm(a, b, c) << std::endl;
-    std::cout << getTriangleArea(a, b, c) << std::endl;
-    std::cout << (getTriangleArea(point, a, b) + getTriangleArea(point, b, c) + getTriangleArea(point, c, a)) << std::endl;
-    // if (getTriangleArea(a, b, c)>=((getTriangleArea(point, a, b) + getTriangleArea(point, b, c) + getTriangleArea(point, c, a))))
-    //     std::cout << "yep" << std::endl;
+    Fixed abc(getTriangleArea(a, b, c));
+    Fixed abcp(getTriangleArea(point, a, b) + getTriangleArea(point, b, c) + getTriangleArea(point, c, a));
+    if (abc >= abcp)
+        std::cout << "yep" << std::endl;
     return true;
 }
