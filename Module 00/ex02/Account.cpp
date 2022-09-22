@@ -5,13 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/27 18:55:50 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/22 18:47:06 by samajat          ###   ########.fr       */
+/*   Created: 2022/09/22 19:01:15 by samajat           #+#    #+#             */
+/*   Updated: 2022/09/22 19:08:02 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Account.hpp"
+
+int	Account ::_nbAccounts = 0;
+int	Account ::_totalAmount = 0;
+int	Account ::_totalNbDeposits = 0;
+int	Account ::_totalNbWithdrawals = 0;
 
 int Account::getNbAccounts(void)
 {
