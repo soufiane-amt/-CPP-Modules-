@@ -6,10 +6,12 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 18:55:50 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/29 13:07:44 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/22 18:47:06 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#include "Account.hpp"
 
 int Account::getNbAccounts(void)
 {
