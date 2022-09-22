@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 19:01:15 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/22 19:08:02 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/22 19:18:21 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,17 +94,29 @@ void    Account::_displayTimestamp(void)
     std::string month;
     std::string day;
     std::string year;
+    std::string hour;
+    std::string min;
+    std::string sec;
     
     curr_time = time(0);
     _tm = gmtime(&curr_time);
     month = std::to_string(_tm->tm_mon);
     day = std::to_string(_tm->tm_mday);
     year = std::to_string(_tm->tm_year + 1900);
+    hour = std::to_string(_tm->tm_hour + 1);
+    min = std::to_string(_tm->tm_min);
+    sec = std::to_string(_tm->tm_sec);
     if (month.length() == 1)
         month = "0" + month;
     if (day.length() == 1)
         day = "0" + day;
-	std::cout << "[" + year + month + day + "]  ";
+    if (hour.length() == 1)
+        hour = "0" + hour;
+    if (min.length() == 1)
+        min = "0" + min;
+    if (sec.length() == 1)
+        sec = "0" + sec;
+	std::cout << "[" + year + month + day + "_" + hour + min + sec + "]  ";
 }
 //[19920104_091532] index:0;p_amount:42;deposit:5;amount:47;nb_deposits:1
 void Account::makeDeposit(int deposit)

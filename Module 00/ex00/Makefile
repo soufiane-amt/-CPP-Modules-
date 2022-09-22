@@ -6,15 +6,15 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/23 17:23:05 by samajat           #+#    #+#              #
-#    Updated: 2022/08/27 14:07:15 by samajat          ###   ########.fr        #
+#    Updated: 2022/09/22 15:11:22 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = mega
+NAME = megaphone
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 FILES = megaphone
 
