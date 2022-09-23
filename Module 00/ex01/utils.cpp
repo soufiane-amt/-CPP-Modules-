@@ -6,23 +6,23 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:22:46 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/23 20:08:21 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/23 20:12:33 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MyPhoneBook.hpp"
 
 
-int  onlyWhiteSpace(std::string str)
+bool  onlyWhiteSpace(std::string str)
 {
     int i = 0;
     while (str[i])
     {
         if (!(str[i] == ' ' ||str[i] == '\t' ||str[i] == '\r' || str[i] == '\f' || str[i] == '\v'))
-            return (0);
+            return (false);
         i++;
     }
-    return (1);
+    return (true);
 }
 
 bool isNumber(std::string s) 

@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:20:19 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/23 20:11:08 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/23 20:27:48 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,21 +49,12 @@ void    MyPhoneBook :: add_new_contact (void)
     std::cout << "---------------------------------------------"<< std::endl;
 }
 
-std::string    str_processor(std::string str)
+std::string    str_display(std::string str)
 {
-    int j;
-
-    j = 0;
-    // std::cout << str.length();
     if (str.length() > 10)
     {
         str[9] = '.';
         return (str.substr(0, 10) + "|");   
-    }
-    while (str.length() != 10)
-    {
-        str += " ";
-        j++;
     }
     return (str + "|");
 }
@@ -76,9 +67,11 @@ void    MyPhoneBook::display_contacts_info(void)
     i = 0;
     while (i < this->length)
     {
-        std::cout << str_processor(std::to_string(i)) << str_processor(this->contacts[i].getFirstName())<<\
-        str_processor(this->contacts[i].getLastName()) << str_processor(this->contacts[i].getNickName())\
-        << std::endl;
+        std::cout << std::right << std::setw(10)<< std::to_string(i) << "|" 
+         <<std::right << std::setw(10)<< str_display(this->contacts[i].getFirstName())\
+         <<std::right << std::setw(10)<< str_display(this->contacts[i].getLastName())\
+         <<std::right << std::setw(10)<< str_display(this->contacts[i].getNickName())\
+         << std::endl;
         i++;
     }
 }

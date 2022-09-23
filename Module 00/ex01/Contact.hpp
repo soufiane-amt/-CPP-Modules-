@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:19:24 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/23 19:44:00 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/23 20:17:53 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 //Headers
 #include "iostream"
 #include "string"
+#include <iomanip>
 
 //Classes
 class Contact
