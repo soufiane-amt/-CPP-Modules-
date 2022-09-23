@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 20:46:28 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/23 20:56:17 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/23 21:31:45 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ class ClapTrap
 
     private:
     str::string name;
-    str::string hitPoints;
-    str::string energyPoints;
-    str::string attackDamage;
+    int         hitPoints;
+    int         energyPoints;
+    int         attackDamage;
 }
 
 #endif
