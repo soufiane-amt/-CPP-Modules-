@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:20:19 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/23 19:14:45 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/23 19:20:27 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,34 @@ int displayOptionList(void)
     std::cout << "ADD: save a new contact." << std::endl << "SEARCH: display a specific contact."\
               << std::endl << "EXIT: to exit program." << std::endl << std::endl << ">";
     return (1);
+}
+
+
+
+
+void    Contact::setFirstName(std::string fname)
+{
+    this->firstName = fname;
+}
+
+void    Contact::setLastName(std::string lname)
+{
+    this->lastName = lname;
+}
+
+void    Contact::setNickName(std::string niname)
+{
+    this->nickName = niname;
+}
+
+void    Contact::setPhoneNumber(std::string phoneNumb)
+{
+    this->phoneNumber = phoneNumb;
+}
+
+void    Contact::setDarkSecret(std::string DarkSecret)
+{
+    this->darkestSecret = DarkSecret;
 }
 
 int main (void)

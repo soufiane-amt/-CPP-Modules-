@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:19:24 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/23 19:09:10 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/23 19:19:26 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ class Contact
         void    setDarkSecret(std::string DarkSecret);
 
     private:
-        std::string first_name;
-        std::string last_name;
-        std::string nickname;
-        std::string phone_number;
-        std::string darkest_secret;
+        std::string firstName;
+        std::string lastName;
+        std::string nickName;
+        std::string phoneNumber;
+        std::string darkestSecret;
 };
 
 #endif
