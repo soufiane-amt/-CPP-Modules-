@@ -6,15 +6,26 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:20:19 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/23 11:22:32 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/23 19:14:45 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MyPhoneBook.hpp"
 
+void    Contact::display_contact_whole_info(Contact contacts[], int index)
+{
+    std::cout <<"---------------------------------------------"<< std::endl\
+                <<"First Name: "<< contacts[index].first_name << std::endl\
+                << "Last Name: "<<contacts[index].last_name<< std::endl\
+                << "Nickname: "<<contacts[index].nickname<< std::endl\
+                << "Phone Number: "<<contacts[index].phone_number<< std::endl\
+                << "Darkest secret: "<<contacts[index].darkest_secret<< std::endl\
+                << "---------------------------------------------"<< std::endl;
+}
+
 void    MyPhoneBook :: add_new_contact (void)
 {
-    Contact new_contact;
+    Contact newContact;
     static  int i;
 
     if(i == 8)
@@ -22,15 +33,15 @@ void    MyPhoneBook :: add_new_contact (void)
     std::cout << "---------------------------------------------"<< std::endl;
     std :: cout << "Adding new contact ...Empty fields are unvalid."<< std::endl;
     std :: cout << "First Name:"<< std::endl;
-    getInput(&new_contact.first_name, "First Name");
+    newContact.setFirstName(getInput("First Name"));
     std :: cout << "Last Name:"<< std::endl;
-    getInput(&new_contact.last_name, "Last Name");
+    newContact.setLastName(getInput("Last Name"));
     std :: cout << "Nickname:"<< std::endl;
-    getInput(&new_contact.nickname, "Nickname");
+    newContact.setNickName(getInput("Nickname"));
     std :: cout << "Phone number:"<< std::endl;
-    getInput(&new_contact.phone_number, "Phone number");
+    newContact.setPhoneNumber(getInput("Phone number"));
     std :: cout << "Darkest secret:"<< std::endl;
-    getInput(&new_contact.darkest_secret, "Darkest secret");
+    newContact.setDarkSecret(getInput("Darkest secret"));
     this->contacts[i] = new_contact;
     i++;
     if (this->length < 8)
@@ -57,16 +68,6 @@ std::string    str_processor(std::string str)
     return (str + "|");
 }
 
-void    display_contact_whole_info(Contact contacts[], int index)
-{
-    std::cout <<"---------------------------------------------"<< std::endl\
-                <<"First Name: "<< contacts[index].first_name << std::endl\
-                << "Last Name: "<<contacts[index].last_name<< std::endl\
-                << "Nickname: "<<contacts[index].nickname<< std::endl\
-                << "Phone Number: "<<contacts[index].phone_number<< std::endl\
-                << "Darkest secret: "<<contacts[index].darkest_secret<< std::endl\
-                << "---------------------------------------------"<< std::endl;
-}
 
 void    MyPhoneBook::display_contacts_info(void)
 {
@@ -111,6 +112,7 @@ int displayOptionList(void)
               << std::endl << "EXIT: to exit program." << std::endl << std::endl << ">";
     return (1);
 }
+
 int main (void)
 {
     MyPhoneBook phoneBook;
@@ -123,10 +125,7 @@ int main (void)
         else if(input == "SEARCH")
             phoneBook.search();
         else if (input == "EXIT")
-        {
             exit(1);
-            std::cout << input << std::endl;
-        }
         else
             std::cerr << "Unvalid command." << std::endl;
     }
