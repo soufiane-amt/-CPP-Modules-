@@ -6,20 +6,20 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:20:19 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/23 19:20:27 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/23 20:11:08 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MyPhoneBook.hpp"
 
-void    Contact::display_contact_whole_info(Contact contacts[], int index)
+void    Contact::display_contact_whole_info(void)
 {
     std::cout <<"---------------------------------------------"<< std::endl\
-                <<"First Name: "<< contacts[index].first_name << std::endl\
-                << "Last Name: "<<contacts[index].last_name<< std::endl\
-                << "Nickname: "<<contacts[index].nickname<< std::endl\
-                << "Phone Number: "<<contacts[index].phone_number<< std::endl\
-                << "Darkest secret: "<<contacts[index].darkest_secret<< std::endl\
+                <<"First Name: "<< this->getFirstName() << std::endl\
+                << "Last Name: "<<this->getLastName()<< std::endl\
+                << "Nickname: "<<this->getNickName()<< std::endl\
+                << "Phone Number: "<<this->getPhoneNumber()<< std::endl\
+                << "Darkest secret: "<<this->getDarkSecret()<< std::endl\
                 << "---------------------------------------------"<< std::endl;
 }
 
@@ -42,7 +42,7 @@ void    MyPhoneBook :: add_new_contact (void)
     newContact.setPhoneNumber(getInput("Phone number"));
     std :: cout << "Darkest secret:"<< std::endl;
     newContact.setDarkSecret(getInput("Darkest secret"));
-    this->contacts[i] = new_contact;
+    this->contacts[i] = newContact;
     i++;
     if (this->length < 8)
         this->length++;
@@ -76,8 +76,8 @@ void    MyPhoneBook::display_contacts_info(void)
     i = 0;
     while (i < this->length)
     {
-        std::cout << str_processor(std::to_string(i)) << str_processor(this->contacts[i].first_name)<<\
-        str_processor(this->contacts[i].last_name) << str_processor(this->contacts[i].nickname)\
+        std::cout << str_processor(std::to_string(i)) << str_processor(this->contacts[i].getFirstName())<<\
+        str_processor(this->contacts[i].getLastName()) << str_processor(this->contacts[i].getNickName())\
         << std::endl;
         i++;
     }
@@ -100,8 +100,9 @@ void    MyPhoneBook::search (void)
         if (index == "EXIT")
             exit(1);
     }
+        // display_contact_whole_info(contacts, );
     if(isNumber(index))
-        display_contact_whole_info(contacts, std::stoi(index));
+        contacts[std::stoi(index)].display_contact_whole_info();
     else
         std::cerr << "-----Invalid input.----- :)" << std::endl;
 }
@@ -141,6 +142,33 @@ void    Contact::setDarkSecret(std::string DarkSecret)
     this->darkestSecret = DarkSecret;
 }
 
+
+std::string    Contact::getFirstName(void)
+{
+    return (this->firstName);
+}
+std::string    Contact::getLastName(void)
+{
+    return (this->lastName);
+}
+std::string    Contact::getNickName(void)
+{
+    return (this->nickName);
+}
+std::string    Contact::getPhoneNumber(void)
+{
+    return (this->phoneNumber);
+}
+std::string    Contact::getDarkSecret(void)
+{
+    return (this->darkestSecret);
+}
+// int            MyPhoneBook::getLength(void)
+// {
+//     return (length);
+// }
+
+
 int main (void)
 {
     MyPhoneBook phoneBook;
@@ -155,6 +183,6 @@ int main (void)
         else if (input == "EXIT")
             exit(1);
         else
-            std::cerr << "Unvalid command." << std::endl;
+            std::cerr << "Unvalid command. Please try again!" << std::endl;
     }
 }

@@ -6,11 +6,24 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:22:46 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/23 19:10:54 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/23 20:08:21 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MyPhoneBook.hpp"
+
+
+int  onlyWhiteSpace(std::string str)
+{
+    int i = 0;
+    while (str[i])
+    {
+        if (!(str[i] == ' ' ||str[i] == '\t' ||str[i] == '\r' || str[i] == '\f' || str[i] == '\v'))
+            return (0);
+        i++;
+    }
+    return (1);
+}
 
 bool isNumber(std::string s) 
 {
@@ -36,7 +49,7 @@ std::string    getInput(std :: string field_name)
 
     while(std::getline(std::cin, data))
     {
-        if ((*data).empty())
+        if (data.empty() || onlyWhiteSpace(data))
             printErrMessage(field_name);
         else
             return (data);

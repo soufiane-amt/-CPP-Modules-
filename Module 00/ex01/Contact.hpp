@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:19:24 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/23 19:19:26 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/23 19:44:00 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,19 @@
 class Contact
 {
     public:
-        void    display_contact_whole_info(Contact contacts[], int index);
-        void    setFirstName(std::string fname);
-        void    setLastName(std::string lname);
-        void    setNickName(std::string niname);
-        void    setPhoneNumber(std::string phoneNumb);
-        void    setDarkSecret(std::string DarkSecret);
+        void           display_contact_whole_info(Contact contacts[], int index);
+        void           setFirstName(std::string fname);
+        void           setLastName(std::string lname);
+        void           setNickName(std::string niname);
+        void           setPhoneNumber(std::string phoneNumb);
+        void           setDarkSecret(std::string DarkSecret);
+        std::string    getFirstName(void);
+        std::string    getLastName(void);
+        std::string    getNickName(void);
+        std::string    getPhoneNumber(void);
+        std::string    getDarkSecret(void);
+        void           display_contact_whole_info(void);
+
 
     private:
         std::string firstName;
