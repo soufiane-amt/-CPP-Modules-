@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 20:46:29 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/23 21:22:27 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/23 21:29:18 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ ClapTrap operator=(ClapTrap &copy)
 
 void ClapTrap::attack (const std::string& target)
 {
+    this->hitPoints++;
     std::cout << "ClapTrap "<< this->name <<" attacks "<< target <<", causing "<< 1 <<" points of damage!" << std::endl;
 }
 
@@ -46,6 +47,15 @@ void ClapTrap::takeDamage(unsigned int amount)
         this->attackDamage += this->energyPoints;
         this->energyPoints  = 0;
     }
+    std::cout << "ClapTrap "<< this->name <<" has been attacked "<< target <<", getting "<< amount <<" points of damage!" << std::endl;
+}
+
+void ClapTrap::beRepaired(unsigned int amount)
+{
+    if(10 - this->energyPoints >= amount)
+        this->energyPoints += amount;
+    else
+        this->energyPoints  = 10;
     std::cout << "ClapTrap "<< this->name <<" has been attacked "<< target <<", getting "<< amount <<" points of damage!" << std::endl;
 }
 
