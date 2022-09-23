@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/23 20:37:13 by samajat           #+#    #+#              #
-#    Updated: 2022/09/22 18:44:23 by samajat          ###   ########.fr        #
+#    Updated: 2022/09/23 11:22:55 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -rf
 
-FILES = MyPhoneBook
+FILES = MyPhoneBook utils
 
 HEADERS = MyPhoneBook.hpp Contact.hpp
 

@@ -6,29 +6,11 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:20:19 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/22 18:33:30 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/23 11:22:32 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MyPhoneBook.hpp"
-
-
-void    printErrMessage(std :: string field_name)
-{
-    std :: cerr << "The " << field_name << " field is empty please enter a valid input.\n" << field_name << std::endl;
-}
-
-void    getInput(std :: string* data, std :: string field_name)
-{
-    while(std::getline(std::cin, *data))
-    {
-        if ((*data).empty())
-            printErrMessage(field_name);
-        else
-            return;
-    }
-    exit(1);
-}
 
 void    MyPhoneBook :: add_new_contact (void)
 {
@@ -108,7 +90,7 @@ void    MyPhoneBook::search (void)
     display_contacts_info();
     std :: cout << "Please choose an index:" << std::endl;
     getline(std::cin, index);
-    while ((std::stoi(index) >= this->length || std::stoi(index) < 0))
+    while (isNumber(index) && (std::stoi(index) >= this->length || std::stoi(index) < 0))
     {
         std::cerr << "The index is not valid please try again." << std ::endl;
         if(!getline(std::cin, index))
@@ -117,7 +99,10 @@ void    MyPhoneBook::search (void)
         if (index == "EXIT")
             exit(1);
     }
-    display_contact_whole_info(contacts, std::stoi(index));
+    if(isNumber(index))
+        display_contact_whole_info(contacts, std::stoi(index));
+    else
+        std::cerr << "-----Invalid input.----- :)" << std::endl;
 }
 
 int displayOptionList(void)

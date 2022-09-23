@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 15:22:09 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/22 18:36:50 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/23 11:23:45 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,9 @@ class MyPhoneBook
         MyPhoneBook (){this->length = 0;}
 };
 
+
+//func
+bool isNumber(std::string s);
+void    printErrMessage(std :: string field_name);
+void    getInput(std :: string* data, std :: string field_name);
 #endif

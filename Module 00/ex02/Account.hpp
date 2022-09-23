@@ -61,7 +61,6 @@ private:
 	Account( void );
 };
 
-//Static declarations
 
 // ************************************************************************** //
 // vim: set ts=4 sw=4 tw=80 noexpandtab:                                      //

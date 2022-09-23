@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 19:01:15 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/22 19:18:21 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/22 19:29:57 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int Account::checkAmount(void) const
     return (this->_amount);
 }
 
-//index:0;amount:42;created
 Account::Account(int initial_deposit)
 {
     this->_displayTimestamp();
@@ -70,7 +69,6 @@ Account::~Account(void)
     << ";closed"<< std::endl;
 }
 
-//[19920104_091532] index:0;amount:42;deposits:0;withdrawals:0
 void    Account::displayStatus(void) const
 {
     this->_displayTimestamp();
@@ -78,7 +76,6 @@ void    Account::displayStatus(void) const
     << ";deposits:" << this->_nbDeposits << ";withdrawals:" << this->_nbWithdrawals<< std::endl;
 }
 
-//[19920104_091532] accounts:8;total:20049;deposits:0;withdrawals:0
 void Account::displayAccountsInfos(void)
 {
     _displayTimestamp();
@@ -118,7 +115,7 @@ void    Account::_displayTimestamp(void)
         sec = "0" + sec;
 	std::cout << "[" + year + month + day + "_" + hour + min + sec + "]  ";
 }
-//[19920104_091532] index:0;p_amount:42;deposit:5;amount:47;nb_deposits:1
+
 void Account::makeDeposit(int deposit)
 {
     _displayTimestamp();
@@ -129,7 +126,6 @@ void Account::makeDeposit(int deposit)
     this->_totalNbDeposits += 1;
     std::cout << ";amount:" << this->_amount << ";nb_deposits:" << this->_nbDeposits << std::endl;
 }
-// [19920104_091532] index:6;p_amount:763;withdrawal:657;amount:106;nb_withdrawals:1
 
 bool Account::makeWithdrawal(int withdrawal)
 {
