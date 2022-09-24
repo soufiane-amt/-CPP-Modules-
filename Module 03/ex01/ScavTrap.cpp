@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 21:43:10 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/24 13:20:30 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/24 13:23:58 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,10 @@ void ScavTrap::beRepaired(unsigned int amount)
     std::cout << "ScavTrap "<< name <<" has repaired itself, by "<< amount <<" points !" << std::endl;
 }
 
+void    ScarpTrap::guardGate()
+{
+    std::cout << "ScavTrap is now in Gate keeper mode." << std::endl;
+}
 ScavTrap::~ScavTrap (void)
 {
     std::cout << name << "is dead!" << std::endl;     

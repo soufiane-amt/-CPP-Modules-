@@ -6,13 +6,16 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 20:46:28 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/23 21:31:45 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/24 13:35:38 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
+
+//Headers
+#include <iostream>
 
 class ClapTrap
 {
@@ -26,10 +29,10 @@ class ClapTrap
     ~ClapTrap(void);
 
     private:
-    str::string name;
-    int         hitPoints;
-    int         energyPoints;
-    int         attackDamage;
-}
+    std::string  name;
+    unsigned int hitPoints;
+    unsigned int energyPoints;
+    unsigned int attackDamage;
+};
 
 #endif
