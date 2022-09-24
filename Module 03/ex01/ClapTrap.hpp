@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 20:46:28 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/23 21:31:45 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/24 12:01:36 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class ClapTrap
     ClapTrap operator=(ClapTrap &copy);
     ~ClapTrap(void);
 
-    private:
+    protected:
     str::string name;
     int         hitPoints;
     int         energyPoints;
