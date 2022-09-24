@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 20:46:29 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/24 13:42:58 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/24 17:51:11 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 ClapTrap::ClapTrap (std::string name): name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-    std::cout << "ClapTrap " << name << " is created!" << std::endl;
+    std::cout << "ClapTrap " << this->name << " is created!" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap &copy)

@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 20:46:28 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/24 13:37:14 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/24 17:52:15 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
 
+#include <iostream>
+#include <string>
 class ClapTrap
 {
     public:
@@ -30,6 +32,6 @@ class ClapTrap
     unsigned int hitPoints;
     unsigned int energyPoints;
     unsigned int attackDamage;
-}
+};
 
 #endif
