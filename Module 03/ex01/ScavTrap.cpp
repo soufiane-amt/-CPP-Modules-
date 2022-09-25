@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 21:43:10 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 19:23:41 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/25 19:32:18 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,33 +63,33 @@ void ScavTrap::attack (const std::string& target)
 }
 
 
-// void ScavTrap::takeDamage(unsigned int amount)
-// {
-//     if(amount <= hitPoints)
-//     {
-//         hitPoints -= amount;
-//     }
-//     else
-//     {
-//         hitPoints  = 0;
-//     }
-//     std::cout << "ScavTrap "<< name <<" has been attacked "<< target <<", getting "<< amount <<" points of damage!" << std::endl;
-// }
+void ScavTrap::takeDamage(unsigned int amount)
+{
+    if(amount <= hitPoints)
+    {
+        hitPoints -= amount;
+    }
+    else
+    {
+        hitPoints  = 0;
+    }
+    std::cout << "ScavTrap "<< name <<" has been attacked , getting "<< amount <<" points of damage!" << std::endl;
+}
 
-// void ScavTrap::beRepaired(unsigned int amount)
-// {
-//     if (!energyPoints)
-//     {
-//         std::cout << "ScavTrap "<< name << "has no energy!" << std::endl;
-//         return;
-//     }
-//     energyPoints--;
-//     if(100 - hitPoints >= amount)
-//         hitPoints += amount;
-//     else
-//         hitPoints  = 100;
-//     std::cout << "ScavTrap "<< name <<" has repaired itself, by "<< amount <<" points !" << std::endl;
-// }
+void ScavTrap::beRepaired(unsigned int amount)
+{
+    if (!energyPoints)
+    {
+        std::cout << "ScavTrap "<< name << "has no energy!" << std::endl;
+        return;
+    }
+    energyPoints--;
+    if(100 - hitPoints >= amount)
+        hitPoints += amount;
+    else
+        hitPoints  = 100;
+    std::cout << "ScavTrap "<< name <<" has repaired itself, by "<< amount <<" points !" << std::endl;
+}
 
 void    ScavTrap::guardGate()
 {
