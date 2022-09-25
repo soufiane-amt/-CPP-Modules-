@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 21:43:10 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 19:32:18 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/25 19:33:38 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,5 @@ void    ScavTrap::guardGate()
 }
 ScavTrap::~ScavTrap (void)
 {
-    std::cout << "ScavTrap " << name << "is dead!" << std::endl;     
+    std::cout << "ScavTrap " << name << " is dead!" << std::endl;     
 }
