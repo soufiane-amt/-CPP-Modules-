@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 20:46:28 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 12:35:31 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/25 13:29:55 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 //Headers
 #include <iostream>
+#include <string>
 
 class ClapTrap
 {
@@ -25,7 +26,7 @@ class ClapTrap
     void     attack(const std::string& target);
     void     takeDamage(unsigned int amount);
     void     beRepaired(unsigned int amount);
-    ClapTrap operator=(ClapTrap &copy);
+    ClapTrap& operator=(ClapTrap &copy);
     ~ClapTrap(void);
 
     private:

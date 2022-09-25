@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 20:46:29 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 12:38:53 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/25 13:30:34 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,15 @@ ClapTrap::ClapTrap (std::string name): name(name), hitPoints(10), energyPoints(1
     std::cout << "ClapTrap " << name << " is created!" << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap &copy)
-{
-    (*this) = copy;
-    std::cout << "ClapTrap " << name << " is copied!" << std::endl;
-}
+ClapTrap::ClapTrap(ClapTrap &copy):name(copy.name), hitPoints(copy.hitPoints), energyPoints(copy.energyPoints), attackDamage(copy.attackDamage){}
 
-ClapTrap ClapTrap::operator=(ClapTrap &copy)
+ClapTrap& ClapTrap::operator=(ClapTrap &copy)
 {
     std::cout << "is here" << std::endl;
-    ClapTrap temp("");
-    temp.name         = copy.name;
-    temp.hitPoints    = copy.hitPoints;
-    temp.energyPoints = copy.energyPoints;
-    temp.attackDamage = copy.attackDamage;
-    return (temp);
+    // ClapTrap temp("");
+    // this->ClapTrap(copy);
+    std::swap(*this, copy);
+    return (*this);
 }
 
 void ClapTrap::attack (const std::string& target)
