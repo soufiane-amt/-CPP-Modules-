@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/24 13:26:12 by samajat           #+#    #+#              #
-#    Updated: 2022/09/24 13:28:33 by samajat          ###   ########.fr        #
+#    Updated: 2022/09/25 15:09:06 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-FILES = ClapTrap main
+FILES = ClapTrap ScavTrap main
 
 OBJ = $(FILES:=.o)
 
-HEADER = ClapTrap.hpp
+HEADER = ClapTrap.hpp ScavTrap.hpp
 
 RM = rm -rf
 

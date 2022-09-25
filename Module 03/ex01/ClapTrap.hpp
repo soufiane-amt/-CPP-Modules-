@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 20:46:28 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 14:48:50 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/25 16:05:03 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,16 @@ class ClapTrap
     void     takeDamage(unsigned int amount);
     void     beRepaired(unsigned int amount);
     ClapTrap& operator=(ClapTrap &copy);
-    void ft_swap(ClapTrap &a, ClapTrap &b);
     ~ClapTrap(void);
 
-    private:
+    protected:
     std::string  name;
     unsigned int hitPoints;
     unsigned int energyPoints;
     unsigned int attackDamage;
+    void ft_swap(ClapTrap &a, ClapTrap &b);
+    ClapTrap(std::string name, unsigned int hitPoints, \
+            unsigned int energyPoints, unsigned int attackDamage);
 };
 
 #endif

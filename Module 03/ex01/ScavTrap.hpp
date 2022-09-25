@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 21:42:49 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/24 13:23:47 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/25 16:32:21 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@
 class ScavTrap :public ClapTrap 
 {
     public:
+    ScavTrap (std::string n);
+    ScavTrap(ScavTrap &copy);
     void guardGate();
-}
+    void ft_swap(ScavTrap &a, ScavTrap &b);
+};
 
 #endif
