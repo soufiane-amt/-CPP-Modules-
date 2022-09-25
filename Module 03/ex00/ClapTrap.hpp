@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 20:46:28 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 13:29:55 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/25 14:15:24 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 //Headers
 #include <iostream>
 #include <string>
+#include <algorithm>
 
 class ClapTrap
 {
@@ -27,6 +28,7 @@ class ClapTrap
     void     takeDamage(unsigned int amount);
     void     beRepaired(unsigned int amount);
     ClapTrap& operator=(ClapTrap &copy);
+    void ft_swap(ClapTrap &a, ClapTrap &b);
     ~ClapTrap(void);
 
     private:

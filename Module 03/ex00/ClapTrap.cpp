@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 20:46:29 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 13:30:34 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/25 14:17:15 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,23 @@ ClapTrap::ClapTrap (std::string name): name(name), hitPoints(10), energyPoints(1
     std::cout << "ClapTrap " << name << " is created!" << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap &copy):name(copy.name), hitPoints(copy.hitPoints), energyPoints(copy.energyPoints), attackDamage(copy.attackDamage){}
+ClapTrap::ClapTrap(ClapTrap &copy):name(copy.name), hitPoints(copy.hitPoints), energyPoints(copy.energyPoints), attackDamage(copy.attackDamage)
+{
+    std::cout << "Copy constructor is called" << std::endl;
+}
+
+void ClapTrap::ft_swap(ClapTrap &a, ClapTrap &b)
+{
+    ClapTrap temp(b);
+    std::swap(a.name, temp.name);
+    std::swap(a.hitPoints, temp.hitPoints);
+    std::swap(a.energyPoints, temp.energyPoints);
+    std::swap(a.attackDamage, temp.attackDamage);
+}
 
 ClapTrap& ClapTrap::operator=(ClapTrap &copy)
 {
-    std::cout << "is here" << std::endl;
-    // ClapTrap temp("");
-    // this->ClapTrap(copy);
-    std::swap(*this, copy);
+    ft_swap(*this, copy);
     return (*this);
 }
 
@@ -81,5 +90,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap::~ClapTrap (void)
 {
-    std::cout << name << "is dead!" << std::endl;     
+    std::cout << this->name << "is dead!" << std::endl;     
 }
