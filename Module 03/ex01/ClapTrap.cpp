@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 20:46:29 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 14:49:04 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/25 18:25:53 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap::~ClapTrap (void)
 {
-    std::cout << this->name << "is dead!" << std::endl;     
+    std::cout << "ClapTrap " << this->name << "is dead!" << std::endl;     
 }

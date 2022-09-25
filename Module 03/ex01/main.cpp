@@ -1,6 +1,25 @@
-obj a("aem");
-obj b(a);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/25 17:53:10 by samajat           #+#    #+#             */
+/*   Updated: 2022/09/25 18:28:25 by samajat          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int a = 5;
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-c = a +b;//a.operator=(b);
+
+int main ()
+{
+    ScavTrap t("chalb");
+    t.attack("harold");
+    t.takeDamage(8);
+    t.takeDamage(8);
+    t.beRepaired(8);
+    t.beRepaired(8);
+}
