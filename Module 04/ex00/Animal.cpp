@@ -6,13 +6,15 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 20:52:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 21:05:58 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/25 21:25:18 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal(void):type(""){}
+Animal::Animal(void):{}
+
+Animal::Animal(std::string t):type(t){}
 
 Animal::Animal  (Animal &copy) : (copy.type)("")
 {
