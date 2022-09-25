@@ -6,16 +6,12 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 21:43:10 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 19:45:39 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/25 19:56:39 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-// ScavTrap::ScavTrap (std::string name): name(name), hitPoints(100), energyPoints(50), attackDamage(20)
-// {
-//     std::cout << "ScavTrap" << name << "is created!" << std::endl;
-// }
 //: ClapTrap(n, 100, 50, 20){}
 ScavTrap::ScavTrap (std::string n):ClapTrap(n, 100, 50, 20)
 {

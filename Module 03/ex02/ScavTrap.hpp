@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 20:46:28 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 15:11:14 by samajat          ###   ########.fr       */
+/*   Created: 2022/09/23 21:42:49 by samajat           #+#    #+#             */
+/*   Updated: 2022/09/25 19:30:47 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
 
 //Headers
-#include <iostream>
-#include <string>
-#include <algorithm>
+#include "ClapTrap.hpp"
 
-class ClapTrap
+class ScavTrap :public ClapTrap 
 {
     public:
-    ClapTrap(std::string name);
-    ClapTrap(ClapTrap &copy);
-    void     attack(const std::string& target);
+    ScavTrap (std::string n);
+    ScavTrap(ScavTrap &copy);
+    void     attack (const std::string& target);
     void     takeDamage(unsigned int amount);
     void     beRepaired(unsigned int amount);
-    ClapTrap& operator=(ClapTrap &copy);
-    ~ClapTrap(void);
-
-    private:
-    void ft_swap(ClapTrap &a, ClapTrap &b);
-    std::string  name;
-    unsigned int hitPoints;
-    unsigned int energyPoints;
-    unsigned int attackDamage;
+    ScavTrap &operator=(ScavTrap &copy);
+    void     guardGate();
+    void     ft_swap(ScavTrap &a, ScavTrap &b);
+    ~ScavTrap (void);
 };
 
 #endif

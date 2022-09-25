@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 20:46:29 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 14:58:30 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/25 19:55:39 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 
 ClapTrap::ClapTrap (std::string name): name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-    std::cout << "ClapTrap " << name << " is created!" << std::endl;
+    std::cout << "ClapTrap " << name << " is created!1" << std::endl;
+}
+ClapTrap::ClapTrap (std::string name, unsigned int hitPoints, unsigned int energyPoints, unsigned int attackDamage):name(name),hitPoints(hitPoints), energyPoints(energyPoints), attackDamage(attackDamage)
+{
+        std::cout << "ClapTrap " << name << " is created!2" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap &copy):name(copy.name), hitPoints(copy.hitPoints), energyPoints(copy.energyPoints), attackDamage(copy.attackDamage)
@@ -25,7 +29,6 @@ ClapTrap::ClapTrap(ClapTrap &copy):name(copy.name), hitPoints(copy.hitPoints), e
 void ClapTrap::ft_swap(ClapTrap &a, ClapTrap &b)
 {
     ClapTrap temp(b);
-
     std::swap(a.name, temp.name);
     std::swap(a.hitPoints, temp.hitPoints);
     std::swap(a.energyPoints, temp.energyPoints);
@@ -91,5 +94,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap::~ClapTrap (void)
 {
-    std::cout << this->name << "is dead!" << std::endl;     
+    std::cout << "ClapTrap " << this->name << " is dead!" << std::endl;     
 }
