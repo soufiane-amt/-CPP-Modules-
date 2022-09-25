@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 21:43:10 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 19:03:42 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/25 19:23:41 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,20 @@
 //     std::cout << "ScavTrap" << name << "is created!" << std::endl;
 // }
 //: ClapTrap(n, 100, 50, 20){}
-ScavTrap::ScavTrap (std::string n):ClapTrap(n)
+ScavTrap::ScavTrap (std::string n):ClapTrap(n, 1)
 {
     std::cout << "ScavTrap " << name << " default constructor is called!" << std::endl;
 }
 
 
 //testing assignemnent
-ScavTrap::ScavTrap(ScavTrap &copy):ClapTrap(copy.name)
+ScavTrap::ScavTrap(ScavTrap &copy):ClapTrap(copy.name, 1)
 {
     this->name = copy.name;
     this->hitPoints = copy.hitPoints;
     this->energyPoints = copy.energyPoints;
     this->attackDamage = copy.attackDamage;
+    std::cout << this->name <<" "<< this->hitPoints<<" "<< this->energyPoints << " "<<this->attackDamage<<"\n";
     std::cout << "ScavTrap " << name << "is copied!" << std::endl;
 }
 

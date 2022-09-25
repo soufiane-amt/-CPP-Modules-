@@ -6,13 +6,12 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 17:53:10 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 18:32:33 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/25 19:12:03 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
-
 
 int main ()
 {
@@ -21,5 +20,10 @@ int main ()
     t.takeDamage(8);
     t.takeDamage(8);
     t.beRepaired(8);
+    std::cout << "-----------\n";
     ScavTrap a = t;
+    a.attack("arnold");
+    a.takeDamage(8);
+    a.takeDamage(8);
+    a.beRepaired(8);
 }
