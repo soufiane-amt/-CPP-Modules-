@@ -6,16 +6,18 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 20:46:29 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/24 17:51:11 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/25 12:39:40 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 
+#include "ClapTrap.hpp"
+
 ClapTrap::ClapTrap (std::string name): name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-    std::cout << "ClapTrap " << this->name << " is created!" << std::endl;
+    std::cout << "ClapTrap " << name << " is created!" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap &copy)
@@ -26,11 +28,13 @@ ClapTrap::ClapTrap(ClapTrap &copy)
 
 ClapTrap ClapTrap::operator=(ClapTrap &copy)
 {
-    name         = copy.name;
-    hitPoints    = copy.hitPoints;
-    energyPoints = copy.energyPoints;
-    attackDamage = copy.attackDamage;
-    return (*this);
+    std::cout << "is here" << std::endl;
+    ClapTrap temp("");
+    temp.name         = copy.name;
+    temp.hitPoints    = copy.hitPoints;
+    temp.energyPoints = copy.energyPoints;
+    temp.attackDamage = copy.attackDamage;
+    return (temp);
 }
 
 void ClapTrap::attack (const std::string& target)
@@ -47,17 +51,18 @@ void ClapTrap::attack (const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
+    unsigned int lostP = 0;
     if(amount <= hitPoints)
     {
-        // attackDamage += amount;
         hitPoints -= amount;
+        lostP += amount;
     }
     else
     {
-        // attackDamage += hitPoints;
+        lostP = hitPoints;
         hitPoints  = 0;
     }
-    std::cout << "ClapTrap "<< name <<" has been attacked , getting "<< amount <<" points of damage!" << std::endl;
+    std::cout << "ClapTrap "<< name <<" has been attacked , getting "<< lostP <<" points of damage!" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
