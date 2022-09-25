@@ -6,12 +6,9 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 20:46:29 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 12:39:40 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/25 14:49:04 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "ClapTrap.hpp"
-
 
 #include "ClapTrap.hpp"
 
@@ -20,21 +17,24 @@ ClapTrap::ClapTrap (std::string name): name(name), hitPoints(10), energyPoints(1
     std::cout << "ClapTrap " << name << " is created!" << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap &copy)
+ClapTrap::ClapTrap(ClapTrap &copy):name(copy.name), hitPoints(copy.hitPoints), energyPoints(copy.energyPoints), attackDamage(copy.attackDamage)
 {
-    (*this) = copy;
-    std::cout << "ClapTrap " << name << " is copied!" << std::endl;
+    std::cout << "Copy constructor is called" << std::endl;
 }
 
-ClapTrap ClapTrap::operator=(ClapTrap &copy)
+void ClapTrap::ft_swap(ClapTrap &a, ClapTrap &b)
 {
-    std::cout << "is here" << std::endl;
-    ClapTrap temp("");
-    temp.name         = copy.name;
-    temp.hitPoints    = copy.hitPoints;
-    temp.energyPoints = copy.energyPoints;
-    temp.attackDamage = copy.attackDamage;
-    return (temp);
+    ClapTrap temp(b);
+    std::swap(a.name, temp.name);
+    std::swap(a.hitPoints, temp.hitPoints);
+    std::swap(a.energyPoints, temp.energyPoints);
+    std::swap(a.attackDamage, temp.attackDamage);
+}
+
+ClapTrap& ClapTrap::operator=(ClapTrap &copy)
+{
+    ft_swap(*this, copy);
+    return (*this);
 }
 
 void ClapTrap::attack (const std::string& target)
@@ -90,5 +90,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap::~ClapTrap (void)
 {
-    std::cout << name << "is dead!" << std::endl;     
+    std::cout << this->name << "is dead!" << std::endl;     
 }
