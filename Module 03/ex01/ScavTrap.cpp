@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 21:43:10 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 18:25:26 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/25 19:03:42 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,18 @@ ScavTrap::ScavTrap (std::string n):ClapTrap(n)
 
 
 //testing assignemnent
-ScavTrap::ScavTrap(ScavTrap &copy):ClapTrap("")
+ScavTrap::ScavTrap(ScavTrap &copy):ClapTrap(copy.name)
 {
-    (*this) = copy;
-    std::cout << "ScavTrap" << name << "is copied!" << std::endl;
+    this->name = copy.name;
+    this->hitPoints = copy.hitPoints;
+    this->energyPoints = copy.energyPoints;
+    this->attackDamage = copy.attackDamage;
+    std::cout << "ScavTrap " << name << "is copied!" << std::endl;
 }
 
 void ScavTrap::ft_swap(ScavTrap &a, ScavTrap &b)
 {
-    ScavTrap temp(b);
+    ScavTrap temp = b;
 
     std::swap(a.name, temp.name);
     std::swap(a.hitPoints, temp.hitPoints);
@@ -42,6 +45,7 @@ void ScavTrap::ft_swap(ScavTrap &a, ScavTrap &b)
 
 ScavTrap& ScavTrap::operator=(ScavTrap &copy)
 {
+    std::cout << "Entered\n";
     ft_swap(*this, copy);
     return (*this);
 }
