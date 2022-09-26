@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/29 22:36:24 by samajat           #+#    #+#              #
-#    Updated: 2022/08/30 17:12:55 by samajat          ###   ########.fr        #
+#    Updated: 2022/09/26 13:23:11 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = armors
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -rf
 
@@ -32,10 +32,10 @@ $(NAME) : $(OBJ)
 %.o : %.cpp $(HEADERS)
 	$(CC) $(FLAGS)  -c $< -o $@ -I 
 
-clean :
+clean:
 	$(RM) $(OBJ)
 
-flcean :clean
+fclean : clean
 	$(RM) $(NAME)
 
-re : flcean all
+re : fclean all
