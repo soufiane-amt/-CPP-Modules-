@@ -6,21 +6,11 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 17:21:42 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/06 15:47:55 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/26 15:53:26 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "replace.hpp"
-
-int	ft_strcmp(char *s1, char *s2)
-{
-	int i;
-
-	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
-		i++;
-	return (s1[i] - s2[i]);
-}
 
 std::string    replaceLine(std::ofstream *rFile, std::string buff, std::string s1, std::string s2)
 {
@@ -59,16 +49,17 @@ void    replaceText(std::ofstream *rFile, char **parm)
         std::cerr << "Failed to find the  file!" << std::endl;
         exit(1);
     }
-    if (file.eof())
-    {
-        std::cerr << "No lines in text." << std::endl;
-        return ;
-    }
+    createAReFile(parm[0], rFile);
     while (getline(file, buff))
     {
         text += buff;
         if(!file.eof())
             text += "\n";
+    }
+    if (!text.length())
+    {
+        std::cerr << "File Is Empty!" << std::endl;   
+        exit(1);
     }
     replaceLine(rFile, text, parm[1], parm[2]);
 }
@@ -78,7 +69,7 @@ void    createAReFile(std::string file, std::ofstream *rFile)
 {
     file += ".replace";
     rFile->open(file , std::ios::out);
-    if (!rFile)
+    if (!(*rFile))
     {
         std::cerr << "Failed to create the replace file!" << std::endl;
         exit (1);

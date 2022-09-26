@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 12:32:21 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/09 16:29:15 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/26 15:20:55 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ int main(int argc, char **argv)
         std::cerr << "The input don't contain the specified number of Args."<<std::endl;
         return (1);
     }
-    createAReFile(argv[1], &rFile);
     replaceText(&rFile, argv + 1);
 }
