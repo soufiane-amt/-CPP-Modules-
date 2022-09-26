@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:20:19 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/23 20:27:48 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/26 21:36:14 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,10 @@ void    MyPhoneBook::display_contacts_info(void)
     i = 0;
     while (i < this->length)
     {
-        std::cout << std::right << std::setw(10)<< std::to_string(i) << "|" 
-         <<std::right << std::setw(10)<< str_display(this->contacts[i].getFirstName())\
-         <<std::right << std::setw(10)<< str_display(this->contacts[i].getLastName())\
-         <<std::right << std::setw(10)<< str_display(this->contacts[i].getNickName())\
+        std::cout << std::right << std::setw(11)<< std::to_string(i) << "|" 
+          << std::setw(11)<< str_display(this->contacts[i].getFirstName())\
+          << std::setw(11)<< str_display(this->contacts[i].getLastName())\
+          << std::setw(11)<< str_display(this->contacts[i].getNickName())\
          << std::endl;
         i++;
     }
