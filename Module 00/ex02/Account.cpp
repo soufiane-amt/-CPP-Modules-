@@ -6,11 +6,13 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 19:01:15 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/22 19:29:57 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/23 15:33:07 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
+#include <iostream>
+#include <ctime>
 
 int	Account ::_nbAccounts = 0;
 int	Account ::_totalAmount = 0;
@@ -47,6 +49,8 @@ Account::Account(int initial_deposit)
     this->_displayTimestamp();
     this->_accountIndex = this->_nbAccounts;
     this->_amount = initial_deposit;
+    this->_nbDeposits = 0;
+    this->_nbWithdrawals = 0;
     this->_totalAmount += initial_deposit;
     std::cout << "index:" << this->_accountIndex << ";amount:" << this->_amount\
     << ";created"<< std::endl;
@@ -58,6 +62,8 @@ Account::Account(void)
     this->_displayTimestamp();
     this->_accountIndex = this->_nbAccounts;
     this->_amount = 0;
+    this->_nbDeposits = 0;
+    this->_nbWithdrawals = 0;
     std::cout << "index:" << this->_accountIndex << ";amount:" << this->_amount\
     << ";created"<< std::endl;
     this->_nbAccounts++;
