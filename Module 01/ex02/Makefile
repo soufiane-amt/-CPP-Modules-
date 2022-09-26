@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/29 13:44:36 by samajat           #+#    #+#              #
-#    Updated: 2022/09/05 17:06:30 by samajat          ###   ########.fr        #
+#    Updated: 2022/09/26 13:11:14 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -rf
 
-HEADER = Zombie.hpp
 
 FILES = main 
 
@@ -29,7 +28,7 @@ $(NAME) : all
 all: $(OBJ) 
 	$(CC) $(FLAGS) $(OBJ)  -o $(NAME) 
 
-%.o : %.cpp $(HEADER)
+%.o : %.cpp
 	$(CC) $(FLAGS) -c $< -o $@ 
 
 clean : 
