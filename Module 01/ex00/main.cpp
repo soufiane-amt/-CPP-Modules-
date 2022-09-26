@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:18:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/29 18:43:43 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/26 12:24:59 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 int main()
 {
-    // std::cout <<"hello";
+    Zombie *z = newZombie("Robot");
+    z->announce();
     randomChump("kool");
     randomChump("fg");
     randomChump("kofgdol");
     randomChump("koodl");
+    delete z;
 }
