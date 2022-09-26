@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:18:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/29 21:38:27 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/26 12:56:26 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ int main()
 {
     Zombie *zombies;
 
-    zombies = zombieHorde(50, "wa7s");
+    zombies = zombieHorde(10, "wa7s");
     delete []zombies;
 }
