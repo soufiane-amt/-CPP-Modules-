@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 13:51:14 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/29 18:38:12 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/26 12:31:29 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,21 @@
 
 //Headers
 #include <iostream>
+#include <string>
 
 //Classes
 
 class Zombie
 {
+    
     public:
+    Zombie(std::string name);
     void            announce(void);
-    void            setName(std::string n);
-    ~Zombie(); 
+    ~Zombie();
+    
     private:
     std::string name; 
+    void  setName(std::string n);
      
 }; 
  

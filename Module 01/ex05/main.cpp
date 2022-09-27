@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 10:52:46 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/12 12:12:22 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/26 18:19:32 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int main ()
 {
     Harl h;
-    h.complain("WRONGCOMMENT");
+    h.complain("ssdffsd");
     h.complain("INFO");
     h.complain("WARNING");
     h.complain("ERROR");
     h.complain("tkhrbi9a");
-}
+}0

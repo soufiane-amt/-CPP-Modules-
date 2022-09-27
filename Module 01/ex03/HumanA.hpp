@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 13:01:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/30 13:59:51 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/27 14:17:08 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 //Header
 #include <iostream>
 #include "Weapon.hpp"
-#include "HumanB.hpp"
 
 //Classes
 class HumanA

@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 17:25:39 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/12 12:14:25 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/26 15:58:43 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Harl::Harl(void)
     messages[2] = &Harl::info;
     messages[3] = &Harl::warning;
     messages[4] = &Harl::error;
-    // levels[0] = "WRONGCOMMENT";
     levels[0] = "DEBUG";
     levels[1] = "INFO";
     levels[2] = "WARNING";

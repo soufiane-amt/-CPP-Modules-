@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 17:05:04 by samajat           #+#    #+#             */
-/*   Updated: 2022/08/29 18:07:22 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/26 12:29:47 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 void randomChump( std::string name )
 {
-    Zombie zombie;
+    Zombie zombie(name);
 
-    zombie.setName(name);
     zombie.announce();
 }

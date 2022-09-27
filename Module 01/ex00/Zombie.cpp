@@ -6,11 +6,16 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 13:51:15 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/26 12:23:35 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/26 12:33:11 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+Zombie::Zombie(std::string name)
+{
+    setName(name);
+}
 
 void    Zombie::announce(void)
 {

@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/09 16:19:05 by samajat           #+#    #+#              #
-#    Updated: 2022/09/09 16:28:16 by samajat          ###   ########.fr        #
+#    Updated: 2022/09/27 14:26:34 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC  = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-FILES = main replaceUtils
+FILES = main replace
 
 HEADER = replace.hpp
 
