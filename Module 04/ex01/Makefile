@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/25 20:35:53 by samajat           #+#    #+#              #
-#    Updated: 2022/09/27 20:04:28 by samajat          ###   ########.fr        #
+#    Updated: 2022/09/28 10:49:01 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-FILES = Animal Cat Dog main
+FILES = Animal Brain Cat Dog main
 
 OBJ = $(FILES:=.o)
 
-HEADER = Animal.hpp Cat.hpp Dog.hpp
+HEADER = Animal.hpp Brain.hpp Cat.hpp Dog.hpp
 
 RM = rm -rf
 

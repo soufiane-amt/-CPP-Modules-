@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:01:55 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/27 20:37:26 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/28 10:45:42 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Dog::Dog(): Animal("Dog")
 {
+    brain = new Brain();
     std::cout << "Cat constructor is called" << std::endl;
 }
 

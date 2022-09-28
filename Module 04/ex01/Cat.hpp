@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 21:07:40 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/27 20:34:51 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/28 11:35:27 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 //Headers
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 //Class
 class Cat :public Animal
@@ -25,6 +26,9 @@ class Cat :public Animal
     Cat& operator=(Cat &copy);
     ~Cat (void);
     void    makeSound(void) const;
+    
+    private:
+    Brain* brain;
 };
 
 

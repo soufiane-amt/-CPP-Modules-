@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 21:07:38 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/27 20:37:15 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/28 11:10:51 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Cat::Cat(): Animal("Cat")
 {
+    brain = new Brain();
     std::cout << "Cat constructor is called" << std::endl;
 }
 
@@ -36,5 +37,6 @@ void Cat::makeSound(void) const
 
 Cat::~Cat(void)
 {
+    delete brain;
     std::cout << "Cat is destroyed!" << std::endl;
 }
