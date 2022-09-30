@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:01:55 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/28 10:45:42 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/30 14:45:50 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Dog::Dog(): Animal("Dog")
 {
     brain = new Brain();
-    std::cout << "Cat constructor is called" << std::endl;
+    std::cout << "Dog constructor is called" << std::endl;
 }
 
 Dog::Dog  (Dog &copy)
@@ -36,5 +36,6 @@ void Dog::makeSound(void) const
 
 Dog::~Dog(void)
 {
+    delete brain;
     std::cout << "Dog is destroyed!" << std::endl;
 }
