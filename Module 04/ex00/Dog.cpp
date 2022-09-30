@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:01:55 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/27 20:37:26 by samajat          ###   ########.fr       */
+/*   Updated: 2022/09/30 12:37:21 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Dog::Dog(): Animal("Dog")
 {
-    std::cout << "Cat constructor is called" << std::endl;
+    std::cout << "Dog constructor is called" << std::endl;
 }
 
 Dog::Dog  (Dog &copy)
