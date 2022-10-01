@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 17:56:28 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 18:03:26 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/01 19:54:35 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@
 class GradeTooLowException : public std::exception
 {
     public:
-    char *what();
+    GradeTooLowException (const char* message);
+    const char *what()const throw ();
+
+    private:
+    const char* message;
 };
 
 #endif
