@@ -6,16 +6,14 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:06 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 21:17:10 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/01 21:23:36 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Form.hpp"
 
-Form::Form()
-{
-}
+Form::Form(void){}
 
 Form::Form(std::string n, const int gToSign, const int gToExec): name(n), gradeToSign(gToSign), gradeToExec(gToExec)
 {
@@ -65,6 +63,13 @@ const int           Form::getGradeToExec(void)
 bool                Form::getIsSigned(void)
 {
     return (signedForm);
+}
+
+
+std::ostream& operator <<(std::ostream &COUT,  Form &f)
+{
+    COUT << f.getName() << ", Executor grade: " << f.getGradeToExec() << " , Signer grade: " << f.getGradeToSign() << ", Signed :" << f.getIsSigned() << std::endl;
+    return (COUT);
 }
 
 Form::~Form()

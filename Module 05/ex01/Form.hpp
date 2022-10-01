@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:07 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 21:11:21 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/01 21:19:33 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ public:
     ~Form();
 };
 
+std::ostream& operator <<(std::ostream &COUT, Form &f);
 
 
 #endif
