@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 15:39:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 19:26:50 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/01 20:19:44 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,6 @@ class Bureaucrat
     const std::string name;
     int              grade;
 };
+
+std::ostream& operator <<(std::ostream &COUT, Bureaucrat &b);
 #endif

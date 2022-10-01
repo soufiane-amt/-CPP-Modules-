@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 15:15:03 by samajat           #+#    #+#              #
-#    Updated: 2022/10/01 18:05:50 by samajat          ###   ########.fr        #
+#    Updated: 2022/10/01 20:18:54 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM = rm -rf
 
 HEADERS = Bureaucrat.hpp GradeTooHighException.hpp GradeTooLowException.hpp
 
-FILES = Bureaucrat main GradeTooHighException GradeTooLowException
+FILES = Bureaucrat GradeTooHighException GradeTooLowException main
 
 OBJ = $(FILES:=.o)
 
