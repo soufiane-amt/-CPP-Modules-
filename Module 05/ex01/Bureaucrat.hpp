@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 15:39:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 21:32:35 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/01 21:59:49 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <string>
 #include "GradeTooHighException.hpp"
 #include "GradeTooLowException.hpp"
+#include "Form.hpp"
 
 //Class
 class Bureaucrat
@@ -30,6 +31,7 @@ class Bureaucrat
     int               &getGrade(void);
     void              incrementGrade(void);
     void              decrementGrade(void);
+    void              signForm( Form &form);
     ~Bureaucrat();
 
     private:

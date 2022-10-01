@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:06 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 21:34:13 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/01 21:53:30 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void                 Form::beSigned(Bureaucrat& b)
     if (b.getGrade() >= this->getGradeToSign())
         this->signedForm = true;
     else
-        throw GradeTooLowException("The bureaucrat can't sign the form as he hasn't reached the appropriate grade");
+        throw GradeTooLowException("he/she hasn't reached the appropriate grade.");
 }
 
 Form::~Form()

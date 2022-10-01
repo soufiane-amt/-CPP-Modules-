@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 19:05:07 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 21:32:31 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/01 21:51:32 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,20 @@ void  Bureaucrat::decrementGrade(void)
         std::cerr << e.what() << std::endl;
         exit(1);
     }
+}
+
+void   Bureaucrat::signForm(Form &form)
+{
+    try
+    {
+        form.beSigned(*this);
+        std::cout << *this << " signed " << form << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << *this << " couldn’t sign " << form <<" because " << e.what() << std::endl;
+    }
+    
 }
 
 Bureaucrat::~Bureaucrat(void)
