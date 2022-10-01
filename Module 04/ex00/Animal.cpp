@@ -6,26 +6,26 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 20:52:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/30 12:37:33 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/01 13:20:08 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal(void)
+Animal::Animal()
 {
     std::cout << "Animal constructor is called!" << std::endl;
 }
 
 Animal::Animal(std::string t):type(t){}
 
-Animal::Animal  (Animal &copy)
+Animal::Animal  (const Animal &copy)
 {
     std::cout << "Animal Copy constructor is called" << std::endl;
     this->type = copy.type;
 }
 
-Animal& Animal::operator=(Animal &copy)
+Animal& Animal::operator=(const Animal &copy)
 {
     this->type = copy.type;
     return (*this);

@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/25 20:40:44 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 13:20:23 by samajat          ###   ########.fr       */
+/*   Created: 2022/09/27 20:51:28 by samajat           #+#    #+#             */
+/*   Updated: 2022/09/28 10:52:05 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL
-#define ANIMAL
+#include "Brain.hpp"
 
-//Headers
-#include <iostream>
-
-//Class
-class Animal
+Brain::Brain(void)
 {
-    public:
-    Animal();
-    Animal (const Animal &copy);
-    Animal& operator=(const Animal &copy);
-    std::string getType(void) const;
-    virtual void makeSound(void) const;
-    ~Animal (void);
-    
-    protected:
-    Animal(std::string t);
-    std::string type;
-};
+    std::cout << "Brain is created!" << std::endl;
+}
 
-#endif
+Brain::Brain(Brain &copy)
+{
+    (void)copy;
+}
+
+Brain& Brain::operator=(Brain &copy)
+{
+    (void)copy;
+    // this->idea = copy.idea;
+    return (*this);
+}
+
+Brain::~Brain()
+{
+    std::cout << "Brain is destroyed!" << std::endl;
+}

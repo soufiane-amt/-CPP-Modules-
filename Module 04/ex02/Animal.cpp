@@ -6,13 +6,13 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 20:52:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 13:22:20 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/01 13:36:32 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal(void)
+Animal::Animal()
 {
     std::cout << "Animal constructor is called!" << std::endl;
 }

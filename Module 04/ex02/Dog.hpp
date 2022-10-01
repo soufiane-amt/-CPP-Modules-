@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/25 21:25:58 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 13:21:13 by samajat          ###   ########.fr       */
+/*   Created: 2022/09/27 20:04:51 by samajat           #+#    #+#             */
+/*   Updated: 2022/09/28 11:35:29 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef DOG
+#define DOG
+
+//Headers
 #include "Animal.hpp"
 #include "Dog.hpp"
-#include "Cat.hpp"
-int main()
+#include "Brain.hpp"
+
+//Class
+class Dog :public Animal
 {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
-    Animal a = Animal();//Animal a(Animal())
-    return 0;
-}
+    public:
+    Dog  (void);
+    Dog  (Dog &copy);
+    Dog& operator=(Dog &copy);
+    ~Dog (void);
+    void    makeSound(void) const;
+
+    private:
+    Brain* brain;
+};
+
+
+#endif

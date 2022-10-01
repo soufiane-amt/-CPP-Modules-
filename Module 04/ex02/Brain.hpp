@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/25 20:40:44 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 13:20:23 by samajat          ###   ########.fr       */
+/*   Created: 2022/09/27 20:51:26 by samajat           #+#    #+#             */
+/*   Updated: 2022/09/28 11:10:41 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL
-#define ANIMAL
+#ifndef BRAIN
+#define BRAIN
 
-//Headers
-#include <iostream>
+//includes
+#include<iostream>
+#include <string>
 
-//Class
-class Animal
+class Brain
 {
-    public:
-    Animal();
-    Animal (const Animal &copy);
-    Animal& operator=(const Animal &copy);
-    std::string getType(void) const;
-    virtual void makeSound(void) const;
-    ~Animal (void);
-    
-    protected:
-    Animal(std::string t);
-    std::string type;
+private:
+    std::string idea[100];
+
+public:
+    Brain(void);
+    Brain(Brain &copy);
+    Brain& operator=(Brain &copy);
+    ~Brain();
 };
 
 #endif
