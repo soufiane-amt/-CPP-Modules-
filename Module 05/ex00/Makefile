@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 15:15:03 by samajat           #+#    #+#              #
-#    Updated: 2022/10/01 15:21:03 by samajat          ###   ########.fr        #
+#    Updated: 2022/10/01 18:05:50 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,9 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -rf
 
-HEADERS = Bureaucrat.hpp
+HEADERS = Bureaucrat.hpp GradeTooHighException.hpp GradeTooLowException.hpp
 
-FILES = Bureaucrat main
+FILES = Bureaucrat main GradeTooHighException GradeTooLowException
 
 OBJ = $(FILES:=.o)
 
@@ -29,7 +29,7 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
-%.o : %.cpp
+%.o : %.cpp $(HEADERS)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean :
