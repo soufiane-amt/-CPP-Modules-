@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:06 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 21:23:36 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/01 21:28:59 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,14 @@ std::ostream& operator <<(std::ostream &COUT,  Form &f)
 {
     COUT << f.getName() << ", Executor grade: " << f.getGradeToExec() << " , Signer grade: " << f.getGradeToSign() << ", Signed :" << f.getIsSigned() << std::endl;
     return (COUT);
+}
+
+void                 Form::beSigned(Bureaucrat& b)
+{
+    if (b.getGrade() >= this->getGradeToSign())
+        this->signedForm = true;
+    else
+        std::cout << "The bureaucrat can't sign the form as he hasn't reached the appropriate grade" << std::endl;
 }
 
 Form::~Form()

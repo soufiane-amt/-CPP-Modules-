@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:07 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 21:19:33 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/01 21:26:11 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ public:
     const int            getGradeToSign(void);
     const int            getGradeToExec(void);
     bool                 getIsSigned(void);
+    void                 beSigned(Bureaucrat& b);
     ~Form();
 };
 
