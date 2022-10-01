@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:06 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 21:11:38 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/01 21:17:10 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,15 @@ Form::Form(std::string n, const int gToSign, const int gToExec): name(n), gradeT
 {
     try
     {
-        if (gradeToSign < 1 || gradeToSign < 1)
-            throw GradeTooHighException("Very low grade Error!");
-        else if (gradeToSign > 150 || gradeToSign > 150)
-            throw GradeTooLowException("Very high grade Error!");
-        grade = gToSign;
+        if (gradeToSign < 1)
+            throw GradeTooHighException("Very high grade for form Bureaucrat signer Error!");
+        else if (gradeToSign > 150)
+            throw GradeTooLowException("Very low grade for form Bureaucrat signer Error!");
+        if (gradeToExec < 1)
+            throw GradeTooHighException("Very high grade for form Bureaucrat executor Error!");
+        else if (gradeToExec > 150)
+            throw GradeTooLowException("Very low grade for form Bureaucrat executor Error!");
+        signedForm = false;
     }
     catch(const std::exception& e)
     {
