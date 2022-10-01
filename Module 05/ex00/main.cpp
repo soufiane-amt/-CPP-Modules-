@@ -6,8 +6,13 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 19:04:58 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 19:05:02 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/01 19:55:58 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include 
+#include "Bureaucrat.hpp"
+
+int main ()
+{
+    
+} 
