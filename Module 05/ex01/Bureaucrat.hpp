@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 15:39:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 20:19:44 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/01 21:32:35 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 class Bureaucrat
 {
     public:
-    Bureaucrat(void);
     Bureaucrat(const std::string Name, int Grade);
     Bureaucrat(const Bureaucrat &copy);
     Bureaucrat &operator=(const Bureaucrat &copy);

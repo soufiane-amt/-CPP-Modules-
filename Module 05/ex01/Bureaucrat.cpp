@@ -6,16 +6,11 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 19:05:07 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 20:32:32 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/01 21:32:31 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
-Bureaucrat::Bureaucrat(void)
-{
-    
-}
 
 Bureaucrat::Bureaucrat(const std::string Name, int Grade): name(Name)
 {

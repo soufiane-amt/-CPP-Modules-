@@ -6,14 +6,13 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:06 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 21:28:59 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/01 21:34:13 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Form.hpp"
 
-Form::Form(void){}
 
 Form::Form(std::string n, const int gToSign, const int gToExec): name(n), gradeToSign(gToSign), gradeToExec(gToExec)
 {
@@ -43,19 +42,20 @@ Form::Form(const Form &form):name(form.name), gradeToSign(form.gradeToSign), gra
 Form& Form::operator=(const Form &form)
 {
     (void)form;
+    return (*this);
 }
 
-const std::string    Form::getName(void)
+const std::string&    Form::getName(void)
 {
     return (name);
 }
 
-const int           Form::getGradeToSign(void)
+const int&           Form::getGradeToSign(void)
 {
     return (gradeToSign);
 }
 
-const int           Form::getGradeToExec(void)
+const int&           Form::getGradeToExec(void)
 {
     return (gradeToExec);
 }
@@ -77,7 +77,7 @@ void                 Form::beSigned(Bureaucrat& b)
     if (b.getGrade() >= this->getGradeToSign())
         this->signedForm = true;
     else
-        std::cout << "The bureaucrat can't sign the form as he hasn't reached the appropriate grade" << std::endl;
+        throw GradeTooLowException("The bureaucrat can't sign the form as he hasn't reached the appropriate grade");
 }
 
 Form::~Form()
