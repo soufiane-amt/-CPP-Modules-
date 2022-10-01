@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 20:40:44 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 13:36:43 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/01 13:43:43 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Animal
     Animal  (const Animal &copy);
     Animal& operator=(const Animal &copy);
     std::string getType(void) const;
-    virtual void makeSound(void) const ;
+    virtual void makeSound(void) const = 0;
     virtual ~Animal (void);
     
     protected:

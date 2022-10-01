@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 21:25:58 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 13:35:27 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/01 15:01:43 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 int main()
 {
+    Dog c = Dog();
+    c.getType();
     Animal *animals[NObjects];
     for (int i = 0; i < NObjects; i++)
     {

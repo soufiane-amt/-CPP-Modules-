@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 20:52:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 13:36:32 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/01 13:44:15 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,6 @@ Animal& Animal::operator=(const Animal &copy)
 std::string Animal::getType(void) const
 {
     return (this->type);
-}
-void Animal::makeSound(void) const
-{
-    std::cout << "**Animal sound**" << std::endl;
 }
 
 Animal::~Animal(void)

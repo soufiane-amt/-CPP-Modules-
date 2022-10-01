@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:51:28 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/28 10:52:05 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/01 14:59:22 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ Brain::Brain(void)
     std::cout << "Brain is created!" << std::endl;
 }
 
-Brain::Brain(Brain &copy)
+Brain::Brain(const Brain &copy)
 {
     (void)copy;
 }
 
-Brain& Brain::operator=(Brain &copy)
+Brain& Brain::operator=(const Brain &copy)
 {
     (void)copy;
     // this->idea = copy.idea;
