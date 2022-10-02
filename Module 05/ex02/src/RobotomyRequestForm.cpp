@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 21:38:46 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/02 22:45:45 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/02 22:47:40 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const Robotomy &target)
 void RobotomyRequestForm::formAction(void)
 {
   
-  std::cout << "Hrrrrrrrrrrr, (drilling noises)" << std::endl;
+  std::cout << "\nHrrrrrrrrrrr, (drilling noises)" << std::endl;
   if (rand() % 2)
     std::cout << "informs that "+ name +" has been robotomized" <<std::endl;
   else

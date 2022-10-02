@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 19:04:58 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/02 22:42:41 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/02 22:47:53 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int main ()
     Bureaucrat a = Bureaucrat("b", 150);
     RobotomyRequestForm s("home");
 
-    s.formAction();
     a.signForm(s);
+    s.formAction();
 } 
