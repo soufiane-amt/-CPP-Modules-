@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:07 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/02 12:09:15 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/02 17:25:21 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
     Form(const std::string n, const int gToSign, const int gToExec);
     Form(const Form &form);
     Form& operator=(const Form &form);
-    const std::string&    getName(void);
+    virtual const std::string&    getName(void) = 0;
     const int&            getGradeToSign(void);
     const int&            getGradeToExec(void);
     bool                  getIsSigned(void);
