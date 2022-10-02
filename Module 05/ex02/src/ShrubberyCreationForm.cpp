@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 16:41:06 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/02 18:41:58 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/02 21:03:39 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,47 +16,49 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target):Form(target, 14
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const shrubbery &obj):Form(obj)
+ShrubberyCreationForm::ShrubberyCreationForm(const Shrubbery &obj):Form(obj)
 {
     
 }
 
-ShrubberyCreationForm& ShrubberyCreationForm::operator=(const shrubbery &target)
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const Shrubbery &target)
 {
-    (void)target;
+  (void)target;
+  return (*this);
 }
 
-std::string& ShrubberyCreationForm::generateTree(void)
+std::string ShrubberyCreationForm::generateTree(void)
 {
     std::string tree;
 
-    tree = "                                              .         ;  \
-                 .              .              ;%     ;;   \
-                   ,           ,                :;%  %;   \
-                    :         ;                   :;%;'     .,   \
-           ,.        %;     %;            ;        %;'    ,;\
-             ;       ;%;  %%;        ,     %;    ;%;    ,%'\
-              %;       %;%;      ,  ;       %;  ;%;   ,%;' \
-               ;%;      %;        ;%;        % ;%;  ,%;'\
-                `%;.     ;%;     %;'         `;%%;.%;'\
-                 `:;%.    ;%%. %@;        %; ;@%;%'\
-                    `:%;.  :;bd%;          %;@%;'\
-                      `@%:.  :;%.         ;@@%;'   \
-                        `@%.  `;@%.      ;@@%;         \
-                          `@%%. `@%%    ;@@%;        \
-                            ;@%. :@%%  %@@%;       \
-                              %@bd%%%bd%%:;     \
-                                #@%%%%%:;;\
-                                %@@%%%::;\
-                                %@@@%(o);  . '         \
-                                %@@@o%;:(.,'         \
-                            `.. %@@@o%::;         \
-                               `)@@@o%::;         \
-                                %@@(o)::;        \
-                               .%@@@@%::;         \
-                               ;%@@@@%::;.          \
-                              ;%@@@@%%:;;;. \
+    tree = "                                              .         ;  \n\
+                 .              .              ;%     ;;   \n\
+                   ,           ,                :;%  %;   \n\
+                    :         ;                   :;%;'     .,   \n\
+           ,.        %;     %;            ;        %;'    ,;\n\
+             ;       ;%;  %%;        ,     %;    ;%;    ,%'\n\
+              %;       %;%;      ,  ;       %;  ;%;   ,%;' \n\
+               ;%;      %;        ;%;        % ;%;  ,%;'\n\
+                `%;.     ;%;     %;'         `;%%;.%;'\n\
+                 `:;%.    ;%%. %@;        %; ;@%;%'\n\
+                    `:%;.  :;bd%;          %;@%;'\n\
+                      `@%:.  :;%.         ;@@%;'   \n\
+                        `@%.  `;@%.      ;@@%;         \n\
+                          `@%%. `@%%    ;@@%;        \n\
+                            ;@%. :@%%  %@@%;       \n\
+                              %@bd%%%bd%%:;     \n\
+                                #@%%%%%:;;\n\
+                                %@@%%%::;\n\
+                                %@@@%(o);  . '         \n\
+                                %@@@o%;:(.,'         \n\
+                            `.. %@@@o%::;         \n\
+                               `)@@@o%::;         \n\
+                                %@@(o)::;        \n\
+                               .%@@@@%::;         \n\
+                               ;%@@@@%::;.          \n\
+                              ;%@@@@%%:;;;. \n\
                           ...;%@@@@@%%:;;;;,..    \n\n\n";
+  return (tree);
 }
 
 void ShrubberyCreationForm::createTargetTreesFile(void)
@@ -71,11 +73,14 @@ void ShrubberyCreationForm::createTargetTreesFile(void)
         return;
     }
     for (int i = 0; i < 5; i++)
-    {
         targetFile << generateTree();
-    }
 }
+//    virtual const std::string&    getName(void) = 0;
 
+const std::string& ShrubberyCreationForm::getName(void)
+{
+  return (name);
+}
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {

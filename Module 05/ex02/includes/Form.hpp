@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:07 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/02 17:25:21 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/02 20:56:03 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ class Form
 {
 protected:
     const std::string name;
-    const int        gradeToSign;
-    const int        gradeToExec;
-    bool             signedForm;
+    const int         gradeToSign;
+    const int         gradeToExec;
+    bool              signedForm;
     
 public:
     Form(const std::string n, const int gToSign, const int gToExec);

@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 15:10:38 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/02 18:41:48 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/02 20:59:35 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,19 @@
 #include <fstream>
 #include <string>
 
-typedef class ShrubberyCreationForm : public Form
+class ShrubberyCreationForm : public Form
 {
 public:
-    typedef ShrubberyCreationForm shrubbery;
-    ShrubberyCreationForm(std::string const target);
-    ShrubberyCreationForm(const shrubbery &obj);
-    ShrubberyCreationForm &operator=(const shrubbery &target);
+    typedef ShrubberyCreationForm Shrubbery;
+    ShrubberyCreationForm(const std::string target);
+    ShrubberyCreationForm(const Shrubbery &obj);
+    ShrubberyCreationForm &operator=(const Shrubbery &target);
     ~ShrubberyCreationForm();
     void createTargetTreesFile(void);
+    const std::string&    getName(void);
 
 private:
-    std::string& generateTree(void);
+    std::string generateTree(void);
 };
 
 
