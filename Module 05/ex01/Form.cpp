@@ -6,12 +6,13 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:06 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 21:53:30 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/02 12:06:06 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 
 Form::Form(std::string n, const int gToSign, const int gToExec): name(n), gradeToSign(gToSign), gradeToExec(gToExec)
@@ -68,13 +69,13 @@ bool                Form::getIsSigned(void)
 
 std::ostream& operator <<(std::ostream &COUT,  Form &f)
 {
-    COUT << f.getName() << ", Executor grade: " << f.getGradeToExec() << " , Signer grade: " << f.getGradeToSign() << ", Signed :" << f.getIsSigned() << std::endl;
+    COUT << f.getName() << ", Executor grade: " << f.getGradeToExec() << " , Signer grade: " << f.getGradeToSign() << ", Signed :" << f.getIsSigned();
     return (COUT);
 }
 
-void                 Form::beSigned(Bureaucrat& b)
+void                 Form::beSigned(Bureaucrat & b)
 {
-    if (b.getGrade() >= this->getGradeToSign())
+    if (b.getGrade() <= this->getGradeToSign())
         this->signedForm = true;
     else
         throw GradeTooLowException("he/she hasn't reached the appropriate grade.");

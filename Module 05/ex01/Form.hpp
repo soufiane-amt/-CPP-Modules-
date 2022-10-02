@@ -6,14 +6,20 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:07 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 21:57:01 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/02 11:44:39 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM
 #define FORM
 
-#include "Bureaucrat.hpp"
+// #include "Bureaucrat.hpp"
+#include <iostream>
+#include <string>
+#include "GradeTooHighException.hpp"
+#include "GradeTooLowException.hpp"
+
+class Bureaucrat;
 
 class Form
 {
