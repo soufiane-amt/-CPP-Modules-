@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:06 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/03 12:42:18 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/03 13:02:38 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ Form& Form::operator=(const Form &form)
     return (*this);
 }
 
-const std::string&    Form::getName(void)
+const std::string&    Form::getName(void) const
 {
     return (name);
 }
 
-const int&           Form::getGradeToSign(void)
+const int&           Form::getGradeToSign(void) const
 {
     return (gradeToSign);
 }
@@ -61,19 +61,19 @@ const int&           Form::getGradeToExec(void) const
     return (gradeToExec);
 }
 
-bool                Form::getIsSigned(void)
+bool                Form::getIsSigned(void) const
 {
     return (signedForm);
 }
 
 
-std::ostream& operator <<(std::ostream &COUT,  Form &f)
+std::ostream& operator <<(std::ostream &COUT,  Form const &f)
 {
     COUT << f.getName() << ", Executor grade: " << f.getGradeToExec() << " , Signer grade: " << f.getGradeToSign() << ", Signed :" << f.getIsSigned();
     return (COUT);
 }
 
-void                 Form::beSigned(Bureaucrat & b)
+void                 Form::beSigned(Bureaucrat & b) const
 {
     if (b.getGrade() <= this->getGradeToSign())
         this->signedForm = true;
@@ -85,7 +85,7 @@ void    Form::execute(Bureaucrat const & executor) const
 {
     if (!this->signedForm)
     {
-        std::cout << "The form is not signed" << std::endl;
+        std::cout << "The form is not signed." << std::endl;
         return;
     }
     if (executor.getGrade() > this->getGradeToExec())
