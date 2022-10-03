@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 15:10:38 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/02 21:43:30 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/03 13:18:58 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
     ShrubberyCreationForm &operator=(const Shrubbery &target);
     ~ShrubberyCreationForm();
     void formAction(void);
-    const std::string&    getName(void);
+    const std::string&    getName(void) const;
 
 private:
     std::string generateTree(void);

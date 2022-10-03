@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 19:05:07 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/03 12:57:08 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/03 13:21:54 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,12 @@ void  Bureaucrat::decrementGrade(void)
     }
 }
 
-void   Bureaucrat::signForm(Form const &form)
+void   Bureaucrat::signForm(Form &form)
 {
     try
     {
         form.beSigned(*this);
-        std::cout << *this << " signed " << form;
+        std::cout << *this << " signed " << form <<std::endl;
     }
     catch(const std::exception& e)
     {
@@ -100,14 +100,19 @@ void   Bureaucrat::signForm(Form const &form)
 
 void    Bureaucrat::executeForm(Form const & form)
 {
+    if (!form.getIsSigned())
+    {
+        std::cout << "The form is not signed." << std::endl;
+        return;
+    }
     try
     {
         form.execute(*this);
-        std::cout << *this << " executed " << form;
+        std::cout << *this << " executed " << form << std::endl;
     }
     catch(const std::exception& e)
     {
-        std::cout << *this << " couldn’t sign " << form <<" because " << e.what() << std::endl;
+        std::cout << *this << " couldn’t execute " << form <<" because " << e.what() << std::endl;
     }
 }
 

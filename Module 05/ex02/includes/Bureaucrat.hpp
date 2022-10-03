@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 15:39:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/03 12:59:19 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/03 13:07:45 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Bureaucrat
     const  int        &getGrade(void) const;
     void              incrementGrade(void);
     void              decrementGrade(void);
-    void              signForm( Form const &form);
+    void              signForm( Form &form);
     void              executeForm(Form const & form);
     ~Bureaucrat();
 

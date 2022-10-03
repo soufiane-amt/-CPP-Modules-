@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 21:38:46 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/03 12:02:51 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/03 13:19:20 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void RobotomyRequestForm::formAction(void)
       std::cout << "The robotomy failed." <<std::endl;
 }
 
-const std::string& RobotomyRequestForm::getName(void)
+const std::string& RobotomyRequestForm::getName(void)  const
 {
   return (name);
 }
