@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:06 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/02 22:56:15 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/03 12:42:18 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ const int&           Form::getGradeToSign(void)
     return (gradeToSign);
 }
 
-const int&           Form::getGradeToExec(void)
+const int&           Form::getGradeToExec(void) const
 {
     return (gradeToExec);
 }
@@ -78,7 +78,18 @@ void                 Form::beSigned(Bureaucrat & b)
     if (b.getGrade() <= this->getGradeToSign())
         this->signedForm = true;
     else
-        throw GradeTooLowException("he/she hasn't reached the appropriate grade.");
+        throw GradeTooLowException("he/she hasn't reached the appropriate grade to sign.");
+}
+
+void    Form::execute(Bureaucrat const & executor) const
+{
+    if (!this->signedForm)
+    {
+        std::cout << "The form is not signed" << std::endl;
+        return;
+    }
+    if (executor.getGrade() > this->getGradeToExec())
+        throw GradeTooLowException("he/she hasn't reached the appropriate grade to exceute.");
 }
 
 Form::~Form()

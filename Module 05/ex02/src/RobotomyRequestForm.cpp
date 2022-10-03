@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 21:38:46 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/02 22:47:40 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/03 12:02:51 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target):Form(target, 72, 45)
 {
+  srand(time(NULL));
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const Robotomy &obj):Form(obj)

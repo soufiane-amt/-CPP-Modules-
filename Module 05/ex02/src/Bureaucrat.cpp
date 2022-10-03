@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 19:05:07 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/02 12:05:41 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/03 12:40:35 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ const std::string& Bureaucrat::getName(void)
     return (name);
 }
 
-int&  Bureaucrat::getGrade(void)
+const int&  Bureaucrat::getGrade(void) const 
 {
     return (grade);
 }
