@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:41:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/03 14:42:21 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/03 15:32:42 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 
+class Form;
 class Intern
 {
 private:
@@ -24,7 +25,7 @@ public:
     Intern();
     Intern(const Intern &obj);
     Intern& operator=(const Intern &obj);
-    void    makeForm(std::string formType, std::string target);
+    Form* makeForm(std::string formType, std::string target);
     ~Intern();
 };
 
