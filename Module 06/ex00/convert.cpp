@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/07 16:34:13 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/07 16:41:24 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ bool    Convert::isInt(void)
 {
     for (size_t i = 0; i < value.length(); i++)
     {
-        if (isdigit(value[i]))
+        if (ft_isdigit(value[i]))
             return (false);
     }
     return (true);
@@ -41,12 +41,12 @@ bool    Convert::isDouble(void)
 {
     int i = 0;
 
-    while (value[i] && isdigit(value[i]))
+    while (value[i] && ft_isdigit(value[i]))
         i++;
     if (value[i] != '.')
         return (false);
     i++;
-    while (value[i] && isdigit(value[i]))
+    while (value[i] && ft_isdigit(value[i]))
         i++;
     if (value[i])
         return (false);
@@ -57,12 +57,12 @@ bool    Convert::isFloat(void)
 {
     int i = 0;
 
-    while (value[i] && isdigit(value[i]))
+    while (value[i] && ft_isdigit(value[i]))
         i++;
     if (value[i] != '.')
         return (false);
     i++;
-    while (value[i] && isdigit(value[i]))
+    while (value[i] && ft_isdigit(value[i]))
         i++;
     if (value[i] != 'f' || value[i] != 'F')
         return (false);
@@ -74,11 +74,19 @@ bool    Convert::isFloat(void)
 
 bool    Convert::isChar(void)
 {
-
-    return (false);    
+    if (value.length() != 1)
+        return (false);
+    return (true);    
 }
 
 void Convert::displayConversions(void)
 {
-    
+    //check if null
+}
+
+int ft_isdigit(char c)
+{
+    if (c >= '0' && c <= '9')
+        return (1);
+    return (0);
 }
