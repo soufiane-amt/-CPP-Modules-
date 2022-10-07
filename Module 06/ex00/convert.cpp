@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/07 18:14:56 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/07 18:19:37 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,23 +96,27 @@ bool    Convert::isChar(const std::string value)
 void    Convert::toInt(void)
 {
     int               castedValue;
-    std::stringstream converter(value);
 
     std::cout << "int: ";
     if (isInt(value))
         std::cout << castedValue << std::endl;
     else
-        std::cout << "" << std::endl;
+        std::cout << "impossible." << std::endl;
 }
+
 void    Convert::toDouble(void)
 {
     double            castedValue;
     std::stringstream converter(value);
 
-    if (isInt(value))
-         converter >> castedValue;        
-    std::cout << "double: " << value << std::endl;
+    std::cout << "double: ";
+    if (isDouble(value))
+    {
+         converter >> castedValue;   
+    }     
+    std::cout << "impossible." << std::endl;
 }
+
 void    Convert::toFloat(void)
 {
     

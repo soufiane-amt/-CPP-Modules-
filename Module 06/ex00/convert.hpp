@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:21 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/07 18:13:10 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/07 18:16:20 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Convert
 
     public:
     Convert  (void);
-    Convert  (const char* input);
+    Convert  (const std::string input);
     Convert  (Convert const &copy);
     Convert& operator=(Convert const &copy);
     void     displayConversions(void);
