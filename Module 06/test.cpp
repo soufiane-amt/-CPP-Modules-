@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:46:24 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/07 16:30:26 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/07 16:59:55 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,11 @@ int main (int argc, char **argv)
     //     std::cout << "cool\n";
     // else
     //     std::cout << "not cool\n";
-    std::string s = "hello";
-    std::cout << s << std::endl;
-    std::cout << s << std::endl;
+    std::string s = NULL;
+    if (s == NULL)
+        std::cout << "Empty";
+    // std::cout << s << std::endl;
+    // std::cout << s << std::endl;
     // std::string o = "op";
     // char a = (char;
 }

@@ -6,12 +6,18 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/07 16:42:13 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/07 17:08:26 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "convert.hpp"
 
+int ft_isprint (char c)
+{
+    if (c >= 32 && c <= 127)
+        return (true);
+    return (false);
+}
 int ft_isdigit(char c)
 {
     if (c >= '0' && c <= '9')
@@ -19,7 +25,7 @@ int ft_isdigit(char c)
     return (0);
 }
 
-Convert::Convert(void): value(0)
+Convert::Convert(void): value("")
 {
 }
 
@@ -35,7 +41,7 @@ Convert& Convert::operator=(Convert const &copy)
 {
 }
 
-bool    Convert::isInt(void)
+bool    Convert::isInt(const std::string value)
 {
     for (size_t i = 0; i < value.length(); i++)
     {
@@ -44,7 +50,7 @@ bool    Convert::isInt(void)
     }
     return (true);
 }
-bool    Convert::isDouble(void)
+bool    Convert::isDouble(const std::string value)
 {
     int i = 0;
 
@@ -60,7 +66,7 @@ bool    Convert::isDouble(void)
     return (true);    
 }
 
-bool    Convert::isFloat(void)
+bool    Convert::isFloat(const std::string value)
 {
     int i = 0;
 
@@ -79,14 +85,40 @@ bool    Convert::isFloat(void)
     return (true);    
 }
 
-bool    Convert::isChar(void)
+bool    Convert::isChar(const std::string value)
 {
     if (value.length() != 1)
         return (false);
     return (true);    
 }
 
+void    Convert::toInt(void)
+{
+    if (isChar())
+        
+    std::cout << "int: " << value << std::endl;
+}
+void    Convert::toDouble(void)
+{
+    std::cout << "double: " << value << std::endl;
+}
+void    Convert::toFloat(void)
+{
+    
+}
+void    Convert::toChar(void)
+{
+    
+}
+
 void Convert::displayConversions(void)
 {
     //check if null
+    if (value.empty())
+    {
+        std::cerr << "The value is null!" << std::endl;
+        return;
+    }
+    if (value.isInt())
+        
 }
