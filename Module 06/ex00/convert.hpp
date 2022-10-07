@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:21 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/07 16:06:24 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/07 16:47:47 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ class Convert
     bool    isDouble(void);
     bool    isFloat(void);
     bool    isChar(void);
+    void    toInt(void);
+    void    toDouble(void);
+    void    toFloat(void);
+    void    toChar(void);
 
     public:
     Convert  (void);

@@ -6,11 +6,18 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/07 16:41:24 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/07 16:42:13 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "convert.hpp"
+
+int ft_isdigit(char c)
+{
+    if (c >= '0' && c <= '9')
+        return (1);
+    return (0);
+}
 
 Convert::Convert(void): value(0)
 {
@@ -82,11 +89,4 @@ bool    Convert::isChar(void)
 void Convert::displayConversions(void)
 {
     //check if null
-}
-
-int ft_isdigit(char c)
-{
-    if (c >= '0' && c <= '9')
-        return (1);
-    return (0);
 }
