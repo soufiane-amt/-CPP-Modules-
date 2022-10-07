@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/07 17:08:26 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/07 18:14:56 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Convert::Convert(void): value("")
 {
 }
 
-Convert::Convert(std::string input):value(input)
+Convert::Convert(const std::string input):value(input)
 {
 }
 
@@ -50,6 +50,7 @@ bool    Convert::isInt(const std::string value)
     }
     return (true);
 }
+
 bool    Convert::isDouble(const std::string value)
 {
     int i = 0;
@@ -94,12 +95,22 @@ bool    Convert::isChar(const std::string value)
 
 void    Convert::toInt(void)
 {
-    if (isChar())
-        
-    std::cout << "int: " << value << std::endl;
+    int               castedValue;
+    std::stringstream converter(value);
+
+    std::cout << "int: ";
+    if (isInt(value))
+        std::cout << castedValue << std::endl;
+    else
+        std::cout << "" << std::endl;
 }
 void    Convert::toDouble(void)
 {
+    double            castedValue;
+    std::stringstream converter(value);
+
+    if (isInt(value))
+         converter >> castedValue;        
     std::cout << "double: " << value << std::endl;
 }
 void    Convert::toFloat(void)
@@ -119,6 +130,6 @@ void Convert::displayConversions(void)
         std::cerr << "The value is null!" << std::endl;
         return;
     }
-    if (value.isInt())
+    // if (value.isInt())
         
 }
