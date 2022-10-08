@@ -93,6 +93,13 @@ bool    Convert::isChar(const std::string value)
     return (true);    
 }
 
+bool    Convert::isStr(const std::string value)
+{
+    if (isInt(value) || isDouble(value) || isFloat(value) || isChar(value))
+        return (true);
+    return (false);    
+}
+
 void    Convert::toInt(void)
 {
     int               castedValue;

@@ -25,6 +25,7 @@ class Convert
     static bool    isDouble(const std::string value);
     static bool    isFloat(const std::string value);
     static bool    isChar(const std::string value);
+    static bool    isStr(const std::string value);
     void    toInt(void);
     void    toDouble(void);
     void    toFloat(void);
