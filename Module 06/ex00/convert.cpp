@@ -96,8 +96,8 @@ bool    Convert::isChar(const std::string value)
 bool    Convert::isStr(const std::string value)
 {
     if (isInt(value) || isDouble(value) || isFloat(value) || isChar(value))
-        return (true);
-    return (false);
+        return (false);
+    return (true);
 }
 
 void    Convert::toInt(void)
@@ -164,7 +164,19 @@ void    Convert::toFloat(void)
 }
 void    Convert::toChar(void)
 {
-    
+    char            castedValue;
+    std::stringstream s(value);
+    char              *valueInChar;
+
+    s >> valueInChar;
+    std::cout << "char: ";
+    if (isChar(value) && !ft_isdigit(value))
+        castedValue = static_cast<char>(value[0]);
+    else if (!isStr(value))
+        castedValue = static_cast<char>(atoi(valueInChar));
+    else
+        std::cout << "impossible." << std::endl;
+    std::cout << "'"castedValue + "'"<< std::endl;
 }
 
 void Convert::displayConversions(void)
