@@ -125,10 +125,12 @@ void    Convert::toDouble(void)
 
     s >> valueInChar;
     std::cout << "double: ";
-    if (value == "nan" || value == "+inf" || value == "-inf")
-        castedValue = static_cast<float>(atof(valueInChar));
-    else if (value == "nan" || value == "+inf" || value == "-inf")
-        castedValue = static_cast<float>(atof(valueInChar));
+    if   (value == "nan" || value == "nanf")
+        castedValue = static_cast<double>(atof("nan"));
+    else if (value == "+inf" || value == "+inff")
+        castedValue = static_cast<double>(atof("+inf"));
+    else if (value == "-inf" || value == "-inff")
+        castedValue = static_cast<double>(atof("-inf"));
     else if (isStr(value))
         std::cout << "impossible." << std::endl;
     else if (isChar(value) && !ft_isdigit(value))
@@ -146,13 +148,12 @@ void    Convert::toFloat(void)
 
     s >> valueInChar;
     std::cout << "double: ";
-    if (value == "nan" || value == "nanf")
-    {
-        std::cout << static_cast<float>(atof("nan")) << "f" <<  std::endl;
-        return;
-    }
-    if (value == "nan" || value == "+inf" || value == "-inf")
-        castedValue = static_cast<float>(atof(valueInChar));
+    if   (value == "nan" || value == "nanf")
+        castedValue = static_cast<float>(atof("nan"));
+    else if (value == "+inf" || value == "+inff")
+        castedValue = static_cast<float>(atof("+inf"));
+    else if (value == "-inf" || value == "-inff")
+        castedValue = static_cast<float>(atof("-inf"));
     else if (isStr(value))
         std::cout << "impossible." << std::endl;
     else if (isChar(value) && !ft_isdigit(value))
