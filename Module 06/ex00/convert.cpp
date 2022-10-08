@@ -110,13 +110,9 @@ void    Convert::toInt(void)
     std::cout << "int: ";
     if (isStr(value))
         std::cout << "impossible." << std::endl;
-    else if (isChar(value))
+    else if (isChar(value) && !ft_isdigit(value))
         castedValue = static_cast<int>(value[0]);
-    else if (isDouble(value))
-        castedValue = atoi(valueInChar);
-    else if (isFloat(value))
-        castedValue = atoi(valueInChar);
-    else if (isInt(value))
+    else
         castedValue = atoi(valueInChar);
     std::cout << castedValue << std::endl;
 }
@@ -131,15 +127,13 @@ void    Convert::toDouble(void)
     std::cout << "double: ";
     if (value == "nan" || value == "+inf" || value == "-inf")
         castedValue = static_cast<float>(atof(valueInChar));
+    else if (value == "nan" || value == "+inf" || value == "-inf")
+        castedValue = static_cast<float>(atof(valueInChar));
     else if (isStr(value))
         std::cout << "impossible." << std::endl;
-    else if (isChar(value))
+    else if (isChar(value) && !ft_isdigit(value))
         castedValue = static_cast<double>(value[0]);
-    else if (isDouble(value))
-        castedValue = atof(valueInChar);
-    else if (isFloat(value))
-        castedValue = atof(valueInChar);
-    else if (isInt(value))
+    else
         castedValue = atof(valueInChar);
     std::cout << castedValue << std::endl;
 }
@@ -161,14 +155,10 @@ void    Convert::toFloat(void)
         castedValue = static_cast<float>(atof(valueInChar));
     else if (isStr(value))
         std::cout << "impossible." << std::endl;
-    else if (isChar(value))
+    else if (isChar(value) && !ft_isdigit(value))
         castedValue = static_cast<float>(value[0]);
-    else if (isDouble(value))
-        castedValue = static_cast<float>atof(valueInChar);
-    else if (isFloat(value))
-        castedValue = static_cast<float>atof(valueInChar);
-    else if (isInt(value))
-        castedValue = static_cast<float>atof(valueInChar);
+    else
+        castedValue = atof(valueInChar);
     std::cout << castedValue + 'f'<< std::endl;
 }
 void    Convert::toChar(void)

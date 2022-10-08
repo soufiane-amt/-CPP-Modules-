@@ -30,8 +30,8 @@ int main (int argc, char **argv)
     (void)argc;
     std::string s = "124.5";
     std::stringstream l("-inff");
-    float x  = 3.4f;
-    // x = atof("nany");
+    int x;
+    x = atoi("n");
     // l >> x;
     // x = static_cast<float>(x);
     std::cout << (x) <<std::endl;
