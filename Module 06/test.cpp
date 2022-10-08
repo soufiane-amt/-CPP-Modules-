@@ -28,20 +28,8 @@
 int main (int argc, char **argv)
 {
     (void)argc;
-    // std::stringstream ss;
-    // // std::string const a = "12.01";
-    // ss << "5.06";
-    // int s;
-    // ss >> s;
-    // if (ss)
-    //     std::cout << "cool\n";
-    // else
-    //     std::cout << "not cool\n";
-    std::string s = NULL;
-    if (s == NULL)
-        std::cout << "Empty";
-    // std::cout << s << std::endl;
-    // std::cout << s << std::endl;
-    // std::string o = "op";
-    // char a = (char;
+    std::string s = "124.5";
+    // int a  = static_cast<int>(s);
+    double x = atoi(s.c_str());
+    std::cout << x <<std::endl;
 }

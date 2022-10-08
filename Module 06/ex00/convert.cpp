@@ -97,18 +97,27 @@ bool    Convert::isStr(const std::string value)
 {
     if (isInt(value) || isDouble(value) || isFloat(value) || isChar(value))
         return (true);
-    return (false);    
+    return (false);
 }
 
 void    Convert::toInt(void)
 {
     int               castedValue;
+    stringstream      s(value);
+    char              *valueInChar;
 
+    s >> valueInChar;
     std::cout << "int: ";
-    if (isInt(value))
-        std::cout << castedValue << std::endl;
-    else
+    if (isStr(value))
         std::cout << "impossible." << std::endl;
+    else if (isChar(value))
+        castedValue = static_cast<int>(value[0]);
+    else if (isDouble(value))
+        castedValue = atoi(valueInChar);
+    else if (isFloat(value))
+        castedValue = atoi(valueInChar);
+    else if (isInt(value))
+        castedValue = static_cast<int>(value[0]);
 }
 
 void    Convert::toDouble(void)
