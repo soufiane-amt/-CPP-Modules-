@@ -187,6 +187,8 @@ void Convert::displayConversions(void)
         std::cerr << "The value is null!" << std::endl;
         return;
     }
-    // if (value.isInt())
-        
+    toInt(void);
+    toDouble(void);
+    toFloat(void);
+    toChar(void);
 }
