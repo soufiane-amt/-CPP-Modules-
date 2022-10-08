@@ -129,8 +129,8 @@ void    Convert::toDouble(void)
 
     s >> valueInChar;
     std::cout << "double: ";
-    if (castedValue == "nan" || castedValue == "nanf")
-        castedValue = static_cast<float>(atof("nan"));
+    if (value == "nan" || value == "+inf" || value == "-inf")
+        castedValue = static_cast<float>(atof(valueInChar));
     else if (isStr(value))
         std::cout << "impossible." << std::endl;
     else if (isChar(value))
@@ -152,12 +152,14 @@ void    Convert::toFloat(void)
 
     s >> valueInChar;
     std::cout << "double: ";
-    if (castedValue == "nan" || castedValue == "nanf")
+    if (value == "nan" || value == "nanf")
     {
-        std::cout << "nanf" << std::endl;
+        std::cout << static_cast<float>(atof("nan")) << "f" <<  std::endl;
         return;
     }
-    if (isStr(value))
+    if (value == "nan" || value == "+inf" || value == "-inf")
+        castedValue = static_cast<float>(atof(valueInChar));
+    else if (isStr(value))
         std::cout << "impossible." << std::endl;
     else if (isChar(value))
         castedValue = static_cast<float>(value[0]);
@@ -167,7 +169,7 @@ void    Convert::toFloat(void)
         castedValue = static_cast<float>atof(valueInChar);
     else if (isInt(value))
         castedValue = static_cast<float>atof(valueInChar);
-    std::cout << castedValue << std::endl;
+    std::cout << castedValue + 'f'<< std::endl;
 }
 void    Convert::toChar(void)
 {
