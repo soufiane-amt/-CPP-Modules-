@@ -118,24 +118,49 @@ void    Convert::toInt(void)
         castedValue = atoi(valueInChar);
     else if (isInt(value))
         castedValue = atoi(valueInChar);
+    std::cout << castedValue << std::endl;
 }
 
 void    Convert::toDouble(void)
 {
     double            castedValue;
-    std::stringstream converter(value);
+    std::stringstream s(value);
+    char              *valueInChar;
 
+    s >> valueInChar;
     std::cout << "double: ";
-    if (isDouble(value))
-    {
-         converter >> castedValue;   
-    }     
-    std::cout << "impossible." << std::endl;
+    if (isStr(value))
+        std::cout << "impossible." << std::endl;
+    else if (isChar(value))
+        castedValue = static_cast<double>(value[0]);
+    else if (isDouble(value))
+        castedValue = atof(valueInChar);
+    else if (isFloat(value))
+        castedValue = atof(valueInChar);
+    else if (isInt(value))
+        castedValue = atof(valueInChar);
+    std::cout << castedValue << std::endl;
 }
 
 void    Convert::toFloat(void)
 {
-    
+    float            castedValue;
+    std::stringstream s(value);
+    char              *valueInChar;
+
+    s >> valueInChar;
+    std::cout << "double: ";
+    if (isStr(value))
+        std::cout << "impossible." << std::endl;
+    else if (isChar(value))
+        castedValue = static_cast<float>(value[0]);
+    else if (isDouble(value))
+        castedValue = static_cast<float>atof(valueInChar);
+    else if (isFloat(value))
+        castedValue = static_cast<float>atof(valueInChar);
+    else if (isInt(value))
+        castedValue = static_cast<float>atof(valueInChar);
+    std::cout << castedValue << std::endl;
 }
 void    Convert::toChar(void)
 {
