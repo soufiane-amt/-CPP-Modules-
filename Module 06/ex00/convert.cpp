@@ -117,7 +117,7 @@ void    Convert::toInt(void)
     else if (isFloat(value))
         castedValue = atoi(valueInChar);
     else if (isInt(value))
-        castedValue = static_cast<int>(value[0]);
+        castedValue = atoi(valueInChar);
 }
 
 void    Convert::toDouble(void)
