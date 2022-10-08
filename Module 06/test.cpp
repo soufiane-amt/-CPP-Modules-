@@ -29,7 +29,10 @@ int main (int argc, char **argv)
 {
     (void)argc;
     std::string s = "124.5";
-    // int a  = static_cast<int>(s);
-    double x = atoi(s.c_str());
+    std::stringstream l("nan");
+    float x ;
+    // x = atof("nanfdsfsg")
+    l >> x;
+    // x = static_cast<float>(x);
     std::cout << x <<std::endl;
 }

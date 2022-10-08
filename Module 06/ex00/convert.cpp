@@ -129,7 +129,9 @@ void    Convert::toDouble(void)
 
     s >> valueInChar;
     std::cout << "double: ";
-    if (isStr(value))
+    if (castedValue == "nan" || castedValue == "nanf")
+        castedValue = static_cast<float>(atof("nan"));
+    else if (isStr(value))
         std::cout << "impossible." << std::endl;
     else if (isChar(value))
         castedValue = static_cast<double>(value[0]);
@@ -150,6 +152,11 @@ void    Convert::toFloat(void)
 
     s >> valueInChar;
     std::cout << "double: ";
+    if (castedValue == "nan" || castedValue == "nanf")
+    {
+        std::cout << "nanf" << std::endl;
+        return;
+    }
     if (isStr(value))
         std::cout << "impossible." << std::endl;
     else if (isChar(value))
