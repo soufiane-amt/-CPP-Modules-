@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/09 16:45:41 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/09 18:17:24 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,8 @@ bool    Convert::isDouble(const char* value)
     return (true);
 }
 
+int b = 12;
+char a = b;
 bool    Convert::isFloat(const char* value)
 {
     int i = 0;
@@ -177,7 +179,7 @@ void    Convert::toDouble(void)
     else
     {
         castedValue = atof(value);
-        if (castedValue == atoi(value))
+        if (castedValue == static_cast<int>(castedValue))
             zeroAfterPoint = ".0";
     }
     std::cout << castedValue << zeroAfterPoint << std::endl;
@@ -208,11 +210,13 @@ void    Convert::toFloat(void)
     else
     {
         castedValue = atof(value);
-        if (castedValue == atoi(value))
+        if (castedValue == static_cast<int>(castedValue))
             zeroAfterPoint = ".0";
     }
     std::cout << castedValue << zeroAfterPoint+'f'<< std::endl;
 }
+
+
 void    Convert::toChar(void)
 {
     char            castedValue;
@@ -256,3 +260,16 @@ Convert::~Convert(void)
 {
     
 }
+
+/*to test
+a non digit character
+a digit character
+a double 
+a float
+an int
+a string
+a zero
+a negative numb
+a positive numb
+nan / inf
+*/
