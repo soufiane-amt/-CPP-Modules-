@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/08 22:41:56 by samajat           #+#    #+#              #
-#    Updated: 2022/10/08 22:50:52 by samajat          ###   ########.fr        #
+#    Updated: 2022/10/09 10:02:16 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,6 @@ clean :
 	$(RM) $(OBJ)
 
 fclean : clear
-    $(RM) $(NAME)
+	$(RM) $(NAME)
 
 re : fclean all

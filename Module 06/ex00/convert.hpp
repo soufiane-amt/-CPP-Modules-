@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:21 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/07 18:16:20 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/09 10:40:22 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@
 class Convert
 {
     private:
-    const std::string value;
-    static bool    isInt(const std::string value);
-    static bool    isDouble(const std::string value);
-    static bool    isFloat(const std::string value);
-    static bool    isChar(const std::string value);
-    static bool    isStr(const std::string value);
+    const char* value;
+    static bool    isInt(const char* value);
+    static bool    isDouble(const char* value);
+    static bool    isFloat(const char* value);
+    static bool    isChar(const char* value);
+    static bool    isStr(const char* value);
     void    toInt(void);
     void    toDouble(void);
     void    toFloat(void);
@@ -33,7 +33,7 @@ class Convert
 
     public:
     Convert  (void);
-    Convert  (const std::string input);
+    Convert  (const char* input);
     Convert  (Convert const &copy);
     Convert& operator=(Convert const &copy);
     void     displayConversions(void);
