@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/09 15:17:33 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/09 15:43:08 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -211,6 +211,11 @@ void    Convert::toChar(void)
     std::cout << "char: ";
     if (isChar(value) && !ft_isdigit(value[0]))
         castedValue = static_cast<char>(value[0]);
+    else if (isChar(value))
+    {
+        std::cout << "Non displayable." << std::endl;
+        return;
+    }
     else if (!isStr(value))
         castedValue = static_cast<char>(atoi(value));
     else
