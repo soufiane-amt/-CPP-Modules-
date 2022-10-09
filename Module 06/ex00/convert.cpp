@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/09 15:43:08 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/09 16:23:05 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ bool    Convert::isFloat(const char* value)
     i++;
     while (value[i] && ft_isdigit(value[i]))
         i++;
-    if (value[i] != 'f' || value[i] != 'F')
+    if (value[i] != 'f' && value[i] != 'F')
         return (false);
     i++;
     if (value[i])
@@ -211,13 +211,15 @@ void    Convert::toChar(void)
     std::cout << "char: ";
     if (isChar(value) && !ft_isdigit(value[0]))
         castedValue = static_cast<char>(value[0]);
-    else if (isChar(value))
-    {
-        std::cout << "Non displayable." << std::endl;
-        return;
-    }
     else if (!isStr(value))
+    {
         castedValue = static_cast<char>(atoi(value));
+        if (!ft_isprint(castedValue))
+        {
+            std::cout << "Non displayable." << std::endl;
+            return;
+        }
+    }
     else
     {
         std::cout << "impossible." << std::endl;
