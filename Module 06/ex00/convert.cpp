@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/09 16:23:05 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/09 16:45:41 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,11 @@ bool    Convert::isInt(const char* value)
         return (false);
     i++;
     while (value[i])
+    {
         if (!ft_isdigit(value[i]))
             return (false);
+            i++;
+    }
     return (true);
 }
 
@@ -167,7 +170,10 @@ void    Convert::toDouble(void)
         return;
     }
     else if (isChar(value) && !ft_isdigit(value[0]))
+    {
         castedValue = static_cast<double>(value[0]);
+        zeroAfterPoint = ".0";
+    }
     else
     {
         castedValue = atof(value);
@@ -195,7 +201,10 @@ void    Convert::toFloat(void)
         return;
     }
     else if (isChar(value) && !ft_isdigit(value[0]))
+    {
         castedValue = static_cast<float>(value[0]);
+        zeroAfterPoint = ".0";
+    }
     else
     {
         castedValue = atof(value);
@@ -236,10 +245,11 @@ void Convert::displayConversions(void)
         std::cerr << "The value is null!" << std::endl;
         return;
     }
-    toInt();
-    toDouble();
-    toFloat();
+    // std::cout << "----" << st
     toChar();
+    toInt();
+    toFloat();
+    toDouble();
 }
 
 Convert::~Convert(void)
