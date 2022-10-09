@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/09 15:09:50 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/09 15:17:33 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +68,18 @@ Convert& Convert::operator=(Convert const &copy)
 bool    Convert::isInt(const char* value)
 {
     int len;
+    int i;
 
+    i = 0;
     len = ft_strlen(value);
-    for (int i = 0; i < len; i++)
-    {
+    if (value[i] == '+' || value[i] == '-')
+        i++;
+    if (!ft_isdigit(value[i]))
+        return (false);
+    i++;
+    while (value[i])
         if (!ft_isdigit(value[i]))
             return (false);
-    }
     return (true);
 }
 
