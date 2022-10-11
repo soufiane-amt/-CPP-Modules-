@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/09 18:17:24 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/11 19:47:00 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,8 +179,8 @@ void    Convert::toDouble(void)
     else
     {
         castedValue = atof(value);
-        if (castedValue == static_cast<int>(castedValue))
-            zeroAfterPoint = ".0";
+        // if (castedValue == static_cast<int>(castedValue))
+        //     zeroAfterPoint = ".0";
     }
     std::cout << castedValue << zeroAfterPoint << std::endl;
 }
@@ -210,10 +210,11 @@ void    Convert::toFloat(void)
     else
     {
         castedValue = atof(value);
-        if (castedValue == static_cast<int>(castedValue))
-            zeroAfterPoint = ".0";
+        // if (castedValue == static_cast<int>(castedValue))
+        //     zeroAfterPoint = ".0";
     }
-    std::cout << castedValue << zeroAfterPoint+'f'<< std::endl;
+    // std::cout << castedValue << zeroAfterPoint +'f'<< std::endl;
+    std::cout << std::fixed << std::setprecision(1) << castedValue << 'f'<< std::endl;
 }
 
 
@@ -243,13 +244,11 @@ void    Convert::toChar(void)
 
 void Convert::displayConversions(void)
 {
-    //check if null
     if (!ft_strcmp(value, ""))
     {
         std::cerr << "The value is null!" << std::endl;
         return;
     }
-    // std::cout << "----" << st
     toChar();
     toInt();
     toFloat();
