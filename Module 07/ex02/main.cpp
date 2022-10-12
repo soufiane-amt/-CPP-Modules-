@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 22:26:10 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/12 23:26:05 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/12 23:30:36 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,14 @@ template<class T>
 unsigned int Array<T>::size()
 {
     return (len);
+}
+
+template<class T>
+T Array<T>::operator[](unsigned int i)
+{
+    if (len - 1 < i)
+        throw std::exception;
+    return (arr[i]);
 }
 
 template<class T>
