@@ -6,11 +6,11 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/08 22:41:56 by samajat           #+#    #+#              #
-#    Updated: 2022/10/11 20:37:17 by samajat          ###   ########.fr        #
+#    Updated: 2022/10/12 12:41:40 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = typeinfo
+NAME = typeidentifier
 
 CC = c++
 
@@ -18,7 +18,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -rf
 
-FILES = typeinfo
+FILES = typeidentifier
 
 OBJ = $(FILES:=.o) main.o
 

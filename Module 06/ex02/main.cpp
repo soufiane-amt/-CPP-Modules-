@@ -1,14 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   typeinfo.cpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 20:38:14 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/11 20:38:38 by samajat          ###   ########.fr       */
+/*   Created: 2022/10/12 14:19:08 by samajat           #+#    #+#             */
+/*   Updated: 2022/10/12 14:41:23 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "typeinfo.hpp"
+#include "typeidentifier.hpp"
 
+int main ()
+{
+    // Base *base = generate();
+    A *a = new A();
+    identify (a);
+    identify (*a);
+}
