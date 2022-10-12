@@ -5,23 +5,50 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 17:56:56 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/12 21:39:40 by samajat          ###   ########.fr       */
+/*   Created: 2022/10/12 22:26:10 by samajat           #+#    #+#             */
+/*   Updated: 2022/10/12 23:26:05 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
+#include "Array.hpp"
 
-
-void    func (int a)
+template<class T>
+Array<T>::Array()
 {
-    std::cout <<  a << " :"<< std::endl;
+    arr = new T();
+}
+
+template<class T>
+Array<T>::Array(unsigned int l) :len(l)
+{
+    arr = new T[len];
+}
+
+template<class T>
+Array<T>::Array(Array &copy)
+{
+    for (size_t i = 0; i < len; i++)
+        this->arr[i] = copy.arr[i];
+}
+
+template<class T>
+Array<T>& Array<T>::operator=(Array &copy)
+{
+    arr = new T();
+}
+
+template<class T>
+unsigned int Array<T>::size()
+{
+    return (len);
+}
+
+template<class T>
+Array<T>::~Array()
+{
+    delete [] arr;
 }
 
 int main ()
 {
-    int a[] = {1, 2, 3};
-    std::string arr[] = {""};
-    
-    iter(a, 3, func);
 }
