@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 14:19:08 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/12 14:41:23 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/12 15:21:20 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int main ()
 {
-    // Base *base = generate();
-    A *a = new A();
-    identify (a);
-    identify (*a);
+    Base *base = generate();
+    // A *a = new A();
+    identify (base);
+    identify (*base);
 }

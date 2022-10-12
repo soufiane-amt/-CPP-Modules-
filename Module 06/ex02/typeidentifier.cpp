@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 20:38:14 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/12 14:58:49 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/12 15:22:15 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Base    *generate(void)
 
 void    identify(Base* p)
 {
-    dynamic_cast<A*>(p))
+    if (dynamic_cast<A*>(p))
         std::cout << "The object pointer by p is A " << std::endl;
     else if (dynamic_cast<B*>(p))
         std::cout << "The object pointer by p is B " << std::endl;
@@ -54,17 +54,33 @@ void    identify(Base* p)
 
 void    identify(Base& p)
 {
-        std::cout << "neither A, B, or C are pointed by p" << std::endl;
-    try
-    {
-        dynamic_cast<A&>(p);
+    std::string message = "The object pointer by p is ";
+    std::string id = "";
+    try{
+        A &Ac = dynamic_cast<A&>(p);(void)Ac;
+        id = "A";
     }
-    catch (...){}
-    
-    std::cout << "The object pointer by p is A " << std::endl;
-
-    dynamic_cast<B&>(p);
-    std::cout << "The object pointer by p is B " << std::endl;
-    dynamic_cast<C&>(p);
-    std::cout << "The object pointer by p is C " << std::endl;
+    catch (std::bad_cast &a)
+    {
+        try
+        {
+            B &Bc = dynamic_cast<B&>(p);(void)Bc;
+            id = "B";
+        }
+        catch (std::bad_cast &b)
+        {
+            try
+            {
+                C &Cc = dynamic_cast<C&>(p);(void)Cc;
+                id = "C";
+            }
+            catch (std::bad_cast &c)
+            {
+                
+                std::cout << "neither A, B, or C are pointed by p" << std::endl;
+                return;
+            }
+        }
+    }
+    std::cout << "The object pointer by p is " + id << std::endl;
 }
