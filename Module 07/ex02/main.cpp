@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 22:26:10 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/12 23:30:36 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/12 23:48:38 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ Array<T>::Array(Array &copy)
 template<class T>
 Array<T>& Array<T>::operator=(Array &copy)
 {
-    arr = new T();
+    for (size_t i = 0; i < len; i++)
+        this->arr[i] = copy.arr[i];
+    return (*this);
 }
 
 template<class T>
@@ -47,7 +49,7 @@ template<class T>
 T Array<T>::operator[](unsigned int i)
 {
     if (len - 1 < i)
-        throw std::exception;
+        throw std::exception ();
     return (arr[i]);
 }
 
@@ -59,4 +61,7 @@ Array<T>::~Array()
 
 int main ()
 {
+    Array<int>arr(2);
+
+    std::cout << arr.size() <<std::endl;
 }
