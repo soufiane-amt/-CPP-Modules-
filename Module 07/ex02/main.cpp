@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 22:26:10 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/13 14:05:52 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/13 19:44:41 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 template<class T>
 Array<T>::Array()
 {
-    arr = new T();
+    arr = NULL;
 }
 
 template<class T>
@@ -27,15 +27,12 @@ Array<T>::Array(unsigned int l) :len(l)
 template<class T>
 Array<T>::Array(const Array &copy)
 {
-    static int o = 0;
-
-    o++;
     this->len = copy.len;
-    std::cout <<  "---" <<   std::endl;
+    arr = new T[len];//alloc protection
     for (size_t i = 0; i < len; i++)
     {
         this->arr[i] = copy.arr[i];
-        std::cout << o << std::endl;
+        std::cout << "----" <<std::endl;
     }
 }
 
@@ -56,7 +53,7 @@ unsigned int Array<T>::size()
 template<class T>
 T& Array<T>::operator[](unsigned int i)
 {
-    if (len - 1 < i)
+    if (len <= i)
         throw std::exception ();
     return (arr[i]);
 }
@@ -64,7 +61,9 @@ T& Array<T>::operator[](unsigned int i)
 template<class T>
 Array<T>::~Array()
 {
-    delete [] arr;
+    std::cout << &arr << std::endl;
+    if (arr)
+        delete [] arr;
 }
 
 #define MAX_VAL 7
@@ -84,6 +83,7 @@ int main(int, char**)
         Array<int> tmp = numbers;
         Array<int> test(tmp);
     }
+    std::cout <<  "---" <<   std::endl;
 
     for (int i = 0; i < MAX_VAL; i++)
     {
