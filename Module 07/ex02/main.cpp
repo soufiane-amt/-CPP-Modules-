@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 22:26:10 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/12 23:48:38 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/13 13:15:58 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ unsigned int Array<T>::size()
 }
 
 template<class T>
-T Array<T>::operator[](unsigned int i)
+T& Array<T>::operator[](unsigned int i)
 {
     if (len - 1 < i)
         throw std::exception ();
@@ -62,6 +62,7 @@ Array<T>::~Array()
 int main ()
 {
     Array<int>arr(2);
-
+    arr[0] = 45;
     std::cout << arr.size() <<std::endl;
+    std::cout << arr[0] <<std::endl;
 }
