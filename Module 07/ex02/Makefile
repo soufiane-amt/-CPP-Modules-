@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 23:34:16 by samajat           #+#    #+#              #
-#    Updated: 2022/10/12 23:35:31 by samajat          ###   ########.fr        #
+#    Updated: 2022/10/13 14:03:20 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,10 +27,10 @@ HEADERS = $(FILES:=.hpp)
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME) 
 
 %.o : %.cpp $(HEADERS)
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@ 
 
 clean :
 	$(RM) $(OBJ)

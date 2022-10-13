@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 22:30:39 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/13 13:15:55 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/13 13:23:22 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class Array
     public:
     Array();
     Array(unsigned int l);
-    Array(Array &copy);
-    Array &operator=(Array &copy);
+    Array(const Array &copy);
+    Array &operator=(const Array &copy);
     T& operator[](unsigned int i);
     unsigned int size();
     ~Array();
