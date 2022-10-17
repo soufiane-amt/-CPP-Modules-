@@ -10,21 +10,26 @@
 #                                                                              #
 # **************************************************************************** #
 
+NAME = a.out
+
 CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -rf
 
-FILES = Fixed main Point bsp
+FILES = Fixed  Point 
 
-OBJ = $(FILES:=.o)
+OBJ = $(FILES:=.o) main.o bsp.o
 
+HEADERS = $(FILES:=.hpp)
 
-all : $(OBJ)
+all : $(NAME)
+
+$(NAME) : $(OBJ)
 	$(CC) $(FLAGS) $(OBJ)
 
-%.o : %.cpp
+%.o : %.cpp $(HEADERS)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean :

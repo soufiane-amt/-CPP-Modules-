@@ -38,15 +38,6 @@ Fixed Point::getY(void) const
     return (y);
 }
 
-// void Fixed::setX(Fixed x)
-// {
-//     this->x = x;
-// }
-// void Fixed::setY(Fixed y)
-// {
-//     this->y = y;
-// }
-
 Point::~Point(void)
 {
     
