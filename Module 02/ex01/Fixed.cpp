@@ -70,7 +70,7 @@ Fixed& Fixed::operator=(const Fixed &fixed)
     return (*this);
 }
 
-int     Fixed::getFractBits(void)
+int     Fixed::getFractBits(void) const
 {
     return (fractBits);
 }
