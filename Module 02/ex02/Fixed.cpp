@@ -35,7 +35,7 @@ Fixed::Fixed   (const float f)
 
 Fixed::Fixed   (const int d)
 {
-    raw = roundf(d << fractBits);
+    raw = (d << fractBits);
 }
 
 //-----getter/setters-------//
@@ -54,26 +54,33 @@ void    Fixed::setRawBits (int const raw)
 
 float Fixed::toFloat( void ) const
 {
-    float f = (static_cast< float>(this->getRawBits()) / (1 << 8));
+    float f = ((float)(this->getRawBits()) / (1 << fractBits));
     return (f);
 }
 
 int Fixed::toInt( void ) const
 {
-    int d = raw >> 8;
+    int d = raw >> fractBits;
     return (d);
+}
+
+int     Fixed::getFractBits(void) const 
+{
+    return (fractBits);
 }
 
 //-----Overloaded operators-------//
 std::ostream& operator<<(std::ostream &COUT, const Fixed &fixed)
 {
-    float a = (static_cast< float>(fixed.getRawBits()) / (1 << 8));
-    COUT << a;
+    float a = ((float)fixed.getRawBits()) / (1 << fixed.getFractBits());
+    COUT << a; 
     return (COUT);
 }
 
+
 Fixed& Fixed::operator=(const Fixed &fixed)
 {
+
     this->raw = fixed.getRawBits();
     
     return (*this);

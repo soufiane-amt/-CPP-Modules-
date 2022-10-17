@@ -52,13 +52,13 @@ void    Fixed::setRawBits (int const raw)
 
 float Fixed::toFloat( void ) const
 {
-    float f = (static_cast< float>(this->getRawBits()) / (1 << 8));
+    float f = (static_cast< float>(this->getRawBits()) / (1 << fractBits));
     return (f);
 }
 
 int Fixed::toInt( void ) const
 {
-    int d = raw * (1 >> 8);
+    int d = raw * (1 >> fractBits);
     return (d);
 }
 
@@ -70,9 +70,14 @@ Fixed& Fixed::operator=(const Fixed &fixed)
     return (*this);
 }
 
+int     Fixed::getFractBits(void)
+{
+    return (fractBits);
+}
+
 std::ostream& operator<<(std::ostream &COUT, const Fixed &fixed)
 {
-    float a = (static_cast< float>(fixed.getRawBits()) / (1 << 8));
+    float a = (static_cast< float>(fixed.getRawBits()) / (1 << fixed.getFractBits()));
     COUT << a;
     return (COUT);
 }

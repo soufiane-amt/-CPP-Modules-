@@ -34,6 +34,7 @@ public :
     void    setRawBits( int const raw );
     float   toFloat( void ) const;
     int     toInt( void ) const;
+    int     getFractBits(void) const ;
     ~Fixed(void);
 };
 //Adding an overloading function to take care of the case if the paramerter 2 is of Fixed type 
