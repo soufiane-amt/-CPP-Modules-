@@ -25,13 +25,11 @@ int main( void ) {
     std::cout << "a is " << a.toInt() << " as integer" << std::endl;
     std::cout << "b is " << b.toInt() << " as integer" << std::endl;
     std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-    std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-    std::cout << "a is " << a.toFloat() << " as float" << std::endl;
-    std::cout << "b is " << b.toFloat() << " as float" << std::endl;
-    std::cout << "c is " << c.toFloat() << " as float" << std::endl;
-    std::cout << "d is " << d.toFloat() << " as float" << std::endl;
-
-    float z = 10.0;
-    std::cout << z << std::endl;
+    std::cout << "d is " << d.toInt() << " as integer" << std::endl;    
+    // float z = 10.0;
+    // std::cout << z << std::endl;
+    //a = 2.548899f;
+    // a = 111119;
+    // std::cout << a << std::endl;
     return 0;
-}//10011010010.01101110
+}

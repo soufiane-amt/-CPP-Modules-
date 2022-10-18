@@ -31,13 +31,13 @@ Fixed::Fixed(const Fixed &copy)
 Fixed::Fixed   (const float f)
 {
     std::cout << "Float constructor called" << std::endl;
-    raw = roundf(f * (1 << fractBits));
+    raw = roundf((1 << fractBits) * f);
 }
 
 Fixed::Fixed   (const int d)
 {
     std::cout << "Int constructor called" << std::endl;
-    raw = roundf(d << fractBits);
+    raw = d << fractBits;
 }
 
 int     Fixed::getRawBits(void) const
@@ -52,13 +52,14 @@ void    Fixed::setRawBits (int const raw)
 
 float Fixed::toFloat( void ) const
 {
-    float f = (static_cast< float>(this->getRawBits()) / (1 << fractBits));
+    float f = ((float)(this->getRawBits()) / (1 << fractBits));
     return (f);
 }
 
 int Fixed::toInt( void ) const
 {
-    int d = raw * (1 >> fractBits);
+    int d = (raw >> fractBits);
+
     return (d);
 }
 
@@ -77,7 +78,7 @@ int     Fixed::getFractBits(void) const
 
 std::ostream& operator<<(std::ostream &COUT, const Fixed &fixed)
 {
-    float a = (static_cast< float>(fixed.getRawBits()) / (1 << fixed.getFractBits()));
+    float a = fixed.toFloat();
     COUT << a;
     return (COUT);
 }
