@@ -37,7 +37,7 @@ public :
     int     getFractBits(void) const ;
     ~Fixed(void);
 };
-//Adding an overloading function to take care of the case if the paramerter 2 is of Fixed type 
+
 std::ostream& operator <<(std::ostream &COUT, const Fixed &fixed);
 
 #endif
