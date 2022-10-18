@@ -13,7 +13,7 @@
 #include "Fixed.hpp"
 
 int main( void ) {
-    Fixed a;
+    // Fixed a;
     // Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
     // Fixed o = 2.5f;
     // std::cout << a << std::endl;
@@ -26,9 +26,11 @@ int main( void ) {
     // int i = 1;
     // while (1)
     // {
-    a = 1122.459f;
-    std::cout << a << std::endl;
-    std::cout << a << std::endl;
+    // a = 1122.459f;
+    Fixed a(100);
+    Fixed b(5);
+    std::cout << a-- << std::endl;
+    std::cout << --a << std::endl;
     //     std::cout << (a) << std::endl;
     // while(a > 0)
     // {

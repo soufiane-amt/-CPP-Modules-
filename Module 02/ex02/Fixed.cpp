@@ -72,7 +72,7 @@ int     Fixed::getFractBits(void) const
 //-----Overloaded operators-------//
 std::ostream& operator<<(std::ostream &COUT, const Fixed &fixed)
 {
-    float a = ((float)fixed.getRawBits()) / (1 << fixed.getFractBits());
+    float a = fixed.toFloat();
     COUT << a; 
     return (COUT);
 }
@@ -118,43 +118,36 @@ bool Fixed::operator==(const Fixed &f) const
 
 Fixed Fixed::operator+(const Fixed &f)
 {
-    Fixed sum;
+    Fixed sum(this->toFloat() + f.toFloat());
 
-    sum.setRawBits(this->getRawBits() + f.getRawBits());
     return (sum);
 }
 
 
 Fixed Fixed::operator-(const Fixed &f)
 {
-    Fixed abst;
+    Fixed abst(this->toFloat() - f.toFloat());
 
-    abst.setRawBits(this->getRawBits() - f.getRawBits());
     return (abst);
 }
 
-
 Fixed Fixed::operator*(const Fixed &f)
 {
-    Fixed mul;
-
-    mul.setRawBits(this->getRawBits() * f.getRawBits()/(1 << fractBits));
+    Fixed mul(this->toFloat() * f.toFloat());
     return (mul);
 }
 
 
 Fixed Fixed::operator/(const Fixed &f)
 {
-    Fixed div;
+    Fixed div(this->toFloat() / f.toFloat());
 
-    div.setRawBits(this->getRawBits() / f.getRawBits()/(1 << fractBits));
     return (div);
 }
-//
 
 Fixed Fixed::operator++()
 {
-    raw++;
+    *this = Fixed(this->toFloat() + 1);
     return (*this);
 }
 
@@ -162,7 +155,20 @@ Fixed Fixed::operator++(int)
 {
     Fixed tmp(*this);
 
-    raw++;
+    *this = Fixed(this->toFloat() + 1);
+    return (tmp);
+}
+Fixed Fixed::operator--()
+{
+    *this = Fixed(this->toFloat() - 1);
+    return (*this);
+}
+
+Fixed Fixed::operator--(int)
+{
+    Fixed tmp(*this);
+
+    *this = Fixed(this->toFloat() - 1);
     return (tmp);
 }
 
