@@ -147,7 +147,7 @@ Fixed Fixed::operator/(const Fixed &f)
 
 Fixed Fixed::operator++()
 {
-    *this = Fixed(this->toFloat() + 1);
+    raw++;
     return (*this);
 }
 
@@ -155,12 +155,12 @@ Fixed Fixed::operator++(int)
 {
     Fixed tmp(*this);
 
-    *this = Fixed(this->toFloat() + 1);
+    raw++;
     return (tmp);
 }
 Fixed Fixed::operator--()
 {
-    *this = Fixed(this->toFloat() - 1);
+    raw--;
     return (*this);
 }
 
@@ -168,7 +168,7 @@ Fixed Fixed::operator--(int)
 {
     Fixed tmp(*this);
 
-    *this = Fixed(this->toFloat() - 1);
+    raw--;
     return (tmp);
 }
 
@@ -178,19 +178,6 @@ Fixed Fixed::operator--(int)
 
 //-----Min/Max-------//
 
-const Fixed& Fixed::min(const Fixed &f1, const Fixed &f2)
-{
-    if (f1 > f2)
-        return (f2);
-    return (f1);
-}
-
-const Fixed& Fixed::max(const Fixed &f1, const Fixed &f2)
-{
-    if (f1 < f2)
-        return (f2);
-    return (f1);
-}
 
 Fixed& Fixed::min(Fixed &f1, Fixed &f2)
 {
@@ -200,6 +187,19 @@ Fixed& Fixed::min(Fixed &f1, Fixed &f2)
 }
 
 Fixed& Fixed::max(Fixed &f1, Fixed &f2)
+{
+    if (f1 < f2)
+        return (f2);
+    return (f1);
+}
+const Fixed& Fixed::min(const Fixed &f1, const Fixed &f2)
+{
+    if (f1 > f2)
+        return (f2);
+    return (f1);
+}
+
+const Fixed& Fixed::max(const Fixed &f1, const Fixed &f2)
 {
     if (f1 < f2)
         return (f2);
