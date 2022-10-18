@@ -67,7 +67,7 @@ int Fixed::toInt( void ) const
 //-----Overloaded operators-------//
 std::ostream& operator<<(std::ostream &COUT, const Fixed &fixed)
 {
-    float a = ((float)(fixed.getRawBits()) / (1 << 8));
+    float a = fixed.toFloat();
     COUT << a;
     return (COUT);
 }
