@@ -22,19 +22,14 @@ ClapTrap::ClapTrap(ClapTrap &copy):name(copy.name), hitPoints(copy.hitPoints), e
     std::cout << "Copy constructor is called" << std::endl;
 }
 
-void ClapTrap::ft_swap(ClapTrap &a, ClapTrap &b)
-{
-    ClapTrap temp(b);
-
-    std::swap(a.name, temp.name);
-    std::swap(a.hitPoints, temp.hitPoints);
-    std::swap(a.energyPoints, temp.energyPoints);
-    std::swap(a.attackDamage, temp.attackDamage);
-}
 
 ClapTrap& ClapTrap::operator=(ClapTrap &copy)
 {
-    ft_swap(*this, copy);
+
+    this->name          = copy.name;
+    this->hitPoints     = copy.hitPoints;
+    this->energyPoints  = copy.energyPoints;
+    this->attackDamage  = copy.attackDamage;
     return (*this);
 }
 

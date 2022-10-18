@@ -17,7 +17,6 @@
 //Headers
 #include <iostream>
 #include <string>
-#include <algorithm>
 
 class ClapTrap
 {
@@ -31,7 +30,6 @@ class ClapTrap
     ~ClapTrap(void);
 
     private:
-    void ft_swap(ClapTrap &a, ClapTrap &b);
     std::string  name;
     unsigned int hitPoints;
     unsigned int energyPoints;
