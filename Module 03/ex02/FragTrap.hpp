@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 19:38:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/19 20:27:37 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/19 21:01:54 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class FragTrap :public ClapTrap 
 {
     public:
-    FragTrap (std::string n);
+    FragTrap (std::string n = "");
     FragTrap(const FragTrap &copy);
     void     attack (const std::string& target);
     void     takeDamage(unsigned int amount);

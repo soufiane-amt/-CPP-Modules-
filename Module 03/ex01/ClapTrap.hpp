@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 20:46:28 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/19 19:54:07 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/19 20:52:09 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 //Headers
 #include <iostream>
 #include <string>
-#include <algorithm>
 
 class ClapTrap
 {

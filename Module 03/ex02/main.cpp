@@ -6,11 +6,10 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 17:53:10 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 19:58:11 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/19 21:04:38 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 
 int main ()
