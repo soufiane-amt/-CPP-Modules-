@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 20:46:28 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 19:56:04 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/19 20:32:27 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,16 @@
 //Headers
 #include <iostream>
 #include <string>
-#include <algorithm>
 
 class ClapTrap
 {
     public:
-    ClapTrap(std::string name);
-    ClapTrap(ClapTrap &copy);
+    ClapTrap(std::string name = "");
+    ClapTrap(const ClapTrap &copy);
     void     attack(const std::string& target);
     void     takeDamage(unsigned int amount);
     void     beRepaired(unsigned int amount);
-    ClapTrap& operator=(ClapTrap &copy);
+    ClapTrap& operator=(const ClapTrap &copy);
     ~ClapTrap(void);
 
     protected:
@@ -35,7 +34,6 @@ class ClapTrap
     unsigned int hitPoints;
     unsigned int energyPoints;
     unsigned int attackDamage;
-    void ft_swap(ClapTrap &a, ClapTrap &b);
     ClapTrap(std::string name, unsigned int hitPoints, unsigned int energyPoints, unsigned int attackDamage);
 };
 

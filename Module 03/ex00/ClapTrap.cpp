@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 20:46:29 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 14:58:30 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/19 18:55:50 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ ClapTrap::ClapTrap(ClapTrap &copy):name(copy.name), hitPoints(copy.hitPoints), e
 
 ClapTrap& ClapTrap::operator=(ClapTrap &copy)
 {
-
     this->name          = copy.name;
     this->hitPoints     = copy.hitPoints;
     this->energyPoints  = copy.energyPoints;

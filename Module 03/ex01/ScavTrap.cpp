@@ -6,25 +6,19 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 21:43:10 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 19:45:39 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/19 20:19:31 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-// ScavTrap::ScavTrap (std::string name): name(name), hitPoints(100), energyPoints(50), attackDamage(20)
-// {
-//     std::cout << "ScavTrap" << name << "is created!" << std::endl;
-// }
-//: ClapTrap(n, 100, 50, 20){}
 ScavTrap::ScavTrap (std::string n):ClapTrap(n, 100, 50, 20)
 {
     std::cout << "ScavTrap " << name << " default constructor is called!" << std::endl;
 }
 
-
 //testing assignemnent
-ScavTrap::ScavTrap(ScavTrap &copy):ClapTrap(copy.name, 100, 50, 20)
+ScavTrap::ScavTrap(const ScavTrap &copy)
 {
     this->name = copy.name;
     this->hitPoints = copy.hitPoints;
@@ -34,20 +28,12 @@ ScavTrap::ScavTrap(ScavTrap &copy):ClapTrap(copy.name, 100, 50, 20)
     std::cout << "ScavTrap " << name << "is copied!" << std::endl;
 }
 
-void ScavTrap::ft_swap(ScavTrap &a, ScavTrap &b)
+ScavTrap& ScavTrap::operator=(const ScavTrap &copy)
 {
-    ScavTrap temp = b;
-
-    std::swap(a.name, temp.name);
-    std::swap(a.hitPoints, temp.hitPoints);
-    std::swap(a.energyPoints, temp.energyPoints);
-    std::swap(a.attackDamage, temp.attackDamage);
-}
-
-ScavTrap& ScavTrap::operator=(ScavTrap &copy)
-{
-    std::cout << "Entered\n";
-    ft_swap(*this, copy);
+    this->name = copy.name;
+    this->hitPoints = copy.hitPoints;
+    this->energyPoints = copy.energyPoints;
+    this->attackDamage = copy.attackDamage;
     return (*this);
 }
 

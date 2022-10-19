@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 13:25:09 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 14:15:21 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/19 19:03:48 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int main()
 {
-    ClapTrap n("robot1");
-    n.attack("lmalawi");
+    ClapTrap n;
+    n.attack("enemy1");
     n.beRepaired(2);
     ClapTrap b("robot2");
-    b.attack("l7lawi");
-    b.beRepaired(2);
+    b.attack("enemy2");
+    b.beRepaired(10);
     n = b;
 }

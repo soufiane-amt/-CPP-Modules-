@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 17:53:10 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 19:34:15 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/19 19:36:06 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 
 int main ()
 {
-    ScavTrap t("chalb");
-    t.attack("harold");
-    t.takeDamage(8);
-    t.takeDamage(8);
-    t.beRepaired(8);
+    // ScavTrap t("chalb");
+    // t.attack("harold");
+    // t.takeDamage(8);
+    // t.takeDamage(8);
+    // t.beRepaired(8);
     std::cout << "-----------\n";
-    ScavTrap a("tb");
-    a.attack("arnold");
-    a.takeDamage(8);
-    a.takeDamage(8);
-    a.beRepaired(8);
-    a.guardGate();
+    ScavTrap a("S-34");
+    // a.attack("arnold");
+    // a.takeDamage(8);
+    // a.takeDamage(8);
+    // a.beRepaired(8);
+    // a.guardGate();
+    ScavTrap x(a);
 }

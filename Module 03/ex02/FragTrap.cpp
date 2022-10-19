@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 19:38:25 by samajat           #+#    #+#             */
-/*   Updated: 2022/09/25 19:53:56 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/19 20:29:32 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,32 +17,22 @@ FragTrap::FragTrap (std::string n):ClapTrap(n, 100, 100, 30)
     std::cout << "FragTrap " << name << " default constructor is called!" << std::endl;
 }
 
-
-//testing assignemnent
-FragTrap::FragTrap(FragTrap &copy):ClapTrap(copy.name, 100, 100, 30)
+FragTrap::FragTrap(const FragTrap &copy)
 {
     this->name = copy.name;
     this->hitPoints = copy.hitPoints;
     this->energyPoints = copy.energyPoints;
     this->attackDamage = copy.attackDamage;
-    std::cout << this->name <<" "<< this->hitPoints<<" "<< this->energyPoints << " "<<this->attackDamage<<"\n";
     std::cout << "FragTrap " << name << "is copied!" << std::endl;
 }
 
-void FragTrap::ft_swap(FragTrap &a, FragTrap &b)
-{
-    FragTrap temp = b;
 
-    std::swap(a.name, temp.name);
-    std::swap(a.hitPoints, temp.hitPoints);
-    std::swap(a.energyPoints, temp.energyPoints);
-    std::swap(a.attackDamage, temp.attackDamage);
-}
-
-FragTrap& FragTrap::operator=(FragTrap &copy)
+FragTrap& FragTrap::operator=(const FragTrap &copy)
 {
-    std::cout << "Entered\n";
-    ft_swap(*this, copy);
+    this->name = copy.name;
+    this->hitPoints = copy.hitPoints;
+    this->energyPoints = copy.energyPoints;
+    this->attackDamage = copy.attackDamage;
     return (*this);
 }
 
