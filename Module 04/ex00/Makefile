@@ -6,21 +6,24 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/25 20:35:53 by samajat           #+#    #+#              #
-#    Updated: 2022/10/01 13:21:31 by samajat          ###   ########.fr        #
+#    Updated: 2022/10/21 14:24:49 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = clapTrap
+NAME = animal
 
 CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-FILES = Animal main Cat Dog
+TESTFILES = test/WrongAnimal test/WrongCat
 
-OBJ = $(FILES:=.o)
+FILES = Animal Cat Dog $(TESTFILES)
 
-HEADER = Animal.hpp Cat.hpp Dog.hpp
+
+OBJ = $(FILES:=.o) main.o
+
+HEADER = $(FILES:=.hpp)
 
 RM = rm -rf
 

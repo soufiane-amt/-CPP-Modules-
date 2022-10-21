@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 20:52:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 13:20:08 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/21 14:04:34 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ Animal::Animal()
     std::cout << "Animal constructor is called!" << std::endl;
 }
 
-Animal::Animal(std::string t):type(t){}
+Animal::Animal(std::string t):type(t)
+{
+    std::cout << "The Animal contructor sets the type to " + t << std::endl;
+}
 
 Animal::Animal  (const Animal &copy)
 {
@@ -35,6 +38,7 @@ std::string Animal::getType(void) const
 {
     return (this->type);
 }
+
 void Animal::makeSound(void) const
 {
     std::cout << "**Animal sound**" << std::endl;
