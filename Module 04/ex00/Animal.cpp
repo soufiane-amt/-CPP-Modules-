@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 20:52:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/21 14:04:34 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/22 20:12:45 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ Animal::Animal  (const Animal &copy)
 
 Animal& Animal::operator=(const Animal &copy)
 {
+    std::cout << "= constructor is called " << std::endl;
     this->type = copy.type;
     return (*this);
 }

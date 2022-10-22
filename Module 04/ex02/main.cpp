@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 21:25:58 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 15:00:55 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/22 20:29:52 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@
 
 int main()
 {
-    Cat a =  Cat();
-    a.getType();
-    a.makeSound();
+    // Cat a =  Cat();
+    // a.getType();
+    // a.makeSound();
+    Brain a;
+    Brain b(a);
+
+    // a = b;
 }

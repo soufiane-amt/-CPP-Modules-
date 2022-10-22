@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 20:52:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 13:44:15 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/22 20:03:05 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Animal::Animal  (const Animal &copy)
     this->type = copy.type;
 }
 
-Animal& Animal::operator=(const Animal &copy)
+Animal& Animal::operator=(const Animal &copy) // a = b = c //a.operator=(b).operator=(c);
 {
     this->type = copy.type;
     return (*this);

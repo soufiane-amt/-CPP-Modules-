@@ -6,11 +6,11 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/25 20:35:53 by samajat           #+#    #+#              #
-#    Updated: 2022/09/28 10:49:01 by samajat          ###   ########.fr        #
+#    Updated: 2022/10/22 19:46:56 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = clapTrap
+NAME = animal3
 
 CC = c++
 

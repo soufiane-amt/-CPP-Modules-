@@ -6,11 +6,11 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/25 20:35:53 by samajat           #+#    #+#              #
-#    Updated: 2022/10/21 14:24:49 by samajat          ###   ########.fr        #
+#    Updated: 2022/10/22 13:05:51 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = animal
+NAME = animal1
 
 CC = c++
 
@@ -18,7 +18,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 TESTFILES = test/WrongAnimal test/WrongCat
 
-FILES = Animal Cat Dog $(TESTFILES)
+FILES = Animal Cat Dog
 
 
 OBJ = $(FILES:=.o) main.o

@@ -6,19 +6,17 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 21:25:58 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 15:01:43 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/22 13:11:52 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include "Cat.hpp"
 
-#define NObjects 2
+#define NObjects 4
 
 int main()
 {
-    Dog c = Dog();
-    c.getType();
     Animal *animals[NObjects];
     for (int i = 0; i < NObjects; i++)
     {
