@@ -6,11 +6,11 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 15:15:03 by samajat           #+#    #+#              #
-#    Updated: 2022/10/01 20:39:02 by samajat          ###   ########.fr        #
+#    Updated: 2022/10/23 20:05:24 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = CHO
+NAME = exception
 
 CC = c++
 
@@ -18,9 +18,9 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -rf
 
-HEADERS = Bureaucrat.hpp GradeTooHighException.hpp GradeTooLowException.hpp Form.hpp
+HEADERS = Bureaucrat.hpp Form.hpp
 
-FILES = Bureaucrat GradeTooHighException GradeTooLowException main Form
+FILES = Bureaucrat main Form
 
 OBJ = $(FILES:=.o)
 

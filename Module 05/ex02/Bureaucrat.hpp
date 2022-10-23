@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 15:39:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/23 20:02:52 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/23 18:05:29 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 //Header
 #include <iostream>
 #include <string>
-
 
 class Form;
 
@@ -45,10 +44,11 @@ class Bureaucrat
     Bureaucrat(const Bureaucrat &copy);
     Bureaucrat &operator=(const Bureaucrat &copy);
     const std::string &getName(void);
-    int               &getGrade(void);
+    const  int        &getGrade(void) const;
     void              incrementGrade(void);
     void              decrementGrade(void);
     void              signForm( Form &form);
+    void              executeForm(Form const & form);
     ~Bureaucrat();
 
     private:
