@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 15:39:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/23 17:22:26 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/23 19:54:48 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 //Header
 #include <iostream>
 #include <string>
-// #include "GradeTooHighException.hpp"
-// #include "GradeTooLowException.hpp"
-
 //Class
 class Bureaucrat
 {
