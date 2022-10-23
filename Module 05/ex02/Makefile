@@ -6,11 +6,11 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 15:15:03 by samajat           #+#    #+#              #
-#    Updated: 2022/10/02 22:53:37 by samajat          ###   ########.fr        #
+#    Updated: 2022/10/23 20:17:06 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = CHO
+NAME = exception3
 
 CXX = c++
 
@@ -18,7 +18,7 @@ CXXFLAGS = -Wall -Wextra -Werror -I includes/
 
 RM = rm -rf
 
-FILES = Bureaucrat GradeTooHighException GradeTooLowException Form\
+FILES = Bureaucrat Form\
 		PresidentialPardonForm RobotomyRequestForm ShrubberyCreationForm
 
 HEADERS = $(FILES:=.hpp)

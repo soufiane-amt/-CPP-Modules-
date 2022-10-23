@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 15:39:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/03 13:07:45 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/23 20:09:30 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,30 @@
 //Header
 #include <iostream>
 #include <string>
-#include "GradeTooHighException.hpp"
-#include "GradeTooLowException.hpp"
-
 
 class Form;
 
 class Bureaucrat
 {
     public:
+    class GradeTooHighException : public std::exception
+    {
+        public:
+        GradeTooHighException (const char* message);
+        const char *what() const throw ();
+
+        private:
+        const char* message;
+    };
+    class GradeTooLowException : public std::exception
+    {
+       public:
+       GradeTooLowException (const char* message);
+       const char *what()const throw ();
+    
+       private:
+       const char* message;
+    };
     Bureaucrat(const std::string Name, int Grade);
     Bureaucrat(const Bureaucrat &copy);
     Bureaucrat &operator=(const Bureaucrat &copy);
