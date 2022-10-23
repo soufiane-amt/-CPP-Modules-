@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 19:05:07 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 20:32:32 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/23 17:22:03 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,20 @@ void  Bureaucrat::decrementGrade(void)
     }
 }
 
+Bureaucrat::GradeTooLowException (const char* message): message(message){}
+
+const char*    Bureaucrat::GradeTooLowException::what()const throw ()
+{
+    return message;
+}
+Bureaucrat::GradeTooHighException (const char* message): message(message){}
+
+const char    *Bureaucrat::GradeTooHighException::what() const throw ()
+{
+    return message;
+}
 Bureaucrat::~Bureaucrat(void)
 {
     
 }
+

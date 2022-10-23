@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 15:39:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 20:19:44 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/23 17:22:26 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,31 @@
 //Header
 #include <iostream>
 #include <string>
-#include "GradeTooHighException.hpp"
-#include "GradeTooLowException.hpp"
+// #include "GradeTooHighException.hpp"
+// #include "GradeTooLowException.hpp"
 
 //Class
 class Bureaucrat
 {
     public:
+    class GradeTooHighException : public std::exception
+    {
+        public:
+        GradeTooHighException (const char* message);
+        const char *what() const throw ();
+
+        private:
+        const char* message;
+    };
+    class GradeTooLowException : public std::exception
+    {
+    public:
+       GradeTooLowException (const char* message);
+       const char *what()const throw ();
+    
+       private:
+       const char* message;
+    };
     Bureaucrat(void);
     Bureaucrat(const std::string Name, int Grade);
     Bureaucrat(const Bureaucrat &copy);
