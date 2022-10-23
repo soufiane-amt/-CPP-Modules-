@@ -6,32 +6,21 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 19:05:07 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/23 17:22:03 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/23 17:33:32 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(void)
-{
-    
-}
+Bureaucrat::Bureaucrat(void){}
 
 Bureaucrat::Bureaucrat(const std::string Name, int Grade): name(Name)
 {
-    try
-    {
-        if (Grade < 1)
-            throw GradeTooHighException("Very low grade Error!");
-        else if (Grade > 150)
-            throw GradeTooLowException("Very high grade Error!");
-        grade = Grade;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-        exit(1);
-    }
+    if (Grade < 1)
+        throw GradeTooHighException("Very low grade Error!");
+    else if (Grade > 150)
+        throw GradeTooLowException("Very high grade Error!");
+    grade = Grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy): name(copy.name), grade(copy.grade){}
@@ -60,41 +49,23 @@ int&  Bureaucrat::getGrade(void)
 
 void  Bureaucrat::incrementGrade(void)
 {
-    try
-    {
-        if (grade == 1)
-            throw GradeTooHighException("Very high grade Error!");
-        grade--;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-        exit(1);
-    }
+    if (grade == 1)
+        throw GradeTooHighException("Very high grade Error!");
+    grade--;
 }
-
 void  Bureaucrat::decrementGrade(void)
 {
-    try
-    {
-        if (grade == 150)
-            throw GradeTooLowException("Very low grade Error!");
-        grade++;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-        exit(1);
-    }
+    if (grade == 150)
+        throw GradeTooLowException("Very low grade Error!");
 }
 
-Bureaucrat::GradeTooLowException (const char* message): message(message){}
+Bureaucrat::GradeTooLowException::GradeTooLowException (const char* message): message(message){}
 
 const char*    Bureaucrat::GradeTooLowException::what()const throw ()
 {
     return message;
 }
-Bureaucrat::GradeTooHighException (const char* message): message(message){}
+Bureaucrat::GradeTooHighException::GradeTooHighException (const char* message): message(message){}
 
 const char    *Bureaucrat::GradeTooHighException::what() const throw ()
 {
