@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 21:07:40 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/01 14:57:00 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/25 14:34:01 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class Cat :public Animal
     Cat  (void);
     Cat  (const Cat &copy);
     Cat& operator=(const Cat &copy);
+    void makeSound(void) const;
     ~Cat (void);
-    void    makeSound(void) const;
 };
 
 
