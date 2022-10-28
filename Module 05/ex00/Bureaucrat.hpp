@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 15:39:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/23 19:54:48 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/28 15:00:50 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class Bureaucrat
     Bureaucrat(const Bureaucrat &copy);
     Bureaucrat &operator=(const Bureaucrat &copy);
     const std::string &getName(void);
-    int               &getGrade(void);
+    const int         &getGrade(void);
     void              incrementGrade(void);
     void              decrementGrade(void);
     ~Bureaucrat();

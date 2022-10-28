@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 15:10:40 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/03 13:19:10 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/28 16:12:43 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class RobotomyRequestForm : public Form
 {
 public:
     typedef RobotomyRequestForm Robotomy;
-    RobotomyRequestForm(const std::string target);
+    RobotomyRequestForm(const std::string target="");
     RobotomyRequestForm(const Robotomy &obj);
     RobotomyRequestForm &operator=(const Robotomy &target);
     ~RobotomyRequestForm();

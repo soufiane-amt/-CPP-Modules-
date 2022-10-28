@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 15:10:38 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/03 13:18:58 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/28 16:19:08 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class ShrubberyCreationForm : public Form
 {
 public:
     typedef ShrubberyCreationForm Shrubbery;
-    ShrubberyCreationForm(const std::string target);
+    ShrubberyCreationForm(const std::string target = "");
     ShrubberyCreationForm(const Shrubbery &obj);
     ShrubberyCreationForm &operator=(const Shrubbery &target);
     ~ShrubberyCreationForm();

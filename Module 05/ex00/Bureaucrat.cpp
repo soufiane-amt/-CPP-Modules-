@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 19:05:07 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/23 17:33:32 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/28 15:07:42 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ const std::string& Bureaucrat::getName(void)
     return (name);
 }
 
-int&  Bureaucrat::getGrade(void)
+const int&  Bureaucrat::getGrade(void)
 {
     return (grade);
 }
@@ -57,6 +57,7 @@ void  Bureaucrat::decrementGrade(void)
 {
     if (grade == 150)
         throw GradeTooLowException("Very low grade Error!");
+    grade++;
 }
 
 Bureaucrat::GradeTooLowException::GradeTooLowException (const char* message): message(message){}
@@ -73,6 +74,6 @@ const char    *Bureaucrat::GradeTooHighException::what() const throw ()
 }
 Bureaucrat::~Bureaucrat(void)
 {
-    
+    std::cout << "Bureaucrat Destructor called\n";
 }
 

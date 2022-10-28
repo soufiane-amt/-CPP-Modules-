@@ -6,13 +6,13 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 21:38:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/03 13:19:28 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/28 16:23:50 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target):Form(target, 72, 45)
+PresidentialPardonForm::PresidentialPardonForm(std::string target):Form(target, 25, 5)
 {
 }
 

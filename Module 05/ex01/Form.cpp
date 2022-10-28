@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 12:06:06 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/23 20:05:13 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/28 16:10:53 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,17 @@
 
 Form::Form(std::string n, const int gToSign, const int gToExec): name(n), gradeToSign(gToSign), gradeToExec(gToExec)
 {
-        if (gradeToSign < 1)
-            throw Bureaucrat::GradeTooHighException("Very high grade for form Bureaucrat signer Error!");
-        else if (gradeToSign > 150)
-            throw Bureaucrat::GradeTooLowException("Very low grade for form Bureaucrat signer Error!");
-        if (gradeToExec < 1)
-            throw Bureaucrat::GradeTooHighException("Very high grade for form Bureaucrat executor Error!");
-        else if (gradeToExec > 150)
-            throw Bureaucrat::GradeTooLowException("Very low grade for form Bureaucrat executor Error!");
-        signedForm = false;
+    if (n == "")
+        throw std::invalid_argument("Empty target error!\n");
+    if (gradeToSign < 1)
+        throw Bureaucrat::GradeTooHighException("Very high grade for form Bureaucrat signer Error!");
+    else if (gradeToSign > 150)
+        throw Bureaucrat::GradeTooLowException("Very low grade for form Bureaucrat signer Error!");
+    if (gradeToExec < 1)
+        throw Bureaucrat::GradeTooHighException("Very high grade for form Bureaucrat executor Error!");
+    else if (gradeToExec > 150)
+        throw Bureaucrat::GradeTooLowException("Very low grade for form Bureaucrat executor Error!");
+    signedForm = false;
 }
 
 Form::Form(const Form &form):name(form.name), gradeToSign(form.gradeToSign), gradeToExec(form.gradeToExec), signedForm(form.signedForm)

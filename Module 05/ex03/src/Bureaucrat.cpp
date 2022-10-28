@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 19:05:07 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/23 20:26:54 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/28 16:24:47 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ void   Bureaucrat::signForm(Form &form)
     {
         std::cout << *this << " couldn’t sign " << form <<" because " << e.what() << std::endl;
     }
-    
 }
 
 void    Bureaucrat::executeForm(Form const & form)

@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:06 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/23 20:11:36 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/28 16:08:58 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 Form::Form(std::string n, const int gToSign, const int gToExec): name(n), gradeToSign(gToSign), gradeToExec(gToExec)
 {
+        if (n == "")
+            throw std::invalid_argument("Empty target error!\n");
         if (gradeToSign < 1)
             throw Bureaucrat::GradeTooHighException("Very high grade for form Bureaucrat signer Error!");
         else if (gradeToSign > 150)

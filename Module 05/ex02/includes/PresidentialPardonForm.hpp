@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 15:14:30 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/03 13:19:31 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/28 16:12:37 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class PresidentialPardonForm : public Form
 {
 public:
     typedef PresidentialPardonForm PresidentalP;
-    PresidentialPardonForm(const std::string target);
+    PresidentialPardonForm(const std::string target="");
     PresidentialPardonForm(const PresidentalP &obj);
     PresidentialPardonForm &operator=(const PresidentalP &target);
     ~PresidentialPardonForm();
