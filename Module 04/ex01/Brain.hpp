@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:51:26 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/22 13:13:58 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/30 14:23:15 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
     Brain(void);
     Brain(const Brain &copy);
     Brain& operator=(const Brain &copy);
-    ~Brain();
+    virtual ~Brain();
 };
 
 #endif

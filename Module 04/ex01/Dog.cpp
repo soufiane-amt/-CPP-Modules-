@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:01:55 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/22 13:15:18 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/29 14:02:55 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,15 @@ Dog::Dog(): Animal("Dog")
 Dog::Dog  (const Dog &copy)
 {
     std::cout << "Dog Copy constructor is called" << std::endl;
+    this->brain = new Brain;
+    *brain = *(copy.brain);
     this->type = copy.type;
 }
 
 Dog& Dog::operator=(const Dog &copy)
 {
     this->type = copy.type;
+    *brain = *(copy.brain);
     return (*this);
 }
 void Dog::makeSound(void) const

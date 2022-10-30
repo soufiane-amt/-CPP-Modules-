@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:04:51 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/25 14:33:01 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/30 14:22:39 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Dog :public Animal
     Dog  (const Dog &copy);
     Dog& operator=(const Dog &copy);
     void makeSound(void) const;
-    ~Dog (void);
+    virtual ~Dog (void);
 };
 
 

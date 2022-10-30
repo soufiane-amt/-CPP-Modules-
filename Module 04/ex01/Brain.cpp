@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:51:28 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/21 15:06:05 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/30 14:26:03 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Brain::Brain(const Brain &copy)
 
 Brain& Brain::operator=(const Brain &copy)
 {
-    for (size_t i = 0; i < sizeof(idea)/sizeof(idea[0]); i++)
+    for (size_t i = 0; i < 100; i++)
         this->idea[i] = copy.idea[i];    
     return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 21:07:38 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/28 14:27:52 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/29 13:52:33 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ Cat::Cat  (const Cat &copy)
 {
     std::cout << "Cat Copy constructor is called" << std::endl;
     this->brain = new Brain;
-    this->type = copy.type;
     *brain = *(copy.brain);
+    this->type = copy.type;
 }
 
 Cat& Cat::operator=(const Cat &copy)
