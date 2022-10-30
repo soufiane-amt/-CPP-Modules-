@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 19:04:58 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/03 15:39:02 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/30 20:01:48 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,4 @@ int main ()
     Form* rrf;
     rrf = someRandomIntern.makeForm("robotomyd request", "Bender");
     std::cout << rrf->getGradeToSign();
-    delete rrf;
 } 

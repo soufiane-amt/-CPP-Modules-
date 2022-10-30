@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:06 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/03 13:20:12 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/30 20:01:27 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ Form::Form(std::string n, const int gToSign, const int gToExec): name(n), gradeT
     try
     {
         if (gradeToSign < 1)
-            throw GradeTooHighException("Very high grade for form Bureaucrat signer Error!");
+            throw Bureaucrat::GradeTooHighException("Very high grade for form Bureaucrat signer Error!");
         else if (gradeToSign > 150)
-            throw GradeTooLowException("Very low grade for form Bureaucrat signer Error!");
+            throw Bureaucrat::GradeTooLowException("Very low grade for form Bureaucrat signer Error!");
         if (gradeToExec < 1)
-            throw GradeTooHighException("Very high grade for form Bureaucrat executor Error!");
+            throw Bureaucrat::GradeTooHighException("Very high grade for form Bureaucrat executor Error!");
         else if (gradeToExec > 150)
-            throw GradeTooLowException("Very low grade for form Bureaucrat executor Error!");
+            throw Bureaucrat::GradeTooLowException("Very low grade for form Bureaucrat executor Error!");
         signedForm = false;
     }
     catch(const std::exception& e)
@@ -78,13 +78,13 @@ void                 Form::beSigned(Bureaucrat & b)
     if (b.getGrade() <= this->getGradeToSign())
         this->signedForm = true;
     else
-        throw GradeTooLowException("he/she hasn't reached the appropriate grade to sign.");
+        throw Bureaucrat::GradeTooLowException("he/she hasn't reached the appropriate grade to sign.");
 }
 
 void    Form::execute(Bureaucrat const & executor) const
 {
     if (executor.getGrade() > this->getGradeToExec())
-        throw GradeTooLowException("he/she hasn't reached the appropriate grade to exceute.");
+        throw Bureaucrat::GradeTooLowException("he/she hasn't reached the appropriate grade to exceute.");
 }
 
 Form::~Form()

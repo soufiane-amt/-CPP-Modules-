@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:07 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/23 20:09:36 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/30 19:55:45 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ public:
     const int&            getGradeToExec(void) const;
     bool                  getIsSigned(void) const;
     void                  execute(Bureaucrat const & executor) const;
-    void                  beSigned(Bureaucrat &b) ;//protected
+    void                  beSigned(Bureaucrat &b) ;
     virtual void          formAction(void) = 0;
     ~Form();
 };

@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 15:15:03 by samajat           #+#    #+#              #
-#    Updated: 2022/10/23 22:03:27 by samajat          ###   ########.fr        #
+#    Updated: 2022/10/30 20:00:40 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CXXFLAGS = -Wall -Wextra -Werror -I includes/
 
 RM = rm -rf
 
-FILES = Bureaucrat GradeTooHighException GradeTooLowException Form\
+FILES = Bureaucrat Form\
 		PresidentialPardonForm RobotomyRequestForm ShrubberyCreationForm\
 		Intern
 

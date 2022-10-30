@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:06 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/28 16:08:58 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/30 19:55:53 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ std::ostream& operator <<(std::ostream &COUT,  Form const &f)
     return (COUT);
 }
 
-void                 Form::beSigned(Bureaucrat & b) 
+void                 Form::beSigned(Bureaucrat & b)
 {
     if (b.getGrade() <= this->getGradeToSign())
         this->signedForm = true;
@@ -75,7 +75,7 @@ void                 Form::beSigned(Bureaucrat & b)
         throw Bureaucrat::GradeTooLowException("he/she hasn't reached the appropriate grade to sign.");
 }
 
-void    Form::execute(Bureaucrat const & executor) const
+void    Form::execute(Bureaucrat const &executor) const
 {
     if (executor.getGrade() > this->getGradeToExec())
         throw Bureaucrat::GradeTooLowException("he/she hasn't reached the appropriate grade to exceute.");
