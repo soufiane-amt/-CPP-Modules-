@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:07 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/23 20:02:44 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/31 15:22:57 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Bureaucrat;
 
 class Form
 {
-protected:
+private:
     const std::string name;
     const int        gradeToSign;
     const int        gradeToExec;

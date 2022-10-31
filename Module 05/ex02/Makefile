@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 15:15:03 by samajat           #+#    #+#              #
-#    Updated: 2022/10/23 20:17:06 by samajat          ###   ########.fr        #
+#    Updated: 2022/10/31 15:26:50 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = exception3
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -I includes/
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -I includes/
 
 RM = rm -rf
 

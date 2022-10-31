@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:06 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/30 19:55:53 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/31 15:42:31 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ void    Form::execute(Bureaucrat const &executor) const
 {
     if (executor.getGrade() > this->getGradeToExec())
         throw Bureaucrat::GradeTooLowException("he/she hasn't reached the appropriate grade to exceute.");
+    if (!this->getIsSigned())
+        throw std::exception();
 }
 
 Form::~Form()

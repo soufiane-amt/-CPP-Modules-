@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 19:05:07 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/30 19:57:48 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/31 15:55:43 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,6 @@ void   Bureaucrat::signForm(Form &form)
 
 void    Bureaucrat::executeForm(Form const & form)
 {
-    if (!form.getIsSigned())
-    {
-        std::cout << "The form is not signed." << std::endl;
-        return;
-    }
     try
     {
         form.execute(*this);
@@ -81,7 +76,7 @@ void    Bureaucrat::executeForm(Form const & form)
     }
     catch(const std::exception& e)
     {
-        std::cout << *this << " couldn’t execute " << form <<" because " << e.what() << std::endl;
+        std::cout << *this << " couldn’t execute {" << form <<"} because " << e.what() << std::endl;
     }
 }
 
