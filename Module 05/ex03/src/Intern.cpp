@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:41:10 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/03 15:38:36 by samajat          ###   ########.fr       */
+/*   Updated: 2022/10/31 17:54:50 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ std::string Intern::formNames[] = {"robotomy request", "shrubbery request", "pre
 
 Intern::Intern(void)
 {
+    forms[0] = &Intern::getPrsidentPard;
+    forms[1] = &Intern::getRobotRequest;
+    forms[2] = &Intern::getShrubberyCreat;
 }
 
 Intern::Intern(const Intern &obj)
@@ -63,6 +66,22 @@ Form*   Intern::makeForm(std::string formType, std::string target)
         exit(1);
         break;
     }
+    return (form);
+}
+
+Form    *getPrsidentPard(std::string target)
+{
+    Form *form = new PresidentialPardonForm(target);
+    return (form);
+}
+Form    *getRobotRequest(std::string target)
+{
+    Form *form = new RobotomyRequestForm(target);
+    return (form);
+}
+Form    *getShrubberyCreat(std::string target)
+{
+    Form *form = new ShrubberyCreationForm(target);
     return (form);
 }
 
