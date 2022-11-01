@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:07 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/30 19:55:45 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/01 21:42:09 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ public:
     void                  execute(Bureaucrat const & executor) const;
     void                  beSigned(Bureaucrat &b) ;
     virtual void          formAction(void) = 0;
-    ~Form();
+    virtual ~Form();
 };
 
 std::ostream& operator <<(std::ostream &COUT, Form const &f);

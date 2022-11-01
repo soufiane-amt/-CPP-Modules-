@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 19:04:58 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/01 21:06:13 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/01 21:40:25 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,4 @@ int main ()
     //     std::cout << e;
     // }
     Form* form = new PresidentialPardonForm("lol");
-    delete form;
-    (void)form; 
 } 
