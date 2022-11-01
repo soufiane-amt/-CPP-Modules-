@@ -6,11 +6,11 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 15:15:03 by samajat           #+#    #+#              #
-#    Updated: 2022/10/31 19:02:03 by samajat          ###   ########.fr        #
+#    Updated: 2022/11/01 16:06:05 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = CHO
+NAME = exception4
 
 CXX = c++
 
@@ -18,8 +18,8 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -I includes/
 
 RM = rm -rf
 
-FILES = Bureaucrat Form\
-		PresidentialPardonForm RobotomyRequestForm ShrubberyCreationForm\
+FILES = Bureaucrat Form PresidentialPardonForm\
+		RobotomyRequestForm ShrubberyCreationForm\
 		Intern\
 
 HEADERS = $(FILES:=.hpp)
@@ -32,7 +32,7 @@ $(NAME) : $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 %.o : %.cpp $(HEADERS)
-	$(CXX) $(CXXFLAGS) -cfsfds $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean :
 	$(RM) $(OBJ)

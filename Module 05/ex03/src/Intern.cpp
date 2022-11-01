@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:41:10 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/31 19:05:48 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/01 16:13:12 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,13 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
+typedef           Form* (Intern::*Forms)();
 std::string Intern::formNames[] = {"robotomy request", "shrubbery request", "presidential pardon form"};
+Forms Intern::forms[] = {&Intern::getPrsidentPard, &Intern::getRobotRequest, &Intern::getShrubberyCreat};
+// Forms Intern::forms = &Intern::getPrsidentPard;
 
 Intern::Intern(void)
 {
-    forms[0] = &Intern::getPrsidentPard;
-    forms[1] = &Intern::getRobotRequest;
-    forms[2] = &Intern::getShrubberyCreat;
-    formNames[0] = "presidential";
-    formNames[1] = "robotomy request";
-    formNames[2] = "shrubbery request";
 }
 
 Intern::Intern(const Intern &obj)
@@ -49,7 +46,7 @@ int    Intern::formIsIndex(std::string n)
     return (-1);
 }
 
-Form*   Intern::makeForm(std::string formType, std::string target)
+Form*   Intern::makeForm(std::string formType, std::string targeti)
 {
     // switch (formIsIndex(formType))
     // {
@@ -66,14 +63,14 @@ Form*   Intern::makeForm(std::string formType, std::string target)
     //     std::cout << "form name passed as parameter doesn’t exist. "<< std::endl;
     //     break;
     // }
-    (void)formType  ;(void)target;
+    (void)formType  ;(void)targeti;
     return (NULL);
 }
 
-Form    *getPrsidentPard(std::string target)
+Form    *getPrsidentPard()
 {
-    Form *form = new PresidentialPardonForm(target);
-    return (form);
+    // Form *formo = new PresidentialPardonForm(targeti);
+    return (NULL);
 }
 Form    *getRobotRequest(std::string target)
 {

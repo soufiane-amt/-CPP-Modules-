@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:41:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/31 18:56:12 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/01 16:08:31 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ class Form;
 class Intern
 {
 private:
-    typedef           Form* (Intern::*Forms)(std::string name);
-    Forms             forms[3];
-    Form              *getPrsidentPard(std::string target);
-    Form              *getRobotRequest(std::string target);
-    Form              *getShrubberyCreat(std::string target);
+    typedef           Form* (Intern::*Forms)();
+    static Forms             forms;
+    Form              *getPrsidentPard();
+    Form              *getRobotRequest();
+    Form              *getShrubberyCreat();
     int                formIsIndex(std::string n);
     static             std::string formNames[3];
 
@@ -31,10 +31,8 @@ public:
     Intern();
     Intern(const Intern &obj);
     Intern& operator=(const Intern &obj);
-    Form* makeForm(std::string formType, std::string target);
+    Form* makeForm(std::string formType, std::string targeti);
     ~Intern();
 };
-
-
 
 #endif
