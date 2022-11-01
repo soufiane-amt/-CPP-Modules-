@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:41:10 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/01 16:13:12 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/01 20:59:33 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,14 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-typedef           Form* (Intern::*Forms)();
-std::string Intern::formNames[] = {"robotomy request", "shrubbery request", "presidential pardon form"};
-Forms Intern::forms[] = {&Intern::getPrsidentPard, &Intern::getRobotRequest, &Intern::getShrubberyCreat};
-// Forms Intern::forms = &Intern::getPrsidentPard;
-
 Intern::Intern(void)
 {
+    formAdd = 0;
 }
 
 Intern::Intern(const Intern &obj)
 {
+    formAdd = 0;
     (void)obj;
 }
 
@@ -36,53 +33,26 @@ Intern& Intern::operator=(const Intern &obj)
     return (*this);
 }
 
-int    Intern::formIsIndex(std::string n)
+Form*   Intern::makeForm(std::string formType, std::string target)
 {
+    static Form *forms[] = {new RobotomyRequestForm(target), new ShrubberyCreationForm(target), new PresidentialPardonForm(target)};
+    this->formAdd = forms;
     for (int i = 0; i < 3; i++)
     {
-        if (formNames[i] == n)
-            return (i);
+        if (formType == forms[i]->getName())
+            return (forms[i]);
     }
-    return (-1);
-}
-
-Form*   Intern::makeForm(std::string formType, std::string targeti)
-{
-    // switch (formIsIndex(formType))
-    // {
-    // case 0:
-    //     return ((*this).*(forms[0]))(target);
-    //     break;
-    // case 1:
-    //     return ((*this).*(forms[1]))(target);
-    //     break;
-    // case 2:
-    //     return ((*this).*(forms[2]))(target);
-    //     break;
-    // default:
-    //     std::cout << "form name passed as parameter doesn’t exist. "<< std::endl;
-    //     break;
-    // }
-    (void)formType  ;(void)targeti;
+    throw "form name passed as parameter doesn’t exist. ";
     return (NULL);
 }
 
-Form    *getPrsidentPard()
-{
-    // Form *formo = new PresidentialPardonForm(targeti);
-    return (NULL);
-}
-Form    *getRobotRequest(std::string target)
-{
-    Form *form = new RobotomyRequestForm(target);
-    return (form);
-}
-Form    *getShrubberyCreat(std::string target)
-{
-    Form *form = new ShrubberyCreationForm(target);
-    return (form);
-}
 
 Intern::~Intern()
 {
+    if (!formAdd)
+        return;
+    for (size_t i = 0; i < 3; i++)
+    {
+        delete this->formAdd[i];
+    }
 }

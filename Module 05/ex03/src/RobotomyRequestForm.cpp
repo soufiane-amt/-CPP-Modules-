@@ -6,13 +6,13 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 21:38:46 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/03 13:19:20 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/01 20:21:48 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target):Form(target, 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(std::string targ):Form("robotomy request", 72, 45),target(targ)
 {
   srand(time(NULL));
 }

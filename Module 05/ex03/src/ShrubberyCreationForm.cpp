@@ -6,13 +6,13 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 16:41:06 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/28 16:55:59 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/01 20:23:25 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target):Form(target, 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string targ):Form("shrubbery request", 145, 137),target(targ)
 {
 }
 

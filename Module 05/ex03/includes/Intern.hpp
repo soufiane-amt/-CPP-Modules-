@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:41:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/01 16:08:31 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/01 20:59:40 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,7 @@ class Form;
 class Intern
 {
 private:
-    typedef           Form* (Intern::*Forms)();
-    static Forms             forms;
-    Form              *getPrsidentPard();
-    Form              *getRobotRequest();
-    Form              *getShrubberyCreat();
-    int                formIsIndex(std::string n);
-    static             std::string formNames[3];
+    Form               **formAdd;
 
 public:
     Intern();

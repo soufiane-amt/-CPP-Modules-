@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 15:10:38 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/28 16:19:08 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/01 19:44:14 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ public:
 
 private:
     std::string generateTree(void);
+    std::string target;
 };
 
 
