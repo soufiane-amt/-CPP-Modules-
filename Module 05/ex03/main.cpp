@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 19:04:58 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/01 20:58:48 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/01 21:06:13 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,18 @@ int main ()
     // b.signForm(s);
     // b.executeForm(s);
     // s.formAction();
-    try
-    {
-        Intern someRandomIntern;
-        Form* rrf;
-        rrf = someRandomIntern.makeForm("shrubbery request", "Bender");
-        std::cout << rrf->getGradeToSign();
-    }
-    catch(char const* e)
-    {
-        std::cout << e;
-    }
+    // try
+    // {
+    //     Intern someRandomIntern;
+    //     Form* rrf;
+    //     rrf = someRandomIntern.makeForm("shrubbery request", "Bender");
+    //     std::cout << rrf->getGradeToSign();
+    // }
+    // catch(char const* e)
+    // {
+    //     std::cout << e;
+    // }
+    Form* form = new PresidentialPardonForm("lol");
+    delete form;
+    (void)form; 
 } 

@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 15:15:03 by samajat           #+#    #+#              #
-#    Updated: 2022/11/01 16:06:05 by samajat          ###   ########.fr        #
+#    Updated: 2022/11/01 21:35:35 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ FILES = Bureaucrat Form PresidentialPardonForm\
 		RobotomyRequestForm ShrubberyCreationForm\
 		Intern\
 
-HEADERS = $(FILES:=.hpp)
+HEADERS =  $(addprefix includes/, $(FILES:=.hpp))
 
 OBJ = $(addprefix src/, $(FILES:=.o)) main.o
 

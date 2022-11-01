@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 21:38:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/01 20:21:28 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/01 21:02:47 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,5 @@ const std::string& PresidentialPardonForm::getName(void)  const
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
+  std::cout << "pres destruc called\n";
 }
