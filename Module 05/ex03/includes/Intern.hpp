@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:41:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/01 20:59:40 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/02 16:01:49 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,17 @@
 
 #include <iostream>
 
+#define CALL_MEMBER_FN(object,ptrToMember)  ((object).*(ptrToMember))
+typedef           Form* (Intern::*Forms)(std::string name);
+
 class Form;
 class Intern
 {
 private:
-    Form               **formAdd;
+    Forms               *formAdd;
+    Form               *getPrsidentPard(std::string target);
+    Form               *getRobotRequest(std::string target);
+    Form               *getShrubberyCreat(std::string target);
 
 public:
     Intern();

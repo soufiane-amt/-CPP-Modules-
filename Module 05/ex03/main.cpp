@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 19:04:58 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/01 21:40:25 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/02 15:52:41 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,21 @@
 #include <stdlib.h>
 int main ()
 {
-    // Bureaucrat b = Bureaucrat("Trotsky", 45);
-    // Bureaucrat a = Bureaucrat("b", 150);
-    // PresidentialPardonForm s("home");
-
-    // b.signForm(s);
-    // b.executeForm(s);
-    // s.formAction();
-    // try
-    // {
-    //     Intern someRandomIntern;
-    //     Form* rrf;
-    //     rrf = someRandomIntern.makeForm("shrubbery request", "Bender");
-    //     std::cout << rrf->getGradeToSign();
-    // }
-    // catch(char const* e)
-    // {
-    //     std::cout << e;
-    // }
-    Form* form = new PresidentialPardonForm("lol");
+    Intern someRandomIntern;
+    Form* rrf;
+    // rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+    // std::cout << rrf->getName() << std::endl;
+    rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
+    std::cout << &rrf << std::endl;
+    rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
+    std::cout << &rrf << std::endl;
+    rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
+    std::cout << &rrf << std::endl;
+    rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
+    std::cout << &rrf << std::endl;
+    // std::cout << rrf->getName() << std::endl;
+    // delete rrf;
+    // rrf = someRandomIntern.makeForm("shrubbery request", "Bender");
+    // std::cout << rrf->getName() << std::endl;
+    // delete rrf;
 } 
