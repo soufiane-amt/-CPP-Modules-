@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 19:05:07 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/31 15:55:43 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/02 14:47:41 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 Bureaucrat::Bureaucrat(const std::string Name, int Grade): name(Name)
 {
+        if (Name == "")
+            throw std::invalid_argument("Empty Bureacrat error!\n");
         if (Grade < 1)
             throw GradeTooHighException("Very low grade Error!");
         else if (Grade > 150)

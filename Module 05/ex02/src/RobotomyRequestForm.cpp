@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 21:38:46 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/01 20:22:57 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/02 15:14:02 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 RobotomyRequestForm::RobotomyRequestForm(std::string targ):Form("robotomy request", 72, 45),target(targ)
 {
-  
+  if (targ=="")
+    throw std::invalid_argument("Empty Robotomy target error!\n");
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const Robotomy &obj):Form(obj)

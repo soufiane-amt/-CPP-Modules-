@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:07 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/31 15:22:57 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/02 14:39:16 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ private:
     bool             signedForm;
     
 public:
-    Form(const std::string n, const int gToSign, const int gToExec);
+    Form(const std::string n="", const int gToSign=0, const int gToExec=0);
     Form(const Form &form);
     Form& operator=(const Form &form);
     const std::string&    getName(void);

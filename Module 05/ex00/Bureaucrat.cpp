@@ -6,16 +6,16 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 19:05:07 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/28 15:07:42 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/02 14:52:24 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(void){}
-
 Bureaucrat::Bureaucrat(const std::string Name, int Grade): name(Name)
 {
+    if (Name == "")
+        throw std::invalid_argument("Empty Bureacrat error!\n");
     if (Grade < 1)
         throw GradeTooHighException("Very low grade Error!");
     else if (Grade > 150)
@@ -27,7 +27,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy): name(copy.name), grade(copy.grad
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &copy)
 {
-    (void)copy;
+    this->grade = copy.grade;
     return (*this);
 }
 

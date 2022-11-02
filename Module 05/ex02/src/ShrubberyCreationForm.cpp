@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 16:41:06 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/01 19:44:36 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/02 15:14:48 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string targ):Form("shrubbery request", 145, 137),target(targ)
 {
+  if(targ=="")
+    throw std::invalid_argument("Empty Shrubbery target error!\n");
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const Shrubbery &obj):Form(obj)

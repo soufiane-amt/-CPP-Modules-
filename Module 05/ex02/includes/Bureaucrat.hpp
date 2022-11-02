@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 15:39:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/30 19:59:00 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/02 14:47:19 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class Bureaucrat
         private:
         const char* message;
         };
-        Bureaucrat(const std::string Name, int Grade);
+        Bureaucrat(const std::string Name="", int Grade=0);
         Bureaucrat(const Bureaucrat &copy);
         Bureaucrat &operator=(const Bureaucrat &copy);
         const std::string &getName(void);
