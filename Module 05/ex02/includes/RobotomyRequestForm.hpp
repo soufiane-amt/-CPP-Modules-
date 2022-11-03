@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 15:10:40 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/01 19:42:37 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/03 16:15:50 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
     RobotomyRequestForm(const Robotomy &obj);
     RobotomyRequestForm &operator=(const Robotomy &target);
     ~RobotomyRequestForm();
-    void formAction(void);
+    void formAction(void) const;
     const std::string&    getName(void)  const;
 private:
     std::string target;

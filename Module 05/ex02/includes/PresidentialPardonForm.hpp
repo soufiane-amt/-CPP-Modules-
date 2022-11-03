@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 15:14:30 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/01 19:40:29 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/03 16:15:39 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
     PresidentialPardonForm(const PresidentalP &obj);
     PresidentialPardonForm &operator=(const PresidentalP &target);
     ~PresidentialPardonForm();
-    void formAction(void);
+    void formAction(void) const;
     const std::string&    getName(void)  const;
 
 private:

@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 16:41:06 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/02 15:14:48 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/03 16:17:19 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const Shrubbery &target)
   return (*this);
 }
 
-std::string ShrubberyCreationForm::generateTree(void)
+std::string ShrubberyCreationForm::generateTree(void)const
 {
     std::string tree;
 
@@ -63,7 +63,7 @@ std::string ShrubberyCreationForm::generateTree(void)
   return (tree);
 }
 
-void ShrubberyCreationForm::formAction(void)
+void ShrubberyCreationForm::formAction(void)const
 {
     std::ofstream targetFile;
     try{
