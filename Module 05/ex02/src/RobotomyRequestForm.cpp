@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 21:38:46 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/03 16:16:52 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/03 16:44:07 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@ RobotomyRequestForm::RobotomyRequestForm(std::string targ):Form("robotomy reques
 
 RobotomyRequestForm::RobotomyRequestForm(const Robotomy &obj):Form(obj)
 {
-    
+  if (obj.target=="")
+    throw std::invalid_argument("Empty RobotomyRequestForm target error!\n");
+  this->target = obj.target;
 }
 
-RobotomyRequestForm& RobotomyRequestForm::operator=(const Robotomy &target)
+RobotomyRequestForm& RobotomyRequestForm::operator=(const Robotomy &obj)
 {
-  (void)target;
+    this->target = obj.target;
   return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 16:41:06 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/03 16:17:19 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/03 16:44:22 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,15 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string targ):Form("shrubbery r
 
 ShrubberyCreationForm::ShrubberyCreationForm(const Shrubbery &obj):Form(obj)
 {
-    
+  if (obj.target=="")
+    throw std::invalid_argument("Empty ShrubberyCreationForm target error!\n");
+  this->target = obj.target;
 }
 
-ShrubberyCreationForm& ShrubberyCreationForm::operator=(const Shrubbery &target)
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const Shrubbery &obj)
 {
-  (void)target;
-  return (*this);
+    this->target = obj.target;
+    return (*this);
 }
 
 std::string ShrubberyCreationForm::generateTree(void)const

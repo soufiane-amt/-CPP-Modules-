@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 19:04:58 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/03 16:28:42 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/03 16:49:30 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ int main ()
     try
     {
         Bureaucrat b = Bureaucrat("lm9dem", 1);
-        // RobotomyRequestForm r("rob");
+        RobotomyRequestForm r("rob");
         ShrubberyCreationForm s("shrubbery");
-        // PresidentialPardonForm p("presidential");
+        PresidentialPardonForm p("presidential");
         b.signForm(s);
         b.executeForm(s);
-        // b.signForm(r);
-        // b.executeForm(r);
-        // b.signForm(p);
-        // b.executeForm(p);
+        b.signForm(r);
+        b.executeForm(r);
+        b.signForm(p);
+        b.executeForm(p);
     }
     catch(const std::exception& e)
     {
