@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 21:38:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/02 15:20:35 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/03 16:42:22 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 
 PresidentialPardonForm::PresidentialPardonForm(std::string targ):Form("presidential pardon", 25, 5),target(targ)
 {
+  if (targ=="")
+    throw std::invalid_argument("Empty PresidentialPardon target error!\n");
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentalP &obj):Form(obj)
 {
-    
+  if (obj.target=="")
+    throw std::invalid_argument("Empty PresidentialPardonForm target error!\n");
+  this->target = obj.target;
 }
 
-PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentalP &target)
+PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentalP &obj)
 {
-  (void)target;
+    this->target = obj.target;
   return (*this);
 }
 
