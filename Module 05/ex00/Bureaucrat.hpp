@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 15:39:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/02 14:45:27 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/03 15:54:42 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Bureaucrat
     };
     class GradeTooLowException : public std::exception
     {
-    public:
+       public:
        GradeTooLowException (const char* message);
        const char *what()const throw ();
     

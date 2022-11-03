@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 12:06:06 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/28 16:10:53 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/03 15:56:07 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Form::Form(const Form &form):name(form.name), gradeToSign(form.gradeToSign), gra
 
 Form& Form::operator=(const Form &form)
 {
-    (void)form;
+    this->signedForm = form.signedForm;
     return (*this);
 }
 
