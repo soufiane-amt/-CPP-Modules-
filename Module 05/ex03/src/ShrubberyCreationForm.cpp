@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 16:41:06 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/03 16:41:51 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/03 19:39:02 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void ShrubberyCreationForm::formAction(void)
 {
     try{
         std::ofstream targetFile;
-        targetFile.open(name + "_shrubbery");
+        targetFile.open(target + "_shrubbery");
         for (int i = 0; i < 5; i++)
             targetFile << generateTree();
     }

@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 21:38:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/03 16:42:22 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/03 19:38:47 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentalP &ob
 void PresidentialPardonForm::formAction(void)
 {
   
-  std::cout <<std::endl<< name +" has been pardoned by Zaphod Beeblebrox." << std::endl;
+  std::cout <<std::endl<< target +" has been pardoned by Zaphod Beeblebrox." << std::endl;
 }
 
 const std::string& PresidentialPardonForm::getName(void)  const

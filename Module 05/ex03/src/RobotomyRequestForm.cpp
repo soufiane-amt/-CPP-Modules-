@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 21:38:46 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/03 16:42:56 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/03 19:38:54 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void RobotomyRequestForm::formAction(void)
   
   std::cout << "\nHrrrrrrrrrrr, (drilling noises)" << std::endl;
   if (rand() % 2)
-    std::cout << "informs that "+ name +" has been robotomized" <<std::endl;
+    std::cout << "informs that "+ target +" has been robotomized" <<std::endl;
   else
       std::cout << "The robotomy failed." <<std::endl;
 }
