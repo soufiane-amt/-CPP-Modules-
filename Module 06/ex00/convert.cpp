@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/11 20:51:13 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/04 15:42:17 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,6 @@ int	ft_strcmp(const char *s1, const char *s2)
 	return (s1[i] - s2[i]);
 }
 
-Convert::Convert(void): value("")
-{
-}
 
 Convert::Convert(const char* input):value(input)
 {
@@ -182,7 +179,7 @@ void    Convert::toDouble(void)
         // if (castedValue == static_cast<int>(castedValue))
         //     zeroAfterPoint = ".0";
     }
-    std::cout << castedValue << zeroAfterPoint << std::endl;
+    std::cout << std::fixed << std::setprecision(2) << castedValue << std::endl;
 }
 
 void    Convert::toFloat(void)
@@ -214,7 +211,7 @@ void    Convert::toFloat(void)
         //     zeroAfterPoint = ".0";
     }
     // std::cout << castedValue << zeroAfterPoint +'f'<< std::endl;
-    std::cout << std::fixed << std::setprecision(3) << castedValue << 'f'<< std::endl;
+    std::cout << std::fixed << std::setprecision(2) << castedValue << 'f'<< std::endl;
 }
 
 
@@ -244,11 +241,6 @@ void    Convert::toChar(void)
 
 void Convert::displayConversions(void)
 {
-    if (!ft_strcmp(value, ""))
-    {
-        std::cerr << "The value is null!" << std::endl;
-        return;
-    }
     toChar();
     toInt();
     toFloat();

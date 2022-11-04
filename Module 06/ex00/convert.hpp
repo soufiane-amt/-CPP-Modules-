@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:21 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/11 19:39:58 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/04 15:39:16 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ class Convert
     void    toChar(void);
 
     public:
-    Convert  (void);
-    Convert  (const char* input);
+    Convert  (const char* input=NULL);
     Convert  (Convert const &copy);
     Convert& operator=(Convert const &copy);
     void     displayConversions(void);
