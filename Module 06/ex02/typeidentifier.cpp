@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 20:38:14 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/12 15:22:15 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/04 19:11:31 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,14 @@ Base    *generate(void)
     {
     case 0:
         base = new A();
-        std::cout << "-->A\n";
         break;
     
     case 1:
         base = new B();
-        std::cout << "-->B\n";
         break;
     
     case 2:
         base = new C();
-        std::cout << "-->C\n";
         break;
     break;
     }
