@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:21 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/04 15:39:16 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/04 18:37:38 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ class Convert
 {
     private:
     const char* value;
-    static bool    isInt(const char* value);
-    static bool    isDouble(const char* value);
-    static bool    isFloat(const char* value);
-    static bool    isChar(const char* value);
-    static bool    isStr(const char* value);
+    bool    isInt(const char* value);
+    bool    isDouble(const char* value);
+    bool    isFloat(const char* value);
+    bool    isChar(const char* value);
+    bool    isStr(const char* value);
     void    toInt(void);
     void    toDouble(void);
     void    toFloat(void);

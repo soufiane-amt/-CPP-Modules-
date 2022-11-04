@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/04 15:42:17 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/04 18:34:48 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ bool    Convert::isInt(const char* value)
             return (false);
             i++;
     }
+    if (atol(value) < -2147483648 || atol(value) > 2147483647)
+        return (false);
     return (true);
 }
 
@@ -99,8 +101,6 @@ bool    Convert::isDouble(const char* value)
     return (true);
 }
 
-int b = 12;
-char a = b;
 bool    Convert::isFloat(const char* value)
 {
     int i = 0;
@@ -179,7 +179,7 @@ void    Convert::toDouble(void)
         // if (castedValue == static_cast<int>(castedValue))
         //     zeroAfterPoint = ".0";
     }
-    std::cout << std::fixed << std::setprecision(2) << castedValue << std::endl;
+    std::cout << std::fixed << std::setprecision(1) << castedValue << std::endl;
 }
 
 void    Convert::toFloat(void)
@@ -211,7 +211,7 @@ void    Convert::toFloat(void)
         //     zeroAfterPoint = ".0";
     }
     // std::cout << castedValue << zeroAfterPoint +'f'<< std::endl;
-    std::cout << std::fixed << std::setprecision(2) << castedValue << 'f'<< std::endl;
+    std::cout << std::fixed << std::setprecision(1) << castedValue << 'f'<< std::endl;
 }
 
 
