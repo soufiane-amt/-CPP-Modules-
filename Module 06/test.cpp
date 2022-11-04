@@ -6,48 +6,72 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:46:24 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/11 21:31:22 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/04 21:06:32 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
 
+// class Base
+// {
+//   public: virtual ~Base() {}
+
+//   bool isA() {
+//     return (dynamic_cast<Base*>(this) != NULL);
+//   }
+// };
+
+// class D1 {};
+// class D2: public Base {};
+// class D22: public D2 {};
 class Base
 {
-  public: virtual ~Base() {}
-
-  bool isA() {
-    return (dynamic_cast<Base*>(this) != NULL);
-  }
+public:
+    virtual ~Base()
+    {
+        std::cout << "Base constructor called\n";
+    }
+    int a;
 };
 
-class D1: public Base {};
-class D2: public Base {};
-class D22: public D2 {};
+class A : public Base
+{
+public:    
+    A()
+    {
+        std::cout << "A constructor called\n";
+    }
+
+    int a;
+};
+
+class B : public Base
+{   
+public:
+    int a;
+};
+
+// class C : public Base
+// {
+// public:
+//     int a;
+// };
 
 int main(int argc,char* argv[])
 {
-  D1*   d1  = new D1();
-  D2*   d2  = new D2();
-  D22*  d22 = new D22();
-
-  Base*  x = d22;
-
-  if( x->isA<D22>() )
-  {
-    std::cout << "IS A D22" << std::endl;
-  }
-  if( x->isA<D2>() )
-  {
-    std::cout << "IS A D2" << std::endl;
-  }
-  if( x->isA<D1>() )
-  {
-    std::cout << "IS A D1" << std::endl;
-  }
-  if(x->isA<Base>() )
-  {
-    std::cout << "IS A Base" << std::endl;
-  }
+    // int a = 4545455;
+    // uintptr_t ptr = reinterpret_cast<uintptr_t>(&a);
+    // std::cout << ptr << std::endl;
+    // std::cout << &a << std::endl;
+    // A *base = static_cast<A *>(new Base);
+    // int nb = 5;
+    // // int *a = &nb;
+    // int *u = reinterpret_cast<int*>(nb);
+    // std::cout << *u << std::endl;
+    // int a = 5;
+    // int *ptr = (int *)(a);
+    // std::cout << *ptr;
+    int a = 5;
+    float b = reinterpret_cast<float>(a);
 }
