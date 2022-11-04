@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/04 18:34:48 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/04 18:40:08 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -241,6 +241,11 @@ void    Convert::toChar(void)
 
 void Convert::displayConversions(void)
 {
+    if (!value)
+    {
+        std::cerr<< "NULL value\n";
+        return;
+    }
     toChar();
     toInt();
     toFloat();
