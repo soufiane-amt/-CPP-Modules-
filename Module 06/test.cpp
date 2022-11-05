@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:46:24 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/04 21:06:32 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/05 16:41:20 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ public:
     int a;
 };
 
-class B : public Base
-{   
-public:
-    int a;
-};
+// class B : public Base
+// {   
+// public:
+//     int a;
+// };
 
 // class C : public Base
 // {
@@ -60,18 +60,22 @@ public:
 
 int main(int argc,char* argv[])
 {
-    // int a = 4545455;
-    // uintptr_t ptr = reinterpret_cast<uintptr_t>(&a);
-    // std::cout << ptr << std::endl;
-    // std::cout << &a << std::endl;
-    // A *base = static_cast<A *>(new Base);
-    // int nb = 5;
-    // // int *a = &nb;
-    // int *u = reinterpret_cast<int*>(nb);
-    // std::cout << *u << std::endl;
-    // int a = 5;
-    // int *ptr = (int *)(a);
-    // std::cout << *ptr;
-    int a = 5;
-    float b = reinterpret_cast<float>(a);
+    // int var = 45;
+    // int *a = &var;
+    // // // char *c;
+    // // std::cout << a << std::endl;
+    // // ptr = dynamic_cast<Base*>(ptv);
+    // void *c = static_cast<void *>(a);
+    // // std::cout << a << std::endl;
+    // std::cout << c << std::endl;
+    try
+    {
+        long a = 4444545555545454;
+        int d = a;
+        std::cout << d;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 }
