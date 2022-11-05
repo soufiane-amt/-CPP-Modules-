@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/05 16:42:11 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/05 17:20:13 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ Convert& Convert::operator=(Convert const &copy)
     return (*this);
 }
 
+
+
+
+
+///Checkers
 bool    Convert::isInt(const char* value)
 {
     int len;
@@ -36,9 +41,6 @@ bool    Convert::isInt(const char* value)
     len = strlen(value);
     if (value[i] == '+' || value[i] == '-')
         i++;
-    if (!isdigit(value[i]))
-        return (false);
-    i++;
     while (value[i])
     {
         if (!isdigit(value[i]))
@@ -99,6 +101,11 @@ bool    Convert::isStr(const char* value)
     return (true);
 }
 
+
+
+/// Converters//Castings
+
+
 void    Convert::toInt(void)
 {
     int               castedValue;
@@ -112,14 +119,13 @@ void    Convert::toInt(void)
     else if (isChar(value) && !isdigit(value[0]))
         castedValue = static_cast<int>(value[0]);
     else
-        castedValue = atoi(value);
+        castedValue = static_cast<int>(atoi(value));
     std::cout << castedValue << std::endl;
 }
 
 void    Convert::toDouble(void)
 {
     double          castedValue;
-    std::string     zeroAfterPoint = "";
 
     std::cout << "double: ";
     if   (!strcmp(value, "nan") || !strcmp(value, "nanf"))
@@ -134,21 +140,15 @@ void    Convert::toDouble(void)
         return;
     }
     else if (isChar(value) && !isdigit(value[0]))
-    {
         castedValue = static_cast<double>(value[0]);
-        zeroAfterPoint = ".0";
-    }
     else
-    {
-        castedValue = atof(value);
-    }
+        castedValue = static_cast<double>(atof(value));
     std::cout << std::fixed << std::setprecision(1) << castedValue << std::endl;
 }
 
 void    Convert::toFloat(void)
 {
     float           castedValue;
-    std::string     zeroAfterPoint = "";
 
     std::cout << "float: ";
     if   (!strcmp(value, "nan") || !strcmp(value, "nanf"))
@@ -163,14 +163,9 @@ void    Convert::toFloat(void)
         return;
     }
     else if (isChar(value) && !isdigit(value[0]))
-    {
         castedValue = static_cast<float>(value[0]);
-        zeroAfterPoint = ".0";
-    }
     else
-    {
-        castedValue = atof(value);
-    }
+        castedValue = static_cast<float>(atof(value));
     std::cout << std::fixed << std::setprecision(1) << castedValue << 'f'<< std::endl;
 }
 
@@ -201,6 +196,8 @@ void    Convert::toChar(void)
     std::cout << "'"<< castedValue << "'"<< std::endl;
 }
 
+
+
 void Convert::displayConversions(void)
 {
     if (!value)
@@ -218,16 +215,3 @@ Convert::~Convert(void)
 {
     
 }
-
-/*to test
-a non digit character
-a digit character
-a double 
-a float
-an int
-a string
-a zero
-a negative numb
-a positive numb
-nan / inf
-*/
