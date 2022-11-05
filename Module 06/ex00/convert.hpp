@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:21 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/04 18:37:38 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/05 17:26:56 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Convert
     bool    isDouble(const char* value);
     bool    isFloat(const char* value);
     bool    isChar(const char* value);
-    bool    isStr(const char* value);
+    bool    isImpossible(const char* value);
     void    toInt(void);
     void    toDouble(void);
     void    toFloat(void);

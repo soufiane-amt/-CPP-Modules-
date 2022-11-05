@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:18:23 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/05 17:20:13 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/05 17:26:49 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ bool    Convert::isChar(const char* value)
     return (true);    
 }
 
-bool    Convert::isStr(const char* value)
+bool    Convert::isImpossible(const char* value)
 {
     if (isInt(value) || isDouble(value) || isFloat(value) || isChar(value))
         return (false);
@@ -111,7 +111,7 @@ void    Convert::toInt(void)
     int               castedValue;
 
     std::cout << "int: ";
-    if (isStr(value))
+    if (isImpossible(value))
     {
         std::cout << "impossible." << std::endl;
         return;
@@ -134,7 +134,7 @@ void    Convert::toDouble(void)
         castedValue = static_cast<double>(atof("+inf"));
     else if (!strcmp(value, "-inf") || !strcmp(value, "-inff"))
         castedValue = static_cast<double>(atof("-inf"));
-    else if (isStr(value))
+    else if (isImpossible(value))
     {
         std::cout << "impossible." << std::endl;
         return;
@@ -157,7 +157,7 @@ void    Convert::toFloat(void)
         castedValue = static_cast<float>(atof("+inf"));
     else if (!strcmp(value, "-inf") || !strcmp(value, "-inff"))
         castedValue = static_cast<float>(atof("-inf"));
-    else if (isStr(value))
+    else if (isImpossible(value))
     {
         std::cout << "impossible." << std::endl;
         return;
@@ -177,7 +177,7 @@ void    Convert::toChar(void)
     std::cout << "char: ";
     if (isChar(value) && !isdigit(value[0]))
         castedValue = static_cast<char>(value[0]);
-    else if (!isStr(value))
+    else if (!isImpossible(value))
     {
         int var = atoi(value);
         if (isprint(var))
