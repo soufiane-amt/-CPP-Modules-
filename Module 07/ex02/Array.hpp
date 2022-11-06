@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 22:30:39 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/06 20:13:38 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/06 20:26:18 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,6 @@ template<class T>
 Array<T>::Array(const Array &copy)
 {
     this->len = copy.len;
-    if (arr)
-        delete [] arr;
-    std::cout << arr<< std::endl;
     arr = new T[len];
     (*this) = copy;
 }
