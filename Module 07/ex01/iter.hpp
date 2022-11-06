@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 17:45:43 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/12 21:38:55 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/06 19:35:30 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,12 @@
 
 #include <iostream>
 
-// template<T>  void f() {}
 
-template <typename T> void iter (T *arr, size_t len, void    func (T a))
+template <typename T> 
+void iter (T *arr, size_t len, void func (T const & x))
 {
     for (size_t i = 0; i < len; i++)
-    {
         func(arr[i]);
-    }
-}
-// template <typename TF> TF func (T element);
+} 
 
 #endif

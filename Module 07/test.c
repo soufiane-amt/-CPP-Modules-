@@ -1,41 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 16:09:28 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/06 18:00:50 by samajat          ###   ########.fr       */
+/*   Created: 2022/11/06 18:26:02 by samajat           #+#    #+#             */
+/*   Updated: 2022/11/06 18:52:49 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-#define WHATEVER_HPP
+#include <stdio.h>
 
-
-//Header
-#include <iostream>
-
-//Templates
-
-template <typename T> void swap(T &a, T &b)
+int main()
 {
-    T s;
-
-    s = a;
-    a = b;
-    b = s;
+    int 
 }
-
-template <typename T> T min(T &x, T &y)
-{
-    return (x >= y) ? y : x;
-}
-
-template <typename T> T max(T &x, T &y)
-{
-    return (x <= y) ? y : x;
-}
-
-#endif

@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 17:34:37 by samajat           #+#    #+#              #
-#    Updated: 2022/10/12 17:40:57 by samajat          ###   ########.fr        #
+#    Updated: 2022/11/06 14:26:16 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-RM = rm -rf
+RM = rm -f
 
 OBJ = main.o
 
-HEADERS = $(FILES:=.hpp)
+HEADERS = whatever.hpp
 
 all : $(NAME)
 

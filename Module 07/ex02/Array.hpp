@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 22:30:39 by samajat           #+#    #+#             */
-/*   Updated: 2022/10/13 17:12:41 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/06 19:36:36 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@
 template<class T>
 class Array
 {
-    T      *arr;
+    T            *arr;
     unsigned int len;
+
     public:
     Array();
     Array(unsigned int l);
@@ -31,5 +32,54 @@ class Array
     unsigned int size();
     ~Array();
 };
+
+
+template<class T>
+Array<T>::Array():arr(NULL), len(0)
+{
+}
+
+template<class T>
+Array<T>::Array(unsigned int l) :len(l)
+{
+    arr = new T[len];
+}
+
+template<class T>
+Array<T>::Array(const Array &copy)
+{
+    this->len = copy.len;
+    arr = new T[len];
+    (*this) = copy;
+}
+
+template<class T>
+Array<T>& Array<T>::operator=(const Array &copy)
+{
+    for (size_t i = 0; i < len; i++)
+        this->arr[i] = copy.arr[i];
+    return (*this);
+}
+
+template<class T>
+unsigned int Array<T>::size()
+{
+    return (len);
+}
+
+template<class T>
+T& Array<T>::operator[](unsigned int i)
+{
+    if (len <= i)
+        throw std::exception ();
+    return (arr[i]);
+}
+
+template<class T>
+Array<T>::~Array()
+{
+    if (arr)
+        delete [] arr;
+}
 
 #endif

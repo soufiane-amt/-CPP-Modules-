@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 17:40:45 by samajat           #+#    #+#              #
-#    Updated: 2022/10/12 17:41:08 by samajat          ###   ########.fr        #
+#    Updated: 2022/11/06 14:44:38 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM = rm -rf
 
 OBJ = main.o
 
-HEADERS = $(FILES:=.hpp)
+HEADERS = iter.hpp
 
 all : $(NAME)
 
