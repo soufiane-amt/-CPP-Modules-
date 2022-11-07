@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 22:30:39 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/06 20:26:18 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/07 19:03:48 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,10 @@ Array<T>::Array(const Array &copy)
 template<class T>
 Array<T>& Array<T>::operator=(const Array &copy)
 {
+    len = copy.len;
+    if (arr)
+        delete[]arr;
+    arr = new T[len];
     for (size_t i = 0; i < len; i++)
         this->arr[i] = copy.arr[i];
     return (*this);
