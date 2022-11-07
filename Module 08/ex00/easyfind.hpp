@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:55:37 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/08 00:13:28 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/08 00:35:12 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,16 @@
 #include <vector>
 #include <array>
 #include <list>
+#include <forward_list>
+#include <deque> 
+#include <stack>
+#include <queue>
 
 template <typename T>
 void easyfind(T &container, int i)
 {
     typename T::iterator iter;
-    int index = 0;
+    int index = -1;
     for (  iter = container.begin(); iter != container.end(); iter++)
     {
         index++;
