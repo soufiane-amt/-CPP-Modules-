@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 01:03:51 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/08 01:58:43 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/08 02:01:47 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,26 +57,25 @@ int Span::shortestSpan()
 
 int Span::longestSpan()
 {
-    
+    return(compareWith(isLarger));
 }
 
 int Span::compareWith(bool (*func)(int a, int b))
 {
-    int smallestNbr = arr[0];
+    int targetSpan = arr[0];
     for (size_t i = 0; i < size - 1; i++)
     {
         for (size_t j = i + 1; j < size; j++)
         {
-            int s = abs(arr[i] - arr[j]);
-            func(a, b) ? smallestNbr = s : NULL;
+            int diff = abs(arr[i] - arr[j]);
+            func(diff, targetSpan) ? targetSpan = diff : NULL;
         }
     }
+    return (targetSpan);
 }
 
 
 
 //UTILS
 bool isSmaller(int a, int b){return (a < b);}
-
-
 bool isLarger(int a, int b){return (a > b);}
