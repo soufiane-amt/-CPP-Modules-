@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 01:03:51 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/08 02:03:59 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/08 02:32:08 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void Span::addNumber(int n)
 
 bool isSmaller(int a, int b){return (a < b);}
 bool isLarger(int a, int b){return (a > b);}
+
 int Span::shortestSpan()
 {
     return(compareWith(isSmaller));
@@ -60,7 +61,7 @@ int Span::shortestSpan()
 
 int Span::longestSpan()
 {
-    return(compareWith(isLarger));
+    return(abs(min_element(arr)));
 }
 
 int Span::compareWith(bool (*func)(int a, int b))
