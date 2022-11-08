@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/09 00:11:19 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/09 00:15:26 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,73 +38,73 @@ class MutantStack
     void swap (stack& x) noexcept
 };
 
-template<class T>
-MutantStack<T>::MutantStack()
+template <class T, class container_type>
+MutantStack<T, container_type>::MutantStack(const container_type& ctnr)
 {
     
 }
 
-template<class T>
+template <class T, class container_type>
 MutantStack<T>::MutantStack(const MutantStack& copy)
 {
     
 }
 
-template<class T>
+template <class T, class container_type>
 MutantStack<T>& MutantStack<T>::operator=(const MutantStack& copy)
 {
     
 }
 
-template<class T>
+template <class T, class container_type>
 MutantStack<T>::~MutantStack()
 {
     
 }
 
-template<class T>
+template <class T, class container_type>
 bool MutantStack<T>::empty() const
 {
-    
+    return (container.empty());
 }
-template<class T>
+template <class T, class container_type>
 T& MutantStack<T>::top()
 {
     
 }
 
-template<class T>
+template <class T, class container_type>
 const T& MutantStack<T>::top() const
 {
     
 }
 
-template<class T>
+template <class T, class container_type>
 T MutantStack<T>::size() const
 {
     
 }
 
-template<class T>
+template <class T, class container_type>
 void MutantStack<T>::push (const T& val)
 {
     
 }
 
-template<class T>
+template <class T, class container_type>
 void MutantStack<T>::pop()
 {
     
 }
 
-template<class T>
+template <class T, class container_type>
 void MutantStack<T>::swap (stack& x) noexcept
 {
     
 }
 
-template <class ... Args> 
-void MutantStack<T>::emplace (Args&&... args)
+template <class T, class container_type>
+ void MutantStack<T>::emplace (Args&&... args)
 {
     
 }
