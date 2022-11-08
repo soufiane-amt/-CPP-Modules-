@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 00:48:30 by samajat           #+#    #+#              #
-#    Updated: 2022/11/08 00:49:04 by samajat          ###   ########.fr        #
+#    Updated: 2022/11/08 02:03:02 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM = rm -f
 
 HEADER = Span.hpp
 
-FILES = main Span.cpp
+FILES = main Span
 
 OBJ = $(FILES:=.o)
 

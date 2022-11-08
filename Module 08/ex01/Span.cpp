@@ -6,13 +6,13 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 01:03:51 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/08 02:01:47 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/08 02:03:59 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-Span::Span(unsigned int size=0)
+Span::Span(unsigned int size)
 {
    if (!size)
         throw std::length_error("The size of span can't be 0!\n");
@@ -32,7 +32,8 @@ Span& Span::operator=(const Span& copy)
         delete [] arr;
     arr = new int[copy.size];
     for (size_t i = 0; i < size; i++)
-        arr[i] = copy.arr[i]; 
+        arr[i] = copy.arr[i];
+    return (*this);
 }
 
 Span::~Span()
@@ -50,6 +51,8 @@ void Span::addNumber(int n)
     i++;
 }
 
+bool isSmaller(int a, int b){return (a < b);}
+bool isLarger(int a, int b){return (a > b);}
 int Span::shortestSpan()
 {
     return(compareWith(isSmaller));
@@ -77,5 +80,3 @@ int Span::compareWith(bool (*func)(int a, int b))
 
 
 //UTILS
-bool isSmaller(int a, int b){return (a < b);}
-bool isLarger(int a, int b){return (a > b);}
