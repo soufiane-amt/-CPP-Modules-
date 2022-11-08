@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:51:48 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/08 01:56:49 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/08 17:50:28 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,14 @@
 #include <iostream>
 #include <exception>
 #include <stdexcept>
+#include <vector>
+
 class Span
 {
-    int          *arr;
+    private:
+    std::vector<int> arr;
     unsigned int size;
+
     public:
     Span(unsigned int size=0);
     Span(const Span& copy);
