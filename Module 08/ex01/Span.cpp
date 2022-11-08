@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 01:03:51 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/08 18:13:09 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/08 20:40:58 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,38 +40,42 @@ void Span::addNumber(int n)
     static unsigned int i;
 
     if (size == i)
-        throw std::out_of_range ("index range is overpassed\n");;
-    arr[i] = n;
+        throw std::out_of_range ("index range is overpassed\n");
+    arr.push_back(n);
     i++;
 }
+//ADD >>NUMBERS<<
 
-bool isSmaller(int a, int b){return (a < b);}
-bool isLarger(int a, int b){return (a > b);}
+
+void Span::addNumbers(int *numbers)
+{
+    if (sizeof(numbers)/sizeof(numbers[0]))
+        arr.insert(arr.end(), numbers, numbers + sizeof(numbers)/sizeof(numbers[0]));
+}
 
 int Span::shortestSpan()
 {
-    return(compareWith(isSmaller));
-}
-
-int Span::longestSpan()
-{
-    return(abs(min_element(arr)));
-}
-
-int Span::compareWith(bool (*func)(int a, int b))
-{
-    int targetSpan = arr[0];
+    int shortest = arr[0];
     for (size_t i = 0; i < size - 1; i++)
     {
         for (size_t j = i + 1; j < size; j++)
         {
             int diff = abs(arr[i] - arr[j]);
-            func(diff, targetSpan) ? targetSpan = diff : NULL;
+            diff < shortest ? shortest = diff : NULL;
         }
     }
-    return (targetSpan);
+    return (shortest);
+}
+
+int Span::longestSpan()
+{
+    int smallest = *min_element(arr.begin(), arr.end());
+    int largest = *max_element(arr.begin(), arr.end());
+    return(largest - smallest);
 }
 
 
-
-//UTILS
+std::vector<int>& Span::getArr()
+{
+    return (arr);
+}
