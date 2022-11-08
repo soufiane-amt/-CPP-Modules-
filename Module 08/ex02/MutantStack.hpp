@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/08 23:05:36 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/09 00:11:19 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 #define MUTANTSTACK_HPP
 
 #include <iostream>
+#include <deque>
 
-template <class T>
+template <class T, class container_type=std::deque<T>>
 class MutantStack
 {
+    container_type container;
     public:
     //Conanical Form
-    MutantStack();
+    explicit MutantStack(const container_type& ctnr = container_type());
     MutantStack(const MutantStack& copy);
     MutantStack& operator=(const MutantStack& copy);
     ~MutantStack();
