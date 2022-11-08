@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/09 00:15:26 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/09 00:46:59 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ template <class T, class container_type=std::deque<T>>
 class MutantStack
 {
     container_type container;
+    
     public:
     //Conanical Form
     explicit MutantStack(const container_type& ctnr = container_type());
@@ -38,6 +39,7 @@ class MutantStack
     void swap (stack& x) noexcept
 };
 
+
 template <class T, class container_type>
 MutantStack<T, container_type>::MutantStack(const container_type& ctnr)
 {
@@ -45,66 +47,66 @@ MutantStack<T, container_type>::MutantStack(const container_type& ctnr)
 }
 
 template <class T, class container_type>
-MutantStack<T>::MutantStack(const MutantStack& copy)
+MutantStack<T, container_type>::MutantStack(const MutantStack& copy)
 {
     
 }
 
 template <class T, class container_type>
-MutantStack<T>& MutantStack<T>::operator=(const MutantStack& copy)
+MutantStack<T, container_type>& MutantStack<T, container_type>::operator=(const MutantStack& copy)
 {
     
 }
 
 template <class T, class container_type>
-MutantStack<T>::~MutantStack()
+MutantStack<T, container_type>::~MutantStack()
 {
     
 }
 
 template <class T, class container_type>
-bool MutantStack<T>::empty() const
+bool MutantStack<T, container_type>::empty() const
 {
     return (container.empty());
 }
 template <class T, class container_type>
-T& MutantStack<T>::top()
+T& MutantStack<T, container_type>::top()
 {
     
 }
 
 template <class T, class container_type>
-const T& MutantStack<T>::top() const
+const T& MutantStack<T, container_type>::top() const
 {
     
 }
 
 template <class T, class container_type>
-T MutantStack<T>::size() const
+T MutantStack<T, container_type>::size() const
 {
     
 }
 
 template <class T, class container_type>
-void MutantStack<T>::push (const T& val)
+void MutantStack<T, container_type>::push (const T& val)
 {
     
 }
 
 template <class T, class container_type>
-void MutantStack<T>::pop()
+void MutantStack<T, container_type>::pop()
 {
     
 }
 
 template <class T, class container_type>
-void MutantStack<T>::swap (stack& x) noexcept
+void MutantStack<T, container_type>::swap (stack& x) noexcept
 {
     
 }
 
 template <class T, class container_type>
- void MutantStack<T>::emplace (Args&&... args)
+ void MutantStack<T, container_type>::emplace (Args&&... args)
 {
     
 }
