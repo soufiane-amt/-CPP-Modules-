@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 01:03:51 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/08 20:40:58 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/08 21:15:03 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,18 @@ void Span::addNumber(int n)
     arr.push_back(n);
     i++;
 }
+
+
 //ADD >>NUMBERS<<
-
-
-void Span::addNumbers(int *numbers)
-{
-    if (sizeof(numbers)/sizeof(numbers[0]))
-        arr.insert(arr.end(), numbers, numbers + sizeof(numbers)/sizeof(numbers[0]));
+void Span::addNumbers(size_t len, int *numbers)
+{    
+    if (len + arr.size() <= this->size)
+    {
+        for (size_t i = 0; i < len; i++)
+            addNumber(numbers[i]);
+    }
+    else
+        throw std::length_error("addNumbers<ERROR>The size of the numbers passed overlows the span array!\n");
 }
 
 int Span::shortestSpan()
