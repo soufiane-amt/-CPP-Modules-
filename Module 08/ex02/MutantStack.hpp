@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/09 01:06:16 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/09 01:12:21 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 #include <deque>
 
 
-template <class T, class container_type=std::deque<T>>
+template <class T, class containerType=std::deque<T>>
 class MutantStack
 {
-    container_type container;
+    containerType container;
     public:
     //Conanical Form
-    explicit MutantStack(const container_type& ctnr = container_type());
+    explicit MutantStack(const containerType& ctnr = containerType());
     MutantStack(const MutantStack& copy);
     MutantStack& operator=(const MutantStack& copy);
     ~MutantStack();
@@ -36,7 +36,7 @@ class MutantStack
     void push (const T& val);
     void emplace (Args&&... args);
     void pop();
-    void swap (stack& x) noexcept
+    void swap (MutantStack& x) noexcept
 };
 
 
