@@ -6,28 +6,29 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 00:47:51 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/09 01:13:24 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/09 01:43:24 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
 
 template <class T, class containerType>
-MutantStack<T, containerType>::MutantStack(const containerType& ctnr)
+MutantStack<T, containerType>::MutantStack(const containerType& s)
 {
-    
+    (void)s;
 }
 
 template <class T, class containerType>
 MutantStack<T, containerType>::MutantStack(const MutantStack& copy)
 {
-    
+    (void)copy;
 }
 
 template <class T, class containerType>
 MutantStack<T, containerType>& MutantStack<T, containerType>::operator=(const MutantStack& copy)
 {
-    
+    (void)copy;
+
 }
 
 template <class T, class containerType>
@@ -61,7 +62,7 @@ const T& MutantStack<T, containerType>::top() const
 template <class T,  class containerType>
 typename T::size_type MutantStack<T, containerType>::size() const
 {
-    return(container.size())
+    return(container.size());
 }
 
 template <class T, class containerType>
@@ -76,14 +77,14 @@ void MutantStack<T, containerType>::pop()
     container.pop_back();
 }
 
-template <class T, class containerType>
-void MutantStack<T, containerType>::swap (MutantStack& x) noexcept
-{
-    container.swap(x.container);
-}
+// template <class T, class containerType>
+// void MutantStack<T, containerType>::swap (MutantStack& x) noexcept
+// {
+//     container.swap(x.container);
+// }
 
-template <class T, class containerType>
- void MutantStack<T, containerType>::emplace (Args&&... args)
-{
+// template <class T, class containerType>
+//  void MutantStack<T, containerType>::emplace (typename Args &&... args)
+// {
     
-}
+// }
