@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/09 19:32:32 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/09 19:41:30 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,21 +47,4 @@ int main()
     //     std::cout << stack.top() <<" ";
     //     stack.pop();
     // }
-    std::vector <int> s;
-    s.push_back(21);
-    // s.push_back(22);
-    // s.push_back(24);
-    // s.push_back(25);
-    std::vector <int> *pt = &s;
-    std::vector < int > ::iterator iter(pt);
-    // iter  = pt->begin();
-    // std::vector < int > ::iterator iter1(iter);
-    // iter1 = iter;
-    std::cout << (*iter)++ << std::endl;
-    // std::cout << *iter1 << std::endl;
-    // for (iter  = pt->begin() ; iter != pt->end(); iter++)
-    // {
-    //     std::cout << *iter << std::endl;
-    // }
-    
 }
