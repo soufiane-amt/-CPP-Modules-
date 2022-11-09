@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/09 19:25:17 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/09 19:40:42 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,8 @@
 template <class T, class containerType=std::deque<T> >
 class MutantStack
 {
-    // typename containerType::size_type variable_x;
     containerType container;
     public:
-    // typename containerType::size_type;
 
     //Conanical Form
     explicit MutantStack(const containerType& ctnr = containerType());
@@ -44,11 +42,10 @@ class MutantStack
     void swap (MutantStack& x);
     
     //Iterator
-    iterator begin();
-    iterator end  ();
 
     struct iterator
     {
+        private:
         containerType *ptr;
         
         public:
@@ -57,7 +54,24 @@ class MutantStack
         iterator& operator=(const iterator& copy);
         ~iterator();
     };
+    iterator begin();
+    iterator end  ();
 };
+
+//Iterator
+    
+template <class T, class containerType>
+MutantStack<T, containerType>::iterator MutantStack<T, containerType>::begin()
+{
+    return (iterator(&container));
+}
+
+template <class T, class containerType>
+MutantStack<T, containerType>::iterator MutantStack<T, containerType>::end ()
+{
+    return (iterator(&container + container.size() - 1));
+}
+
 
 template <class T, class containerType>
 MutantStack<T, containerType>::iterator::iterator(containerType* pointer=0):ptr(pointer)
@@ -80,6 +94,9 @@ template <class T, class containerType>
 MutantStack<T, containerType>::iterator::~iterator()
 {
 }
+
+//
+
 
 template <class T, class containerType>
 MutantStack<T, containerType>::MutantStack(const containerType& s)
@@ -150,20 +167,6 @@ template <class T, class containerType>
 void MutantStack<T, containerType>::swap (MutantStack& x)
 {
     container.swap(x.container);
-}
-
-//Iterator
-    
-template <class T, class containerType>
-MutantStack<T, containerType>::iterator* MutantStack<T, containerType>::begin()
-{
-    return (ptr);
-}
-
-template <class T, class containerType>
-MutantStack<T, containerType>::iterator* MutantStack<T, containerType>::end ()
-{
-    return (ptr + container.size() - 1);
 }
 
 
