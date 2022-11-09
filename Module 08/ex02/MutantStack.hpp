@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/09 20:39:52 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/09 21:08:37 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ class MutantStack
     void swap (MutantStack& x);
     
     //Iterator
-
-    struct iterator
+    template <class container=containerType>
+    class iterator
     {
         private:
-        containerType *ptr;
+        container *ptr;
         
         public:
-        iterator(containerType* pointer=0);
+        iterator(container* pointer=0);
         iterator(const iterator& copy);
         iterator& operator=(const iterator& copy);
         iterator& operator++();
@@ -62,81 +62,13 @@ class MutantStack
     iterator end  ();
 };
 
-//Iterator
-    
-template <class T, class containerType>
-MutantStack<T, containerType>::iterator MutantStack<T, containerType>::begin()
-{
-    return (iterator(&container));
-}
-
-template <class T, class containerType>
-MutantStack<T, containerType>::iterator MutantStack<T, containerType>::end ()
-{
-    return (iterator(&container + container.size() - 1));
-}
-
-
-template <class T, class containerType>
-MutantStack<T, containerType>::iterator::iterator(containerType* pointer=0):ptr(pointer)
-{
-    
-}
-
-template <class T, class containerType>
-MutantStack<T, containerType>::iterator::iterator(const iterator& copy):ptr(copy.ptr)
-{
-}
-
-template <class T, class containerType>
-MutantStack<T, containerType>::iterator& MutantStack<T, containerType>::iterator::operator=(const iterator& copy)
-{
-    this->ptr = copy.ptr;
-}
-
-template <class T, class containerType>
-MutantStack<T, containerType>::iterator::~iterator()
-{
-}
-
-//
-
-template <class T, class containerType>
-MutantStack<T, containerType>::iterator& MutantStack<T, containerType>::iterator::operator++(int)
-{
-    ptr++;
-    return (ptr - 1);
-}
-
-template <class T, class containerType>
-MutantStack<T, containerType>::iterator& MutantStack<T, containerType>::iterator::operator++()
-{
-    ptr++;
-    return (ptr);
-}
-
-template <class T, class containerType>
-MutantStack<T, containerType>::iterator& MutantStack<T, containerType>::iterator::operator--(int)
-{
-    ptr--;
-    return (ptr + 1);
-}
-
-template <class T, class containerType>
-MutantStack<T, containerType>::iterator& MutantStack<T, containerType>::iterator::operator--()
-{
-    ptr--;
-    return (ptr);
-}
-
 
 //Conanical Form
 
 template <class T, class containerType>
 MutantStack<T, containerType>::MutantStack(const containerType& s)
 {
-   for (int i =  s.size() - 1; i >= 0; i--)
-        this->push(s[i]);
+    container = s;
 }
 
 template <class T, class containerType>
@@ -148,8 +80,8 @@ MutantStack<T, containerType>::MutantStack(const MutantStack& copy)
 template <class T, class containerType>
 MutantStack<T, containerType>& MutantStack<T, containerType>::operator=(const MutantStack& copy)
 {
-   for (int i =  s.size() - 1; i >= 0; i--)
-        this->push(copy.s[i]);
+   for (int i =  container.size() - 1; i >= 0; i--)
+        this->push(copy.container[i]);
     return (*this);
 }
 
@@ -210,5 +142,80 @@ void MutantStack<T, containerType>::swap (MutantStack& x)
 // {
     
 // }
+
+//Iterator
+    
+template <class T, class containerType>
+typename MutantStack<T, containerType>::iterator MutantStack<T, containerType>::begin()
+{
+    return (iterator(&container));
+}
+
+template <class T, class containerType>
+typename MutantStack<T, containerType>::iterator MutantStack<T, containerType>::end ()
+{
+    return (iterator(&container + container.size() - 1));
+}
+
+
+template <class T, class containerType>
+template <class container>
+typename MutantStack<T, containerType>::iterator::iterator(container* pointer):ptr(pointer)
+{
+    
+}
+
+template <class T, class containerType>
+template <class container>
+typename MutantStack<T, containerType>::iterator::iterator(const iterator& copy):ptr(copy.ptr)
+{
+}
+
+template <class T, class containerType>
+template <class container>
+typename MutantStack<T, containerType>::iterator& MutantStack<T, containerType>::iterator::operator=(const iterator& copy)
+{
+    this->ptr = copy.ptr;
+}
+
+template <class T, class containerType>
+template <class container>
+typename MutantStack<T, containerType>::iterator::~iterator()
+{
+}
+
+//
+
+template <class T, class containerType>
+template <class container>
+typename MutantStack<T, containerType>::iterator& MutantStack<T, containerType>::iterator::operator++(int)
+{
+    ptr++;
+    return (ptr - 1);
+}
+
+template <class T, class containerType>
+typename MutantStack<T, containerType>::iterator& MutantStack<T, containerType>::iterator::operator++()
+{
+    ptr++;
+    return (ptr);
+}
+
+template <class T, class containerType>
+template <class container>
+MutantStack<T, containerType>::iterator& MutantStack<T, containerType>::iterator::operator--(int)
+{
+    ptr--;
+    return (ptr + 1);
+}
+
+template <class T, class containerType>
+template <class container>
+typename MutantStack<T, containerType>::iterator& MutantStack<T, containerType>::iterator::operator--()
+{
+    ptr--;
+    return (ptr);
+}
+
 
 #endif
