@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/09 19:41:30 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/09 20:11:32 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,30 @@ std::ostream& operator<<(std::ostream &COUT, const x& xc)
 }
 #include <iterator>
 #include <iostream>
-#include <vector>
-#include <list>
+#include <deque>
+#include <stack>
 
 int main()
 {
-    // MutantStack <int> stack;
-    // stack.push(21);
-    // stack.push(22);
-    // stack.push(24);
-    // stack.push(25);
-       
+    std::stack<int> stack1;
+    stack1.push(1);
+    stack1.push(1);
+    stack1.push(1);
+    stack1.push(1);
+    std::stack <int> stack(stack1);
+    stack.push(2);
+    stack.push(2);
+    stack.push(2);
+    stack.push(2);
+    stack1 = stack;
     // stack.pop();
     // stack.pop();
     // std::cout << stack.size() << std::endl;
+    while (!stack1.empty()) {
+        std::cout << stack1.top() <<" ";
+        stack1.pop();
+    }
+    std::cout << "\n----------\n";
     // while (!stack.empty()) {
     //     std::cout << stack.top() <<" ";
     //     stack.pop();

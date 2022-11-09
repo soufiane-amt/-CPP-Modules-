@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/09 19:58:06 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/09 20:06:32 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,24 +130,29 @@ MutantStack<T, containerType>::iterator& MutantStack<T, containerType>::iterator
 }
 
 
+//Conanical Form
+
 template <class T, class containerType>
 MutantStack<T, containerType>::MutantStack(const containerType& s)
 {
-   for (size_t i =  s.size() - 1; i >= 0; i--)
-        this->push(s[i]);   
+   for (int i =  s.size() - 1; i >= 0; i--)
+        this->push(s[i]);
 }
 
 template <class T, class containerType>
 MutantStack<T, containerType>::MutantStack(const MutantStack& copy)
 {
-    (void)copy;
+   for (int i =  s.size() - 1; i >= 0; i--)
+        this->push(copy.s[i]);
 }
 
 template <class T, class containerType>
 MutantStack<T, containerType>& MutantStack<T, containerType>::operator=(const MutantStack& copy)
 {
-    (void)copy;
-
+    
+   for (int i =  s.size() - 1; i >= 0; i--)
+        this->push(copy.s[i]);
+    return (*this);
 }
 
 template <class T, class containerType>
