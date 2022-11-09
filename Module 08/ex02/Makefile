@@ -6,7 +6,7 @@
 #    By: samajat <samajat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 21:19:47 by samajat           #+#    #+#              #
-#    Updated: 2022/11/08 21:29:45 by samajat          ###   ########.fr        #
+#    Updated: 2022/11/09 00:48:27 by samajat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM = rm -f
 
 HEADER = MutantStack.hpp
 
-FILES = main
+FILES = main MutantStack
 
 OBJ = $(FILES:=.o)
 
