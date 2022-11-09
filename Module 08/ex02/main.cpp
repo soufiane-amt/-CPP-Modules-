@@ -6,11 +6,11 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/09 17:26:26 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/09 18:34:34 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MutantStack.hpp"
+// #include "MutantStack.hpp"
 
 #include <vector>
 #include <ostream>
@@ -27,28 +27,37 @@ std::ostream& operator<<(std::ostream &COUT, const x& xc)
     COUT << xc.getX();
     return (COUT);
 }
-void    func()
-{
-    std::cout << "hello world\n";
-}
-void    func1()
-{
-    std::cout << "helhilo\n";
-}
+#include <iterator>
+#include <iostream>
+#include <vector>
+#include <list>
 
 int main()
 {
-    MutantStack <int> stack;
-    stack.push(21);
-    stack.push(22);
-    stack.push(24);
-    stack.push(25);
+    // MutantStack <int> stack;
+    // stack.push(21);
+    // stack.push(22);
+    // stack.push(24);
+    // stack.push(25);
        
     // stack.pop();
     // stack.pop();
-    std::cout << stack.size() << std::endl;
-    while (!stack.empty()) {
-        std::cout << stack.top() <<" ";
-        stack.pop();
+    // std::cout << stack.size() << std::endl;
+    // while (!stack.empty()) {
+    //     std::cout << stack.top() <<" ";
+    //     stack.pop();
+    // }
+    std::vector <int> s;
+    std::list <int> l;
+    s.push_back(21);
+    s.push_back(22);
+    s.push_back(24);
+    s.push_back(25);
+    std::vector < int > ::iterator iter;
+    
+    for (iter  = s.begin() ; iter != s.end(); iter++)
+    {
+        std::cout << *iter << std::endl;
     }
+    
 }

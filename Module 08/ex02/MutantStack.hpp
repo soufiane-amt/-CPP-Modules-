@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/09 17:31:43 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/09 18:37:15 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ class MutantStack
     void swap (MutantStack& x);
     
     //Iterator
-    T* begin();
-    T* end  ();
+    iterator* begin();
+    iterator* end  ();
     class iterator
     {
         T *ptr;
@@ -54,7 +54,6 @@ class MutantStack
         iterator(const iterator& copy);
         iterator& operator=(const iterator& copy);
         ~iterator();
-        //
     };
 };
 
@@ -129,6 +128,19 @@ void MutantStack<T, containerType>::swap (MutantStack& x)
     container.swap(x.container);
 }
 
+//Iterator
+    
+template <class T, class containerType>
+T* MutantStack<T, containerType>::begin()
+{
+    return (ptr);
+}
+
+template <class T, class containerType>
+T* MutantStack<T, containerType>::end  ()
+{
+    return (ptr + container.size() - 1);
+}
 
 template <class T, class containerType>
 MutantStack<T, containerType>::iterator::iterator(T* pointer=0)
@@ -140,11 +152,13 @@ MutantStack<T, containerType>::iterator::iterator(const iterator& copy)
 {
     
 }
+
 template <class T, class containerType>
-MutantStack<T, containerType>::iterator::iterator& operator=(const iterator& copy)
+MutantStack<T, containerType>::iterator& MutantStack<T, containerType>::iterator::operator=(const iterator& copy)
 {
     
 }
+
 template <class T, class containerType>
 MutantStack<T, containerType>::iterator::~iterator()
 {
