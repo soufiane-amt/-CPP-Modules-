@@ -15,18 +15,14 @@
 //     std::cout << arr[1] << std::endl;
 // }
 
-void func(std::vector<int> arr)
-{
-  std::cout << arr.size() << std::endl;
-}
-
-int main() 
-{
-  std::vector <int>arr;
-  arr.push_back(454);
-  arr.push_back(3);
-  arr.push_back(2);
-  arr.erase(arr.begin(), arr.end());
+namespace boost { int function = 0; }
+int main() { 
+  int f = 0;
+//   boost::function< int() > f; 
+    if (1 < 5 < 2)
+        std::cout << "COol";
+    else
+        std::cout << "no\n";
 }
 
 

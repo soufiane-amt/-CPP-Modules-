@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:51:48 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/08 20:56:12 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/10 18:03:50 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <stdexcept>
 #include <vector>
 #include <iterator>
+
 class Span
 {
     private:
@@ -29,7 +30,7 @@ class Span
     Span(const Span& copy);
     Span& operator=(const Span& copy);
     ~Span();
-    std::vector<int> &getArr();
+    // std::vector<int> &getArr();
     void addNumber(int n);
     void addNumbers(size_t len, int *numbers);
     int shortestSpan();

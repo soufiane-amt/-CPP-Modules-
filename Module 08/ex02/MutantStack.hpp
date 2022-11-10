@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/10 17:19:05 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/10 21:47:18 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <deque>
 #include <stdexcept>
 #include <stack>
+
 
 template <class T , class containerType=std::deque<T> >
 class MutantStack : public std::stack<T>

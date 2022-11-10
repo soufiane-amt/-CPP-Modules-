@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:55:37 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/08 00:35:12 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/10 23:39:41 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,20 @@
 #include <queue>
 
 template <typename T>
-void easyfind(T &container, int i)
+void easyfind( const T &container, int i)
 {
-    typename T::iterator iter;
-    int index = -1;
+    typename T::const_iterator iter;
+    int index = 0;
     for (  iter = container.begin(); iter != container.end(); iter++)
     {
-        index++;
         if (i == *iter)
         {
             std::cout << "The element exists in index: "  << index << std::endl;
             return;
         }
+        index++;
     }
     throw std::exception();
 }
+
 #endif
