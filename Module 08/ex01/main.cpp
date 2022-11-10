@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 02:04:17 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/11 00:08:43 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/11 00:14:10 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main()
         Span sp = Span(SIZE);
         for (size_t i = 0; i < SIZE; i++)
             sp.addNumber(12);
-        for (std::vector<int>::iterator i = sp.begin(); i != sp.end(); i++)
+        for (std::vector<int>::iterator i = sp.getContainer().cbegin(); i != sp.getContainer().cend(); i++)
         {
             
         }

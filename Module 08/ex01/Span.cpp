@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 01:03:51 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/11 00:11:29 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/11 00:13:03 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int Span::longestSpan()
 }
 
 
-const container& Span::getArr()
+const container& Span::getContainer()
 {
     return (arr);
 }

@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:51:48 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/11 00:11:18 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/11 00:12:55 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Span
     Span(const Span& copy);
     Span& operator=(const Span& copy);
     ~Span();
-    const container &getArr();
+    const container &getContainer();
     void addNumber(int n);
     void addNumbers(size_t len, int *numbers);
     int shortestSpan();
