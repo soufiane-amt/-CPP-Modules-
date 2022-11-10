@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 02:04:17 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/11 00:14:49 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/11 00:15:40 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ int main()
         for (size_t i = 0; i < SIZE; i++)
             sp.addNumber(12);
         for (std::vector<int>::const_iterator i = sp.getContainer().cbegin(); i != sp.getContainer().cend(); i++)
-        {
-            
-        }
+            std::cout << *i << std::endl;
         
     }
     catch(const std::exception& e)
