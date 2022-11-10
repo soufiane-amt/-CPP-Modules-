@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 01:03:51 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/11 00:00:54 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/11 00:11:29 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ void Span::addNumbers(size_t len, int *numbers)
 
 int Span::shortestSpan()
 {
+    if (arr.size() < 2)
+        throw std::exception();
     int shortest = arr[0];
     for (size_t i = 0; i < size - 1; i++)
         for (size_t j = i + 1; j < size; j++)
@@ -70,7 +72,7 @@ int Span::shortestSpan()
 
 int Span::longestSpan()
 {
-    if (!arr.size())
+    if (arr.size() < 2)
         throw std::exception();
     int smallest = *min_element(arr.begin(), arr.end());
     int largest = *max_element(arr.begin(), arr.end());
@@ -78,7 +80,7 @@ int Span::longestSpan()
 }
 
 
-std::vector<int>& Span::getArr()
+const container& Span::getArr()
 {
     return (arr);
 }
