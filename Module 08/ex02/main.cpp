@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/10 19:17:05 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/11 01:08:28 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@
 
 int main()
 {
+    {
     MutantStack<int> mstack;
     mstack.push(5);
     mstack.push(17);
@@ -45,8 +46,8 @@ int main()
     mstack.push(737);
     //[...]
     mstack.push(0);
-    MutantStack<int>::iterator it = mstack.begin();
-    MutantStack<int>::iterator ite = mstack.end();
+    MutantStack<int>::const_iterator it = mstack.cbegin();
+    MutantStack<int>::const_iterator ite = mstack.cend();
     ++it;
     --it;
     while (it != ite)
@@ -57,14 +58,28 @@ int main()
     mstack.push(33);
     mstack.push(52);
     mstack.push(37);
-    std::cout << "---More test---\n";
+
+    std::cout << "---More tests---\n";
     //Better tests
     for (MutantStack<int>::iterator i = mstack.begin(); i < mstack.end(); i++)
     {
        std::cout << mstack.top() << std::endl;
-    mstack.pop();
+        mstack.pop();
     }
-    
     std::stack<int> s(mstack);
+
+    }
+    std::cout << " ----In case the Object is const qualified---\n";
+    std::deque<int> d(20, 1337);
+    const MutantStack<int> mstack(d);
+    MutantStack<int>::const_iterator it = mstack.cbegin();
+    MutantStack<int>::const_iterator ite = mstack.cend();
+    ++it;
+    --it;
+    while (it != ite)
+    {
+    std::cout << *it << std::endl;
+    ++it;
+    }
     return 0;
 }

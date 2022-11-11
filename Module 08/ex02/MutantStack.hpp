@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/10 21:47:18 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/11 01:08:44 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class MutantStack : public std::stack<T>
 {
     public:
     //Conanical Form
-    explicit MutantStack(const containerType& ctnr = containerType());
+    MutantStack(const containerType& ctnr = containerType());
     MutantStack(const MutantStack& copy);
     MutantStack& operator=(const MutantStack& copy);
     ~MutantStack();
@@ -32,6 +32,10 @@ class MutantStack : public std::stack<T>
     typedef typename containerType::iterator iterator;
     iterator  begin();
     iterator  end  ();
+
+    typedef typename containerType::const_iterator const_iterator;
+    const_iterator  cbegin()const;
+    const_iterator  cend  ()const;
 };
 
 
@@ -75,6 +79,18 @@ template <class T , class containerType>
 typename containerType::iterator MutantStack<T, containerType>::end ()
 {
     return (this->c.end());
+}
+
+template <class T , class containerType>
+typename containerType::const_iterator MutantStack<T, containerType>::cbegin()const
+{
+    return (this->c.cbegin());
+}
+
+template <class T , class containerType>
+typename containerType::const_iterator MutantStack<T, containerType>::cend ()const
+{
+    return (this->c.cend());
 }
 
 
