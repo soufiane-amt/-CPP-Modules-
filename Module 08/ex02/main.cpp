@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/11 01:24:40 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/11 17:09:13 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ int main()
     }
 
     {
+    
     std::cout << "----------Test the assignment operator\n";
     MutantStack <int> l;
     l.push(42);  
@@ -99,7 +100,36 @@ int main()
       std::cout << d.top() << std::endl;
       d.pop();
     }
-
+    }
+    {
+      std::cout << "----------Test the copy constructor\n";
+      MutantStack<int> s1;
+      s1.push(1);  
+      s1.push(2);  
+      s1.push(3);  
+      s1.push(4);  
+      s1.push(5);
+      MutantStack<int> s2(s1);
+      size_t le = s2.size();
+      for (size_t i = 0; i < le; i++)
+      {
+        std::cout << s2.top() << std::endl;
+        s2.pop();
+      }
     }
     return 0;
 }
+
+      // MutantStack<int> s1;
+      // s1.push(1);  
+      // s1.push(2);  
+      // s1.push(3);  
+      // s1.push(4);  
+      // s1.push(5);
+      // MutantStack<int> s2(s1);
+      // size_t le = s2.size();
+      // for (size_t i = 0; i < le; i++)
+      // {
+      //   std::cout << s2.top() << std::endl;
+      //   s2.pop();
+      // }
