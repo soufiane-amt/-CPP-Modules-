@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/11 17:07:30 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/11 23:41:01 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,14 @@ class MutantStack : public std::stack<T>
     typedef typename containerType::const_iterator const_iterator;
     const_iterator  cbegin()const;
     const_iterator  cend  ()const;
+
+    typedef typename containerType::reverse_iterator reverse_iterator;
+    reverse_iterator  rbegin()const;
+    reverse_iterator  rend  ()const;
+    
+    typedef typename containerType::const_reverse_iterator const_reverse_iterator;
+    const_reverse_iterator  crbegin()const;
+    const_reverse_iterator  crend  ()const;
 };
 
 
@@ -81,6 +89,7 @@ typename containerType::iterator MutantStack<T, containerType>::end ()
     return (this->c.end());
 }
 
+// const Iterator
 template <class T , class containerType>
 typename containerType::const_iterator MutantStack<T, containerType>::cbegin()const
 {
@@ -93,6 +102,34 @@ typename containerType::const_iterator MutantStack<T, containerType>::cend ()con
     return (this->c.cend());
 }
 
+//Reverse iterator
+
+template <class T , class containerType>
+typename containerType::reverse_iterator MutantStack<T, containerType>::rbegin()const
+{
+    return (this->c.rbegin());
+}
+
+template <class T , class containerType>
+typename containerType::reverse_iterator MutantStack<T, containerType>::rend ()const
+{
+    return (this->c.rend());
+}
+
+
+//const Reverse iterator
+
+template <class T , class containerType>
+typename containerType::const_reverse_iterator MutantStack<T, containerType>::crbegin()const
+{
+    return (this->c.crbegin());
+}
+
+template <class T , class containerType>
+typename containerType::const_reverse_iterator MutantStack<T, containerType>::crend ()const
+{
+    return (this->c.crend());
+}
 
 
 
