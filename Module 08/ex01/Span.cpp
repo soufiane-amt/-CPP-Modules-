@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 01:03:51 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/11 23:24:28 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/11 23:29:20 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Span::~Span()
 
 void Span::addNumber(int n)
 {
-    if (size < arr.size())
+    if (size <= arr.size())
         throw std::out_of_range ("index range is overpassed / equals to 0\n");
     arr.push_back(n);
 }
