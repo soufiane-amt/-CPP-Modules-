@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/11 17:09:13 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/11 17:11:56 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,19 +117,18 @@ int main()
         s2.pop();
       }
     }
+    {
+      std::cout << "----------Test the copy constructor\n";
+      std::deque <int> d (4, 42);
+      MutantStack<int> s1(d);
+      
+      size_t le = s1.size();
+      for (size_t i = 0; i < le; i++)
+      {
+        std::cout << s1.top() << std::endl;
+        s1.pop();
+      }
+    }
     return 0;
 }
 
-      // MutantStack<int> s1;
-      // s1.push(1);  
-      // s1.push(2);  
-      // s1.push(3);  
-      // s1.push(4);  
-      // s1.push(5);
-      // MutantStack<int> s2(s1);
-      // size_t le = s2.size();
-      // for (size_t i = 0; i < le; i++)
-      // {
-      //   std::cout << s2.top() << std::endl;
-      //   s2.pop();
-      // }
