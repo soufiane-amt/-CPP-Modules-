@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <stack>
 #include <iterator>
 
 // void print(std::vector <int> const &a) {
@@ -22,11 +23,22 @@ void func(std::vector<int> arr)
 
 int main() 
 {
-  std::vector <int>arr;
-  arr.push_back(454);
-  arr.push_back(3);
-  arr.push_back(2);
-  arr.erase(arr.begin(), arr.end());
+  std::stack <int> l;
+  l.push(42);  
+  l.push(2);  
+  l.push(12);  
+  l.push(32);
+  std::stack <int> d;
+  d = l;
+  d.push(100);  
+  d.push(3200);
+  size_t le = d.size();
+  for (size_t i = 0; i < le; i++)
+  {
+    std::cout << d.top() << std::endl;
+    d.pop();
+  }
+      
 }
 
 

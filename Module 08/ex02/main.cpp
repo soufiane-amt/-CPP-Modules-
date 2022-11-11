@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/11 01:08:28 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/11 01:24:40 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,26 @@ int main()
     {
     std::cout << *it << std::endl;
     ++it;
+    }
+
+    {
+    std::cout << "----------Test the assignment operator\n";
+    MutantStack <int> l;
+    l.push(42);  
+    l.push(2);  
+    l.push(12);  
+    l.push(32);
+    MutantStack <int> d;
+    d = l;
+    d.push(100);  
+    d.push(3200);
+    size_t le = d.size();
+    for (size_t i = 0; i < le; i++)
+    {
+      std::cout << d.top() << std::endl;
+      d.pop();
+    }
+
     }
     return 0;
 }

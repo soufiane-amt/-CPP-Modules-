@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 02:04:17 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/11 00:15:40 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/11 00:47:20 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ int main()
     // sp.addNumber(11);
     // std::cout << sp.shortestSpan() << std::endl;
     // std::cout << sp.longestSpan() << std::endl;
-return 0;
+    return 0;
 }
