@@ -6,16 +6,15 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/11 17:39:22 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/12 00:13:43 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
 #include <list>
 
-int main()
+void subjectTest()
 {
-    {
     MutantStack<int> mstack;
     mstack.push(5);
     mstack.push(17);
@@ -41,15 +40,17 @@ int main()
     mstack.push(37);
 
     std::cout << "---More tests---\n";
-    //Better tests
+
     for (MutantStack<int>::iterator i = mstack.begin(); i < mstack.end(); i++)
     {
        std::cout << mstack.top() << std::endl;
         mstack.pop();
     }
     std::stack<int> s(mstack);
+}
 
-    }
+void testConstIterator()
+{
     std::cout << " ----In case the Object is const qualified---\n";
     std::deque<int> d(20, 1337);
     const MutantStack<int> mstack(d);
@@ -62,9 +63,40 @@ int main()
     std::cout << *it << std::endl;
     ++it;
     }
+}
 
+void  testReverseIter ()
+{
     {
+    std::cout << " ----In case the iterator Object is reverse ---\n";
+    MutantStack<int> mstack;
+    mstack.push(1);
+    mstack.push(2);
+    mstack.push(3);
+    MutantStack<int>::reverse_iterator it ;
+    for (it = mstack.rbegin(); it!= mstack.rend(); it++)
+      std::cout << *it << std::endl;
     
+    }
+    {
+    std::cout << " ----In case the iterator Object is reverse const  ---\n";
+    std::deque<int> d;
+    d.push_back(1);
+    d.push_back(2);
+    d.push_back(3);
+    const MutantStack<int> mstack(d);
+    MutantStack<int>::const_reverse_iterator it = mstack.crbegin();
+    MutantStack<int>::const_reverse_iterator ite = mstack.crend();
+
+    while (it != ite)
+    {
+    std::cout << *it << std::endl;
+    ++it;
+    }
+    }
+}
+void  copyAssignmentTest()
+{
     std::cout << "----------Test the assignment operator\n";
     MutantStack <int> l;
     l.push(42);  
@@ -81,8 +113,10 @@ int main()
       std::cout << d.top() << std::endl;
       d.pop();
     }
-    }
-    {
+}
+
+void copyConst()
+{
       std::cout << "----------Test the copy constructor\n";
       MutantStack<int> s1;
       s1.push(1);  
@@ -97,9 +131,11 @@ int main()
         std::cout << s2.top() << std::endl;
         s2.pop();
       }
-    }
-    {
-      std::cout << "----------Test the copy constructor\n";
+}
+
+void parameterizedConst()
+{
+      std::cout << "----------Test the parametrized constructor\n";
       std::deque <int> d;
       d.push_back(1337);
       d.push_back(42);
@@ -111,8 +147,9 @@ int main()
         std::cout << s1.top() << std::endl;
         s1.pop();
       }
-    }
-    {
+}
+void replacingMSWithList()
+{
       std::cout << "The subject required test replace the Mutantstack with a list type + updating all its functions\n";
       std::list<int> mstack;
       mstack.push_back(5);
@@ -125,8 +162,8 @@ int main()
       mstack.push_back(737);
       //[...]
       mstack.push_back(0);
-      std::list<int>::const_iterator it = mstack.cbegin();
-      std::list<int>::const_iterator ite = mstack.cend();
+    std::list<int>::iterator it = mstack.begin();
+    std::list<int>::iterator ite = mstack.end();
       ++it;
       --it;
       while (it != ite)
@@ -137,7 +174,16 @@ int main()
       mstack.push_back(33);
       mstack.push_back(52);
       mstack.push_back(37);
-    }
+}
+int main()
+{
+    subjectTest();
+    testConstIterator();    
+    testReverseIter();
+    copyAssignmentTest();
+    copyConst();
+    parameterizedConst();
+    replacingMSWithList();
     return 0;
 }
 

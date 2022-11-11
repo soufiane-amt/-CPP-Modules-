@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:03 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/11 23:41:01 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/11 23:57:27 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ class MutantStack : public std::stack<T>
     const_iterator  cend  ()const;
 
     typedef typename containerType::reverse_iterator reverse_iterator;
-    reverse_iterator  rbegin()const;
-    reverse_iterator  rend  ()const;
+    reverse_iterator  rbegin();
+    reverse_iterator  rend  ();
     
     typedef typename containerType::const_reverse_iterator const_reverse_iterator;
     const_reverse_iterator  crbegin()const;
@@ -105,13 +105,13 @@ typename containerType::const_iterator MutantStack<T, containerType>::cend ()con
 //Reverse iterator
 
 template <class T , class containerType>
-typename containerType::reverse_iterator MutantStack<T, containerType>::rbegin()const
+typename containerType::reverse_iterator MutantStack<T, containerType>::rbegin()
 {
     return (this->c.rbegin());
 }
 
 template <class T , class containerType>
-typename containerType::reverse_iterator MutantStack<T, containerType>::rend ()const
+typename containerType::reverse_iterator MutantStack<T, containerType>::rend ()
 {
     return (this->c.rend());
 }
