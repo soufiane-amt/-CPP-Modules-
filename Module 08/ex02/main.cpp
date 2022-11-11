@@ -6,31 +6,12 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/11 17:13:42 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/11 17:39:22 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
-
-// #include <vector>
-// #include <ostream>
-// #include <functional>
-// class x
-// {
-//     int a;
-//     public:
-//     x(int a){this->a=a;}
-//     int getX()const{return a;}
-// };
-// std::ostream& operator<<(std::ostream &COUT, const x& xc)
-// {
-//     COUT << xc.getX();
-//     return (COUT);
-// }
-// #include <iterator>
-// #include <iostream>
-// #include <deque>
-// #include <stack>
+#include <list>
 
 int main()
 {
@@ -130,6 +111,32 @@ int main()
         std::cout << s1.top() << std::endl;
         s1.pop();
       }
+    }
+    {
+      std::cout << "The subject required test replace the Mutantstack with a list type + updating all its functions\n";
+      std::list<int> mstack;
+      mstack.push_back(5);
+      mstack.push_back(17);
+      std::cout << mstack.back() << std::endl;
+      mstack.pop_back();
+      std::cout << mstack.size() << std::endl;
+      mstack.push_back(3);
+      mstack.push_back(5);
+      mstack.push_back(737);
+      //[...]
+      mstack.push_back(0);
+      std::list<int>::const_iterator it = mstack.cbegin();
+      std::list<int>::const_iterator ite = mstack.cend();
+      ++it;
+      --it;
+      while (it != ite)
+      {
+      std::cout << *it << std::endl;
+      ++it;
+      }
+      mstack.push_back(33);
+      mstack.push_back(52);
+      mstack.push_back(37);
     }
     return 0;
 }
