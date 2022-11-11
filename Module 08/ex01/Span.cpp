@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 01:03:51 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/11 00:46:11 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/11 23:24:28 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,9 @@ Span::~Span()
 
 void Span::addNumber(int n)
 {
-    static unsigned int i;
-
-    if (size == i)
-        throw std::out_of_range ("index range is overpassed\n");
+    if (size < arr.size())
+        throw std::out_of_range ("index range is overpassed / equals to 0\n");
     arr.push_back(n);
-    i++;
 }
 
 
@@ -49,8 +46,9 @@ void Span::addNumbers(size_t len, int *numbers)
 {    
     if (len + arr.size() <= this->size)
     {
-        for (size_t i = 0; i < len; i++)
-            addNumber(numbers[i]);
+        std::vector <int> arr(numbers, numbers + len);
+        for (std::vector <int>::iterator i = arr.begin(); i != arr.end(); i++)
+            addNumber(*i);
     }
     else
         throw std::length_error("addNumbers<ERROR>The size of the numbers passed overlows the span array!\n");

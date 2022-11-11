@@ -6,13 +6,13 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 21:02:58 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/11 18:45:55 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/11 19:32:43 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
 
-#define TOSEARCH 505
+#define TOSEARCH 55
 #define TYPE int
 int main()
 {

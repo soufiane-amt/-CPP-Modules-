@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:51:48 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/11 00:12:55 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/11 19:33:40 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ class Span
     void addNumbers(size_t len, int *numbers);
     int shortestSpan();
     int longestSpan();
-    int compareWith(bool (*func)(int a, int b));
 
     private:
     container arr;

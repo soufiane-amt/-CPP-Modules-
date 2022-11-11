@@ -16,29 +16,23 @@
 //     std::cout << arr[1] << std::endl;
 // }
 
-void func(std::vector<int> arr)
-{
-  std::cout << arr.size() << std::endl;
-}
+// void func(std::vector<int> arr)
+// {
+//   std::cout << arr.size() << std::endl;
+// }
+
+#include <algorithm>
+#include <iostream>
 
 int main() 
 {
-  std::stack <int> l;
-  l.push(42);  
-  l.push(2);  
-  l.push(12);  
-  l.push(32);
-  std::stack <int> d;
-  d = l;
-  d.push(100);  
-  d.push(3200);
-  size_t le = d.size();
-  for (size_t i = 0; i < le; i++)
+  int a[] = {45, 32, 1, 543, 23};
+  std::vector <int> arr(a, a + 5);
+  for (std::vector <int>::iterator i = arr.begin(); i != arr.end(); i++)
   {
-    std::cout << d.top() << std::endl;
-    d.pop();
+    std::cout << *i << std::endl;
   }
-      
+  
 }
 
 
