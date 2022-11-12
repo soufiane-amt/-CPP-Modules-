@@ -6,7 +6,7 @@
 /*   By: samajat <samajat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:30:02 by samajat           #+#    #+#             */
-/*   Updated: 2022/11/12 00:13:43 by samajat          ###   ########.fr       */
+/*   Updated: 2022/11/12 01:31:00 by samajat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,7 +150,7 @@ void parameterizedConst()
 }
 void replacingMSWithList()
 {
-      std::cout << "The subject required test replace the Mutantstack with a list type + updating all its functions\n";
+      std::cout << "\n---The subject required test replace the Mutantstack with a list type + updating all its functions\n";
       std::list<int> mstack;
       mstack.push_back(5);
       mstack.push_back(17);
